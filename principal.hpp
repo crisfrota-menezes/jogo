@@ -1,18 +1,14 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <iostream>
-
-namespace Background
+#include "jogador.hpp"
+class Principal
 {
-    class Principal
-    {
-    private:
-        sf::RenderWindow *window;
+private:
+    sf::RenderWindow *window;
+    Entidades::Personagem::Jogador jogador;
 
-    public:
-        Principal();
-        ~Principal();
-        void run();
-    };
-}
+public:
+    Principal();
+    ~Principal();
+    void run();
+};

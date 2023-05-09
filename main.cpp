@@ -2,7 +2,7 @@
 
 int main()
 {
-    Background::Principal objPrincipal;
+    Principal objPrincipal;
 
     return 0;
 }

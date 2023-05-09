@@ -1,20 +1,16 @@
 #include "principal.hpp"
 
-Background::Principal::Principal() : window(new sf::RenderWindow(sf::VideoMode(800, 600), "Game"))
+Principal::Principal() : window(new sf::RenderWindow(sf::VideoMode(800, 600), "Game")), jogador(sf::Vector2f(100.0f, 200.0f), sf::Vector2f(50.0f, 50.0f))
 {
     run();
 }
 
-Background::Principal::~Principal()
+Principal::~Principal()
 {
 }
 
-void Background::Principal::run()
+void Principal::run()
 {
-    sf::RectangleShape jogador(sf::Vector2f(50, 50));
-    jogador.setFillColor(sf::Color::Green);
-    jogador.setPosition(370, 250);
-
     while (window->isOpen())
     {
         sf::Event event;
@@ -25,7 +21,8 @@ void Background::Principal::run()
         }
 
         window->clear();
-        window->draw(jogador);
+        jogador.move();
+        window->draw(jogador.getCorpo());
         window->display();
     }
 }
