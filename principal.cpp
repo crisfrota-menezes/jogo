@@ -11,6 +11,10 @@ Principal::~Principal()
 
 void Principal::run()
 {
+    Menu *menu = new Menu();
+    menu->run();
+    delete menu;
+    menu = nullptr;
     while (window->isOpen())
     {
         sf::Event event;

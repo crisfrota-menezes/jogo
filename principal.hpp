@@ -1,5 +1,6 @@
 #pragma once
 
+#include "menu.hpp"
 #include "jogador.hpp"
 class Principal
 {
