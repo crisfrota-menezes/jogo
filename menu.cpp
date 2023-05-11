@@ -3,7 +3,6 @@
 Menu::Menu()
 {
     window = new sf::RenderWindow();
-    winclose = new sf::RectangleShape();
     font = new sf::Font();
     image = new sf::Texture();
     bg = new sf::Sprite();
@@ -13,7 +12,6 @@ Menu::Menu()
 Menu::~Menu()
 {
     delete window;
-    delete winclose;
     delete font;
     delete image;
     delete bg;
@@ -30,10 +28,10 @@ void Menu::set_values()
     bg->setTexture(*image);
     mousePos = sf::Mouse::getPosition(*window);
     mouseCoord = window->mapPixelToCoords(mousePos);
-    options = {"Jogar", "Opcoes", "Sair"};
-    textos.resize(3);
-    coords = {{100, 100}, {100, 200}, {100, 300}};
-    sizes = {50, 50, 50};
+    options = {"Jogar", "Ranking", "Opcoes", "Sair"};
+    textos.resize(4);
+    coords = {{100, 100}, {100, 200}, {100, 300}, {100, 400}};
+    sizes = {50, 50, 50, 50};
     for (std::size_t i{}; i < textos.size(); i++)
     {
         textos[i].setFont(*font);
@@ -45,17 +43,19 @@ void Menu::set_values()
     textos[0].setOutlineThickness(5);
 }
 
-void Menu::loop_events()
+bool Menu::loop_events()
 {
     sf::Event event;
     while (window->pollEvent(event))
     {
         if (event.type == sf::Event::Closed)
+        {
             window->close();
-
+            return false;
+        }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !pressed)
         {
-            if (pos < 2)
+            if (pos < 3)
             {
                 pos++;
                 pressed = true;
@@ -81,8 +81,17 @@ void Menu::loop_events()
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && !select)
         {
-            std::cout << "Selecionado: " << options[pos] << std::endl;
             select = true;
+            if (pos == 3)
+            {
+                window->close();
+                return false;
+            }
+            else if (pos == 0)
+            {
+                window->close();
+                return true;
+            }
         }
     }
 }
@@ -96,11 +105,13 @@ void Menu::draw()
     window->display();
 }
 
-void Menu::run()
+bool Menu::run()
 {
+    bool jogar = false;
     while (window->isOpen())
     {
-        loop_events();
+        jogar = loop_events();
         draw();
     }
+    return jogar;
 }

@@ -11,10 +11,6 @@ Principal::~Principal()
 
 void Principal::run()
 {
-    Menu *menu = new Menu();
-    menu->run();
-    delete menu;
-    menu = nullptr;
     while (window->isOpen())
     {
         sf::Event event;
@@ -23,7 +19,6 @@ void Principal::run()
             if (event.type == sf::Event::Closed)
                 window->close();
         }
-
         window->clear();
         jogador.move();
         window->draw(jogador.getCorpo());

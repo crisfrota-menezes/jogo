@@ -9,7 +9,6 @@ class Menu
     bool pressed, select;
 
     sf::RenderWindow *window;
-    sf::RectangleShape *winclose;
     sf::Font *font;
     sf::Texture *image;
     sf::Sprite *bg;
@@ -22,11 +21,11 @@ class Menu
 
 protected:
     void set_values();
-    void loop_events();
+    bool loop_events();
     void draw();
 
 public:
     Menu();
     ~Menu();
-    void run();
+    bool run();
 };
