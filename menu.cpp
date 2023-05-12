@@ -23,8 +23,8 @@ void Menu::set_values()
     pos = 0;
     pressed = false;
     select = false;
-    font->loadFromFile("./PressStart2P-Regular.ttf");
-    image->loadFromFile("./background.png");
+    font->loadFromFile("./Midia/PressStart2P-Regular.ttf");
+    image->loadFromFile("./Midia/background.png");
     bg->setTexture(*image);
     mousePos = sf::Mouse::getPosition(*window);
     mouseCoord = window->mapPixelToCoords(mousePos);
