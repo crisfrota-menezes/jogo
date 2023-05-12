@@ -92,6 +92,14 @@ bool Menu::loop_events()
                 window->close();
                 return true;
             }
+            else if (pos == 1)
+            {
+                /* code */
+            }
+            else if (pos == 2)
+            {
+                /* code */
+            }
         }
     }
 }

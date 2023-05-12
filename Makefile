@@ -1,7 +1,7 @@
 all: compile link
 
 compile:
-	g++ -Isrc/include -c *.cpp
+	g++ -IsrcSFML/include -c *.cpp
 
 link:
-	g++ *.o -o main -Lsrc/lib -lsfml-graphics -lsfml-window -lsfml-system
+	g++ *.o -o main -LsrcSFML/lib -lsfml-graphics -lsfml-window -lsfml-system
