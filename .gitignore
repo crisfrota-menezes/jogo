@@ -1,0 +1,5 @@
+# Ignora a pasta .vscode
+.vscode
+
+# Ignore todos os arquivos .o
+*.o
