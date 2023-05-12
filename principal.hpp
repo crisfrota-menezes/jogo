@@ -1,7 +1,7 @@
 #pragma once
 
 #include "menu.hpp"
-#include "./include/Personagem/Jogador/jogador.hpp"
+#include "jogador.hpp"
 class Principal
 {
 private:

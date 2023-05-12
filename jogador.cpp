@@ -1,4 +1,4 @@
-#include "./include/Personagem/Jogador/jogador.hpp"
+#include "jogador.hpp"
 
 Entidades::Personagem::Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : corpo(sf::RectangleShape(tam))
 {
