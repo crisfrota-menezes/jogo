@@ -1,15 +1,15 @@
 #include "principal.hpp"
 
-Principal::Principal() : window(new sf::RenderWindow(sf::VideoMode(800, 600), "Game")), jogador(sf::Vector2f(100.0f, 200.0f), sf::Vector2f(50.0f, 50.0f))
+Jogo::Jogo() : window(new sf::RenderWindow(sf::VideoMode(800, 600), "Game")), jogador(sf::Vector2f(100.0f, 200.0f), sf::Vector2f(50.0f, 50.0f))
 {
     run();
 }
 
-Principal::~Principal()
+Jogo::~Jogo()
 {
 }
 
-void Principal::run()
+void Jogo::run()
 {
     while (window->isOpen())
     {

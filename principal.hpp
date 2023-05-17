@@ -1,15 +1,15 @@
 #pragma once
 
-#include "menu.hpp"
-#include "jogador.hpp"
-class Principal
+#include "Menus/menu.hpp"
+#include "Personagem/jogador.hpp"
+class Jogo
 {
 private:
     sf::RenderWindow *window;
     Entidades::Personagem::Jogador jogador;
 
 public:
-    Principal();
-    ~Principal();
+    Jogo();
+    ~Jogo();
     void run();
 };

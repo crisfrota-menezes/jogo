@@ -8,6 +8,6 @@ int main()
     delete menu;
     menu = nullptr;
     if (control)
-        Principal objPrincipal;
+        Jogo start;
     return 0;
 }
