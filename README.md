@@ -14,3 +14,4 @@ Até o momento o que foi desenvolvido.
   - Botão opções não funcional, mas exibido.
 
 Refêrencia usada até agora os videos do monitor Giovane, apenas como refêrencias de utilização do SFML e implementar as mesmas.
+Foi utilizado também o canal Terminal Root no youtube, como base para o funcionamento do menu e instruções de como anexar as imagens de background.
