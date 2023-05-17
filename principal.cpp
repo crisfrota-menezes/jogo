@@ -1,16 +1,22 @@
 #include "principal.hpp"
 
-Jogo::Jogo() : window(new sf::RenderWindow(sf::VideoMode(800, 600), "Game")), jogador(sf::Vector2f(100.0f, 200.0f), sf::Vector2f(50.0f, 50.0f))
+Jogo::Jogo() : window(new sf::RenderWindow(sf::VideoMode(1920, 1080), "Game")), jogador(sf::Vector2f(100.0f, 200.0f), sf::Vector2f(50.0f, 50.0f))
 {
+    image = new sf::Texture();
+    bg = new sf::Sprite();
     run();
 }
 
 Jogo::~Jogo()
 {
+    delete image;
+    delete bg;
 }
 
 void Jogo::run()
 {
+    image->loadFromFile("./Midia/background.png");
+    bg->setTexture(*image);
     while (window->isOpen())
     {
         sf::Event event;
@@ -20,6 +26,7 @@ void Jogo::run()
                 window->close();
         }
         window->clear();
+        window->draw(*bg);
         jogador.move();
         window->draw(jogador.getCorpo());
         window->display();

@@ -6,6 +6,8 @@ class Jogo
 {
 private:
     sf::RenderWindow *window;
+    sf::Texture *image;
+    sf::Sprite *bg;
     Entidades::Personagem::Jogador jogador;
 
 public:
