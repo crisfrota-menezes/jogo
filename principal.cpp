@@ -15,8 +15,8 @@ Jogo::~Jogo()
 
 void Jogo::run()
 {
-    image->loadFromFile("./Midia/background.png");
-    bg->setTexture(*image);
+    // image->loadFromFile("./Midia/background.png");
+    // bg->setTexture(*image);
     while (window->isOpen())
     {
         sf::Event event;
@@ -26,7 +26,7 @@ void Jogo::run()
                 window->close();
         }
         window->clear();
-        window->draw(*bg);
+        // window->draw(*bg);
         jogador.move();
         window->draw(jogador.getCorpo());
         window->display();
