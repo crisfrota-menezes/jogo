@@ -16,9 +16,13 @@ namespace Entidades
 
         public:
             Personagem(const sf::Vector2f pos, const sf::Vector2f tam);
+            Personagem(const sf::RectangleShape corpo);
+            Personagem();
             ~Personagem();
             const sf::RectangleShape getCorpo();
             virtual void move() = 0;
         };
     }
+    using namespace Personagem;
 }
+using namespace Entidades;

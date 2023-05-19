@@ -1,3 +1,4 @@
+
 #include "principal.hpp"
 
 Jogo::Jogo() : window(new sf::RenderWindow(sf::VideoMode(1920, 1080), "Game"))
@@ -8,8 +9,8 @@ Jogo::Jogo() : window(new sf::RenderWindow(sf::VideoMode(1920, 1080), "Game"))
     Entidades::Personagem::Personagem *p1 = static_cast<Entidades::Personagem::Personagem *>(jogador);
     Entidades::Personagem::Personagem *p2 = static_cast<Entidades::Personagem::Personagem *>(inimigo);
 
-    personagens.push_back(p1);
-    personagens.push_back(p2);
+    personagens.push_back(jogador);
+    personagens.push_back(inimigo);
 
     image = new sf::Texture();
     bg = new sf::Sprite();
@@ -27,8 +28,8 @@ Jogo::~Jogo()
 
 void Jogo::run()
 {
-    // image->loadFromFile("./Midia/background.png");
-    // bg->setTexture(*image);
+    image->loadFromFile("./Midia/background.png");
+    bg->setTexture(*image);
     while (window->isOpen())
     {
         sf::Event event;
@@ -38,13 +39,12 @@ void Jogo::run()
                 window->close();
         }
         window->clear();
-        //  window->draw(*bg);
-        /*for (int i = 0; i < personagens.size(); i++)
+        window->draw(*bg);
+        for (int i = 0; i < personagens.size(); i++)
         {
-            // int i = 0;
-            personagens[i]->move();
-            window->draw(personagens[i]->getCorpo());
-        }*/
+            personagens.at(i)->move();
+            window->draw(personagens.at(i)->getCorpo());
+        }
         window->display();
     }
     personagens.clear();

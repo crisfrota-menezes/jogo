@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Menus/menu.hpp"
-#include "Personagem/jogador.hpp"
-#include "Personagem/inimigo.hpp"
-#include "Personagem/Personagem.hpp"
+#include "menu.hpp"
+#include "jogador.hpp"
+#include "inimigo.hpp"
+#include "Personagem.hpp"
 #include <vector>
 
 class Jogo

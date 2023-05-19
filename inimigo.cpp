@@ -1,6 +1,6 @@
 #include "inimigo.hpp"
 
-Entidades::Personagem::Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam), relogio(), jogador(jogador)
+Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam), relogio(), jogador(jogador)
 {
     corpo.setFillColor(sf::Color::Red);
     inicializa();
@@ -8,16 +8,16 @@ Entidades::Personagem::Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector
     moveAleatorio = rand() % 4;
 }
 
-Entidades::Personagem::Inimigo::~Inimigo()
+Inimigo::~Inimigo()
 {
 }
 
-void Entidades::Personagem::Inimigo::inicializa()
+void Inimigo::inicializa()
 {
     vel = sf::Vector2f(VELOCIDADE_INIMIGO_X, VELOCIDADE_INIMIGO_Y);
 }
 
-void Entidades::Personagem::Inimigo::perseguir(sf::Vector2f posJogador, sf::Vector2f posInimigo)
+void Inimigo::perseguir(sf::Vector2f posJogador, sf::Vector2f posInimigo)
 {
     if (posJogador.x - posInimigo.x > 0.0f)
     {
@@ -38,11 +38,11 @@ void Entidades::Personagem::Inimigo::perseguir(sf::Vector2f posJogador, sf::Vect
     }
 }
 
-void Entidades::Personagem::Inimigo::movimentoAleatorio()
+void Inimigo::movimentoAleatorio()
 {
 }
 
-void Entidades::Personagem::Inimigo::move()
+void Inimigo::move()
 {
     sf::Vector2f posJogador = jogador->getCorpo().getPosition();
     sf::Vector2f posInimigo = corpo.getPosition();

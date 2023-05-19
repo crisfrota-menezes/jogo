@@ -1,32 +1,27 @@
 #include "jogador.hpp"
 
-Entidades::Personagem::Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : corpo(sf::RectangleShape(tam))
+Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(sf::RectangleShape(tam))
 {
     corpo.setPosition(pos);
     corpo.setFillColor(sf::Color::Green);
     inicializa();
 }
 
-Entidades::Personagem::Jogador::Jogador(const sf::RectangleShape corpo) : corpo(corpo)
+Jogador::Jogador(const sf::RectangleShape corpo) : Personagem(corpo)
 {
     inicializa();
 }
 
-Entidades::Personagem::Jogador::Jogador() : corpo()
+Jogador::Jogador() : Personagem()
 {
     inicializa();
 }
 
-Entidades::Personagem::Jogador::~Jogador()
+Jogador::~Jogador()
 {
 }
 
-const sf::RectangleShape Entidades::Personagem::Jogador::getCorpo()
-{
-    return corpo;
-}
-
-void Entidades::Personagem::Jogador::move()
+void Jogador::move()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
@@ -46,7 +41,7 @@ void Entidades::Personagem::Jogador::move()
     }
 }
 
-void Entidades::Personagem::Jogador::inicializa()
+void Jogador::inicializa()
 {
-    vel = sf::Vector2f(0.1f, 0.1f);
+    vel = sf::Vector2f(1.0f, 1.0f);
 }

@@ -8,11 +8,11 @@ using namespace std;
 #include "jogador.hpp"
 #include "Personagem.hpp"
 
-#define VELOCIDADE_INIMIGO_X 0.025f
-#define VELOCIDADE_INIMIGO_Y 0.025f
+#define VELOCIDADE_INIMIGO_X 0.50f
+#define VELOCIDADE_INIMIGO_Y 0.50f
 
-#define RAIO_PERSEGUIR_X 200.0f
-#define RAIO_PERSEGUIR_Y 200.0f
+#define RAIO_PERSEGUIR_X 300.0f
+#define RAIO_PERSEGUIR_Y 300.0f
 
 namespace Entidades
 {
@@ -34,4 +34,6 @@ namespace Entidades
             void move();
         };
     }
+    using namespace Personagem;
 }
+using namespace Entidades;

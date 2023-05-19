@@ -1,4 +1,4 @@
-#include "Menus/menu.hpp"
+#include "menu.hpp"
 
 Menu::Menu()
 {
@@ -19,7 +19,7 @@ Menu::~Menu()
 
 void Menu::set_values()
 {
-    window->create(sf::VideoMode(1280, 720), "Menu");
+    window->create(sf::VideoMode(1920, 1080), "Menu");
     pos = 0;
     pressed = false;
     select = false;
