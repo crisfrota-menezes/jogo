@@ -13,11 +13,14 @@ Jogo::Jogo() : window(new sf::RenderWindow(sf::VideoMode(1920, 1080), "Game"))
 
     image = new sf::Texture();
     bg = new sf::Sprite();
-    run();
 }
 
 Jogo::~Jogo()
 {
+    for (int i = 0; i < personagens.size(); i++)
+    {
+        delete personagens[i];
+    }
     delete image;
     delete bg;
 }
@@ -35,11 +38,12 @@ void Jogo::run()
                 window->close();
         }
         window->clear();
-        // window->draw(*bg);
+        //  window->draw(*bg);
         /*for (int i = 0; i < personagens.size(); i++)
         {
-            personagens.at(i)->move();
-            window->draw(personagens.at(i)->getCorpo());
+            // int i = 0;
+            personagens[i]->move();
+            window->draw(personagens[i]->getCorpo());
         }*/
         window->display();
     }
