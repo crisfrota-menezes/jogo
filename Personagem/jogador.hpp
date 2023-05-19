@@ -3,12 +3,13 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 using namespace std;
+#include "Personagem.hpp"
 
 namespace Entidades
 {
     namespace Personagem
     {
-        class Jogador
+        class Jogador : public Personagem
         {
         private:
             sf::RectangleShape corpo;
