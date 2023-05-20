@@ -14,26 +14,30 @@ using namespace std;
 #define VISAO_INIMIGO_X 300.0f
 #define VISAO_INIMIGO_Y 300.0f
 
-namespace Entidades
+namespace Escape_the_room
 {
-    namespace Personagem
+    namespace Entidades
     {
-        class Inimigo : public Personagem
+        namespace Personagem
         {
-        private:
-            Jogador *jogador;
-            sf::Clock relogio;
-            int moveAleatorio;
-            void inicializa();
+            class Inimigo : public Personagem
+            {
+            private:
+                Jogador *jogador;
+                sf::Clock relogio;
+                int moveAleatorio;
+                void inicializa();
 
-        public:
-            Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador);
-            ~Inimigo();
-            void perseguir(sf::Vector2f posJogador, sf::Vector2f posInimigo);
-            void movimentoAleatorio();
-            void move();
-        };
+            public:
+                Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador);
+                ~Inimigo();
+                void perseguir(sf::Vector2f posJogador, sf::Vector2f posInimigo);
+                void movimentoAleatorio();
+                void move();
+            };
+        }
+        using namespace Personagem;
     }
-    using namespace Personagem;
+    using namespace Entidades;
 }
-using namespace Entidades;
+using namespace Escape_the_room;

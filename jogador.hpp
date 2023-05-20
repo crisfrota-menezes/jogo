@@ -5,23 +5,27 @@
 using namespace std;
 #include "Personagem.hpp"
 
-namespace Entidades
+namespace Escape_the_room
 {
-    namespace Personagem
+    namespace Entidades
     {
-        class Jogador : public Personagem
+        namespace Personagem
         {
-        private:
-            void inicializa();
+            class Jogador : public Personagem
+            {
+            private:
+                void inicializa();
 
-        public:
-            Jogador(const sf::Vector2f pos, const sf::Vector2f tam);
-            Jogador(const sf::RectangleShape corpo);
-            Jogador();
-            ~Jogador();
-            void move();
-        };
+            public:
+                Jogador(const sf::Vector2f pos, const sf::Vector2f tam);
+                Jogador(const sf::RectangleShape corpo);
+                Jogador();
+                ~Jogador();
+                void move();
+            };
+        }
+        using namespace Personagem;
     }
-    using namespace Personagem;
+    using namespace Entidades;
 }
-using namespace Entidades;
+using namespace Escape_the_room;

@@ -4,25 +4,29 @@
 #include <iostream>
 using namespace std;
 
-namespace Entidades
+namespace Escape_the_room
 {
-    namespace Personagem
+    namespace Entidades
     {
-        class Personagem
+        namespace Personagem
         {
-        protected:
-            sf::RectangleShape corpo;
-            sf::Vector2f vel;
+            class Personagem
+            {
+            protected:
+                sf::RectangleShape corpo;
+                sf::Vector2f vel;
 
-        public:
-            Personagem(const sf::Vector2f pos, const sf::Vector2f tam);
-            Personagem(const sf::RectangleShape corpo);
-            Personagem();
-            ~Personagem();
-            const sf::RectangleShape getCorpo();
-            virtual void move() = 0;
-        };
+            public:
+                Personagem(const sf::Vector2f pos, const sf::Vector2f tam);
+                Personagem(const sf::RectangleShape corpo);
+                Personagem();
+                ~Personagem();
+                const sf::RectangleShape getCorpo();
+                virtual void move() = 0;
+            };
+        }
+        using namespace Personagem;
     }
-    using namespace Personagem;
+    using namespace Entidades;
 }
-using namespace Entidades;
+using namespace Escape_the_room;
