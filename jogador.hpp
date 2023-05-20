@@ -12,7 +12,6 @@ namespace Entidades
         class Jogador : public Personagem
         {
         private:
-            // sf::Vector2f vel;
             void inicializa();
 
         public:
@@ -20,7 +19,6 @@ namespace Entidades
             Jogador(const sf::RectangleShape corpo);
             Jogador();
             ~Jogador();
-            // const sf::RectangleShape getCorpo();
             void move();
         };
     }

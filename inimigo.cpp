@@ -53,7 +53,7 @@ void Inimigo::move()
     sf::Vector2f posJogador = jogador->getCorpo().getPosition();
     sf::Vector2f posInimigo = corpo.getPosition();
 
-    if (fabs(posJogador.x - posInimigo.x) <= RAIO_PERSEGUIR_X && fabs(posJogador.y - posInimigo.y) <= RAIO_PERSEGUIR_Y)
+    if (fabs(posJogador.x - posInimigo.x) <= VISAO_INIMIGO_X && fabs(posJogador.y - posInimigo.y) <= VISAO_INIMIGO_Y)
     {
         perseguir(posJogador, posInimigo);
     }

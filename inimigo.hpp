@@ -11,8 +11,8 @@ using namespace std;
 #define VELOCIDADE_INIMIGO_X 0.50f
 #define VELOCIDADE_INIMIGO_Y 0.50f
 
-#define RAIO_PERSEGUIR_X 300.0f
-#define RAIO_PERSEGUIR_Y 300.0f
+#define VISAO_INIMIGO_X 300.0f
+#define VISAO_INIMIGO_Y 300.0f
 
 namespace Entidades
 {
@@ -23,7 +23,7 @@ namespace Entidades
         private:
             Jogador *jogador;
             sf::Clock relogio;
-            short moveAleatorio;
+            int moveAleatorio;
             void inicializa();
 
         public:
