@@ -4,15 +4,16 @@
 #include "jogador.hpp"
 #include "inimigo.hpp"
 #include "Personagem.hpp"
+#include "gerenciadorGrafico.hpp"
 #include <vector>
 
 class Jogo
 {
 private:
-    sf::RenderWindow *window;
+    GerenciadorGrafico *pGrafico;
     sf::Texture *image;
     sf::Sprite *bg;
-    std::vector<Entidades::Personagem::Personagem *> personagens;
+    std::vector<Entidades::Personagens::Personagem *> personagens;
 
 public:
     Jogo();

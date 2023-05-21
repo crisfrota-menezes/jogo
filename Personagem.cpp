@@ -4,7 +4,7 @@ namespace Escape_the_room
 {
     namespace Entidades
     {
-        namespace Personagem
+        namespace Personagens
         {
             Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam) : corpo(sf::RectangleShape(tam))
             {

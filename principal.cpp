@@ -1,13 +1,20 @@
 
 #include "principal.hpp"
 
-Jogo::Jogo() : window(new sf::RenderWindow(sf::VideoMode(1920, 1080), "Game"))
+Jogo::Jogo() : personagens(),
+               pGrafico(pGrafico->getGerenciadorGrafico())
 {
+    if (pGrafico == nullptr)
+    {
+        cout << "Erro ao criar o gerenciador grafico" << endl;
+        exit(1);
+    }
+
     Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
     Inimigo *inimigo = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f), jogador);
 
-    Personagem *p1 = static_cast<Entidades::Personagem::Personagem *>(jogador);
-    Personagem *p2 = static_cast<Entidades::Personagem::Personagem *>(inimigo);
+    Personagem *p1 = static_cast<Entidades::Personagens::Personagem *>(jogador);
+    Personagem *p2 = static_cast<Entidades::Personagens::Personagem *>(inimigo);
 
     personagens.push_back(jogador);
     personagens.push_back(inimigo);
@@ -28,24 +35,24 @@ Jogo::~Jogo()
 
 void Jogo::run()
 {
-    image->loadFromFile("./Midia/background.png");
-    bg->setTexture(*image);
-    while (window->isOpen())
+    //image->loadFromFile("./Midia/background.png");
+    //bg->setTexture(*image);
+    while (pGrafico->janelaAberta())
     {
         sf::Event event;
-        while (window->pollEvent(event))
+        while (pGrafico->getWindow()->pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                window->close();
+                pGrafico->fechaJanela();
         }
-        window->clear();
-        window->draw(*bg);
+        pGrafico->limpar();
+        //window->draw(*bg);
         for (int i = 0; i < personagens.size(); i++)
         {
             personagens.at(i)->move();
-            window->draw(personagens.at(i)->getCorpo());
+            pGrafico->desenhaElemento(personagens.at(i)->getCorpo());
         }
-        window->display();
+        pGrafico->mostraElementos();
     }
     personagens.clear();
 }

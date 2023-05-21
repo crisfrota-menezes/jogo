@@ -8,7 +8,7 @@ namespace Escape_the_room
 {
     namespace Entidades
     {
-        namespace Personagem
+        namespace Personagens
         {
             class Personagem
             {
@@ -26,7 +26,7 @@ namespace Escape_the_room
                 virtual void move() = 0;
             };
         }
-        using namespace Personagem;
+        using namespace Personagens;
     }
     using namespace Entidades;
 }
