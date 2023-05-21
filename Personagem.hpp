@@ -15,6 +15,7 @@ namespace Escape_the_room
             protected:
                 sf::RectangleShape corpo;
                 sf::Vector2f vel;
+                int vida;
 
             public:
                 Personagem(const sf::Vector2f pos, const sf::Vector2f tam);

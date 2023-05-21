@@ -14,6 +14,7 @@ namespace Escape_the_room
             class Jogador : public Personagem
             {
             private:
+                int pontos;
                 void inicializa();
 
             public:
