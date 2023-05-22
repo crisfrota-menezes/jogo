@@ -35,8 +35,8 @@ Jogo::~Jogo()
 
 void Jogo::run()
 {
-    //image->loadFromFile("./Midia/background.png");
-    //bg->setTexture(*image);
+    image->loadFromFile("./Midia/background.png");
+    bg->setTexture(*image);
     while (pGrafico->janelaAberta())
     {
         sf::Event event;
@@ -46,7 +46,7 @@ void Jogo::run()
                 pGrafico->fechaJanela();
         }
         pGrafico->limpar();
-        //window->draw(*bg);
+        pGrafico->getWindow()->draw(*bg);
         for (int i = 0; i < personagens.size(); i++)
         {
             personagens.at(i)->move();
