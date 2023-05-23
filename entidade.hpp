@@ -14,9 +14,11 @@ namespace Escape_the_room
             sf::RectangleShape corpo;
 
         public:
-            Entidade(cons sf::Vector2f pos, const sf::Vector2f tam);
+            Entidade(const sf::Vector2f pos, const sf::Vector2f tam);
+            Entidade(const sf::RectangleShape corpo);
+            Entidade();
             ~Entidade();
-            const sf::RectangleShape getCorpo() const;
+            const sf::RectangleShape getCorpo();
             virtual void atualizar() = 0;
         };
     }

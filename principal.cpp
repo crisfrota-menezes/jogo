@@ -1,8 +1,7 @@
 
 #include "principal.hpp"
 
-Jogo::Jogo() : personagens(),
-               pGrafico(pGrafico->getGerenciadorGrafico())
+Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico())
 {
     if (pGrafico == nullptr)
     {
@@ -10,25 +9,12 @@ Jogo::Jogo() : personagens(),
         exit(1);
     }
 
-    Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
-    Inimigo *inimigo = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f), jogador);
-
-    Personagem *p1 = static_cast<Entidades::Personagens::Personagem *>(jogador);
-    Personagem *p2 = static_cast<Entidades::Personagens::Personagem *>(inimigo);
-
-    personagens.push_back(jogador);
-    personagens.push_back(inimigo);
-
     image = new sf::Texture();
     bg = new sf::Sprite();
 }
 
 Jogo::~Jogo()
 {
-    for (int i = 0; i < personagens.size(); i++)
-    {
-        delete personagens[i];
-    }
     delete image;
     delete bg;
 }
@@ -47,12 +33,24 @@ void Jogo::run()
         }
         pGrafico->limpar();
         pGrafico->getWindow()->draw(*bg);
-        for (int i = 0; i < personagens.size(); i++)
-        {
-            personagens.at(i)->move();
-            pGrafico->desenhaElemento(personagens.at(i)->getCorpo());
-        }
+        listaEntidade.executar(pGrafico->getWindow());
         pGrafico->mostraElementos();
     }
-    personagens.clear();
+}
+
+void Jogo::instanciaEntidades()
+{
+    Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
+    Inimigo *inimigo = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f), jogador);
+
+    Personagem *p1 = static_cast<Entidades::Personagens::Personagem *>(jogador);
+    Personagem *p2 = static_cast<Entidades::Personagens::Personagem *>(inimigo);
+
+    /*Precisa corrigir os problemas aqui nesse cast, assim como ver se não esqueci nada no resto, implementei muitas coisas de uma vez, deveria ter ido de pouco a pouco*/
+
+    // Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
+    // Entidade *e2 = static_cast<Entidades::Entidade *>(inimigo);
+
+    // listaEntidade.inserir(e1);
+    // listaEntidade.inserir(e2);
 }

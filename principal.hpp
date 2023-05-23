@@ -5,7 +5,7 @@
 #include "inimigo.hpp"
 #include "Personagem.hpp"
 #include "gerenciadorGrafico.hpp"
-#include <vector>
+#include "listaEntidade.hpp"
 
 class Jogo
 {
@@ -13,10 +13,11 @@ private:
     GerenciadorGrafico *pGrafico;
     sf::Texture *image;
     sf::Sprite *bg;
-    std::vector<Entidades::Personagens::Personagem *> personagens;
+    ListaEntidades listaEntidade;
 
 public:
     Jogo();
     ~Jogo();
     void run();
+    void instanciaEntidades();
 };

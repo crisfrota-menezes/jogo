@@ -1,6 +1,7 @@
 #pragma once
 
 #include "entidade.hpp"
+#include "lista.hpp"
 
 namespace Escape_the_room
 {
