@@ -17,3 +17,13 @@ Até o momento o que foi desenvolvido.
 
 Refêrencia usada até agora os videos do monitor Giovane, apenas como refêrencias de utilização do SFML e implementar as mesmas.
 Foi utilizado também o canal Terminal Root no youtube, como base para o funcionamento do menu e instruções de como anexar as imagens de background.
+
+Observações:
+  URGENTE - Fazer o diagrama UML.
+          - Corrigir o erro relaciondo ao static cast de entidade na classe principal.
+          - Marcar as últimas reuniões com os monitores para marcar as com o professor.
+          
+  Reuniões - 1ª Reunião feita com o monitor Daniel, a respeito da estrutura de Personagem, classes Abstratas e Polimorfismo.
+           - 2ª Reunião feita com o monitor Giovane, a respeito da relação de Personagem com as filhas, assim como a estrutura de Entidade e classes futuras.
+           - 3ª A marcar. 
+           - 4ª A marcar.
