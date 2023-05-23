@@ -46,11 +46,9 @@ void Jogo::instanciaEntidades()
     Personagem *p1 = static_cast<Entidades::Personagens::Personagem *>(jogador);
     Personagem *p2 = static_cast<Entidades::Personagens::Personagem *>(inimigo);
 
-    /*Precisa corrigir os problemas aqui nesse cast, assim como ver se não esqueci nada no resto, implementei muitas coisas de uma vez, deveria ter ido de pouco a pouco*/
+    /*Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
+    Entidade *e2 = static_cast<Entidades::Entidade *>(inimigo);
 
-    // Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
-    // Entidade *e2 = static_cast<Entidades::Entidade *>(inimigo);
-
-    // listaEntidade.inserir(e1);
-    // listaEntidade.inserir(e2);
+    listaEntidade.inserir(jogador);
+    listaEntidade.inserir(inimigo);*/
 }
