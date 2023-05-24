@@ -6,6 +6,8 @@
 #include "../Entidades/Personagens/Personagem.hpp"
 #include "../Gerenciadores/GerenciadorGrafico.hpp"
 #include "../Listas/listaEntidade.hpp"
+#include "../Entidades/Obstaculo/obstaculo.hpp"
+#include "../Entidades/Obstaculo/obsGenerico.hpp"
 
 class Jogo
 {
@@ -14,6 +16,7 @@ private:
     sf::Texture *image;
     sf::Sprite *bg;
     ListaEntidades listaPersonagem;
+    ListaEntidades listaObstaculo;
 
 public:
     Jogo();
