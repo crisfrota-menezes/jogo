@@ -36,13 +36,13 @@ namespace Escape_the_room
         template <class TE>
         TE *Elemento<TE>::getElemento()
         {
-            return this->elemento;
+            return elemento;
         }
 
         template <class TE>
         Elemento<TE> *Elemento<TE>::getProximo()
         {
-            return this->proximo;
+            return proximo;
         }
 
         template <class TE>

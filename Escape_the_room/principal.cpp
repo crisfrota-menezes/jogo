@@ -19,6 +19,21 @@ Jogo::~Jogo()
     delete bg;
 }
 
+void Jogo::instanciaEntidades()
+{
+    Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
+    Inimigo *inimigo = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f), jogador);
+
+    // Personagem *p1 = static_cast<Entidades::Personagens::Personagem *>(jogador);
+    // Personagem *p2 = static_cast<Entidades::Personagens::Personagem *>(inimigo);
+
+    /*Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
+    Entidade *e2 = static_cast<Entidades::Entidade *>(inimigo);
+
+    listaEntidade.inserir(e1);
+    listaEntidade.inserir(e2);*/
+}
+
 void Jogo::run()
 {
     image->loadFromFile("./Midia/background.png");
@@ -33,22 +48,7 @@ void Jogo::run()
         }
         pGrafico->limpar();
         pGrafico->getWindow()->draw(*bg);
-        listaEntidade.executar(pGrafico->getWindow());
+        listaPersonagem.executar(pGrafico->getWindow());
         pGrafico->mostraElementos();
     }
-}
-
-void Jogo::instanciaEntidades()
-{
-    Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
-    Inimigo *inimigo = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f), jogador);
-
-    Personagem *p1 = static_cast<Entidades::Personagens::Personagem *>(jogador);
-    Personagem *p2 = static_cast<Entidades::Personagens::Personagem *>(inimigo);
-
-    /*Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
-    Entidade *e2 = static_cast<Entidades::Entidade *>(inimigo);
-
-    listaEntidade.inserir(jogador);
-    listaEntidade.inserir(inimigo);*/
 }
