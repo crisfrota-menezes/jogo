@@ -14,15 +14,12 @@ namespace Escape_the_room
             class Jogador : public Personagem
             {
             private:
-                int pontos;
                 void inicializa();
 
             public:
                 Jogador(const sf::Vector2f pos, const sf::Vector2f tam);
-                Jogador(const sf::RectangleShape corpo);
-                Jogador();
                 ~Jogador();
-                void move();
+                void atualizar();
             };
         }
         using namespace Personagens;

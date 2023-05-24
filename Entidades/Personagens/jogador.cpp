@@ -1,19 +1,8 @@
 #include "jogador.hpp"
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(sf::RectangleShape(tam))
+Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam)
 {
-    corpo.setPosition(pos);
     corpo.setFillColor(sf::Color::Green);
-    inicializa();
-}
-
-Jogador::Jogador(const sf::RectangleShape corpo) : Personagem(corpo)
-{
-    inicializa();
-}
-
-Jogador::Jogador() : Personagem()
-{
     inicializa();
 }
 
@@ -21,7 +10,7 @@ Jogador::~Jogador()
 {
 }
 
-void Jogador::move()
+void Jogador::atualizar()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {

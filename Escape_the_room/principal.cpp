@@ -1,13 +1,15 @@
 
 #include "principal.hpp"
 
-Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico())
+Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), listaPersonagem()
 {
     if (pGrafico == nullptr)
     {
         cout << "Erro ao criar o gerenciador grafico" << endl;
         exit(1);
     }
+
+    instanciaEntidades();
 
     image = new sf::Texture();
     bg = new sf::Sprite();
@@ -27,11 +29,11 @@ void Jogo::instanciaEntidades()
     // Personagem *p1 = static_cast<Entidades::Personagens::Personagem *>(jogador);
     // Personagem *p2 = static_cast<Entidades::Personagens::Personagem *>(inimigo);
 
-    /*Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
+    Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
     Entidade *e2 = static_cast<Entidades::Entidade *>(inimigo);
 
-    listaEntidade.inserir(e1);
-    listaEntidade.inserir(e2);*/
+    listaPersonagem.inserir(e1);
+    listaPersonagem.inserir(e2);
 }
 
 void Jogo::run()

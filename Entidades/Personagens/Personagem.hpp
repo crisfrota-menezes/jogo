@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 using namespace std;
+#include "../entidade.hpp"
 
 namespace Escape_the_room
 {
@@ -10,20 +11,16 @@ namespace Escape_the_room
     {
         namespace Personagens
         {
-            class Personagem
+            class Personagem : public Entidade
             {
             protected:
-                sf::RectangleShape corpo;
                 sf::Vector2f vel;
-                int vida;
 
             public:
                 Personagem(const sf::Vector2f pos, const sf::Vector2f tam);
-                Personagem(const sf::RectangleShape corpo);
-                Personagem();
                 ~Personagem();
-                const sf::RectangleShape getCorpo();
-                virtual void move() = 0;
+                const sf::Vector2f getVel();
+                virtual void atualizar() = 0;
             };
         }
         using namespace Personagens;

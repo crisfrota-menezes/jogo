@@ -1,6 +1,6 @@
 #include "inimigo.hpp"
 
-Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam), relogio(), jogador(jogador)
+Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam), jogador(jogador)
 {
     corpo.setFillColor(sf::Color::Red);
     inicializa();
@@ -48,7 +48,7 @@ void Inimigo::movimentoAleatorio()
     }
 }
 
-void Inimigo::move()
+void Inimigo::atualizar()
 {
     sf::Vector2f posJogador = jogador->getCorpo().getPosition();
     sf::Vector2f posInimigo = corpo.getPosition();

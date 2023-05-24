@@ -1,33 +1,14 @@
 #include "Personagem.hpp"
 
-namespace Escape_the_room
+Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam) : Entidade(pos, tam), vel(sf::Vector2f(0, 0))
 {
-    namespace Entidades
-    {
-        namespace Personagens
-        {
-            Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam) : corpo(sf::RectangleShape(tam))
-            {
-                corpo.setPosition(pos);
-                corpo.setFillColor(sf::Color::Green);
-            }
+}
 
-            Personagem::Personagem(const sf::RectangleShape corpo) : corpo(corpo)
-            {
-            }
+Personagem::~Personagem()
+{
+}
 
-            Personagem::Personagem() : corpo()
-            {
-            }
-
-            Personagem::~Personagem()
-            {
-            }
-
-            const sf::RectangleShape Personagem::getCorpo()
-            {
-                return corpo;
-            }
-        }
-    }
+const sf::Vector2f Personagem::getVel()
+{
+    return vel;
 }

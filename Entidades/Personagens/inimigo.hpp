@@ -1,9 +1,6 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <iostream>
-using namespace std;
-#include <math.h>
+#include <cmath>
 #include <time.h>
 #include "jogador.hpp"
 #include "Personagem.hpp"
@@ -33,7 +30,7 @@ namespace Escape_the_room
                 ~Inimigo();
                 void perseguir(sf::Vector2f posJogador, sf::Vector2f posInimigo);
                 void movimentoAleatorio();
-                void move();
+                void atualizar();
             };
         }
         using namespace Personagens;
