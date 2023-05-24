@@ -13,14 +13,15 @@ Até o momento o que foi desenvolvido.
   - Botão ranking não funcional, mas exibido.
   - Botão opções não funcional, mas exibido.
   
-4 - Implementação do Gerenciador Gráfico, ainda não aplicado ao menu (Cristiano).
+4 - Implementação do Gerenciador Gráfico, ainda não aplicado ao menu devido a termos feito o menu primeiro (Cristiano).
+
+5 - Criado e implementado, template de Listas e elemento, assim como Lista Entidades e Entidade (Cristiano).
 
 Refêrencia usada até agora os videos do monitor Giovane, apenas como refêrencias de utilização do SFML e implementar as mesmas.
 Foi utilizado também o canal Terminal Root no youtube, como base para o funcionamento do menu e instruções de como anexar as imagens de background.
 
 Observações:
   URGENTE - Fazer o diagrama UML.
-          - Corrigir o erro relaciondo ao static cast de entidade na classe principal.
           - Marcar as últimas reuniões com os monitores para marcar as com o professor.
           
   Reuniões - 1ª Reunião feita com o monitor Daniel, a respeito da estrutura de Personagem, classes Abstratas e Polimorfismo.
