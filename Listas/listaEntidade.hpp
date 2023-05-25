@@ -21,6 +21,7 @@ namespace Escape_the_room
             Entidade *operator[](int pos);
             int getTam();
             void executar(sf::RenderWindow *window);
+            void limpar();
         };
     }
     using namespace Listas;

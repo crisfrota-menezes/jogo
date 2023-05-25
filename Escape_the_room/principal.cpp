@@ -17,6 +17,8 @@ Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), listaPersonagem(), l
 
 Jogo::~Jogo()
 {
+    listaObstaculo.limpar();
+    listaPersonagem.limpar();
     delete image;
     delete bg;
 }

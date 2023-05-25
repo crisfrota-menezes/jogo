@@ -44,3 +44,8 @@ void ListaEntidades::executar(sf::RenderWindow *window)
         window->draw(aux->getCorpo());
     }
 }
+
+void ListaEntidades::limpar()
+{
+    lista.limpar();
+}

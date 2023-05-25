@@ -21,6 +21,7 @@ namespace Escape_the_room
             void remover(int pos);
             void remover(TL *elemento);
             TL *operator[](int pos);
+            void limpar();
             int getTam();
         };
 
@@ -34,20 +35,7 @@ namespace Escape_the_room
         template <class TL>
         Lista<TL>::~Lista()
         {
-            if (inicio)
-            {
-                Elemento<TL> *aux = inicio;
-                Elemento<TL> *aux2 = nullptr;
-                while (aux != nullptr)
-                {
-                    aux2 = aux->getProximo();
-                    delete (aux->getElemento());
-                    aux = nullptr;
-                    aux = aux2;
-                }
-            }
-            inicio = nullptr;
-            fim = nullptr;
+            limpar();
         }
 
         template <class TL>
@@ -136,6 +124,23 @@ namespace Escape_the_room
                 aux = aux->getProximo();
             }
             return aux->getElemento();
+        }
+
+        template <class TL>
+        void Lista<TL>::limpar()
+        {
+            Elemento<TL> *aux = inicio;
+            Elemento<TL> *aux2 = nullptr;
+            while (aux != nullptr)
+            {
+                aux2 = aux;
+                aux = aux->getProximo();
+                delete (aux2);
+                aux2 = nullptr;
+            }
+            inicio = nullptr;
+            fim = nullptr;
+            tam = 0;
         }
 
         template <class TL>
