@@ -10,5 +10,5 @@ execute:
 	./main.exe
 
 clean:
-	del *.o
+	delete *.o
 	cls

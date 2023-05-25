@@ -1,6 +1,6 @@
 #include "entidade.hpp"
 
-Entidade::Entidade(const sf::Vector2f pos, const sf::Vector2f tam) : corpo(sf::RectangleShape(tam)), pos(pos), tam(tam)
+Entidade::Entidade(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID) : corpo(sf::RectangleShape(tam)), ID(ID), pos(pos), tam(tam)
 {
     corpo.setPosition(pos);
 }
@@ -28,4 +28,9 @@ const sf::Vector2f Entidade::getPos()
 const sf::Vector2f Entidade::getTam()
 {
     return tam;
+}
+
+const IDs::IDs Entidade::getID() const
+{
+    return ID;
 }

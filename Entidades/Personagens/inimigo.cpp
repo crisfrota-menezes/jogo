@@ -1,6 +1,6 @@
 #include "inimigo.hpp"
 
-Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam), jogador(jogador)
+Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam, IDs::IDs::inimigo), jogador(jogador)
 {
     corpo.setFillColor(sf::Color::Red);
     inicializa();
@@ -45,6 +45,23 @@ void Inimigo::movimentoAleatorio()
     {
         moveAleatorio = rand() % 4;
         relogio.restart();
+    }
+}
+
+void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
+{
+    switch (outraEntidade->getID())
+    {
+    case (IDs::IDs::jogador):
+    {
+        std::cout << "Bate jogador e jogador pode bater no inimigo" << std::endl;
+    }
+    break;
+    case (IDs::IDs::inimigo):
+    {
+        std::cout << "Empurra inimigo" << std::endl;
+    }
+    break;
     }
 }
 

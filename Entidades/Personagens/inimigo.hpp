@@ -30,6 +30,7 @@ namespace Escape_the_room
                 ~Inimigo();
                 void perseguir(sf::Vector2f posJogador, sf::Vector2f posInimigo);
                 void movimentoAleatorio();
+                void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 void atualizar();
             };
         }

@@ -8,6 +8,7 @@
 #include "../Listas/listaEntidade.hpp"
 #include "../Entidades/Obstaculo/obstaculo.hpp"
 #include "../Entidades/Obstaculo/obsGenerico.hpp"
+#include "../Gerenciadores/gerenciadorColisao.hpp"
 
 class Jogo
 {
@@ -17,6 +18,7 @@ private:
     sf::Sprite *bg;
     ListaEntidades listaPersonagem;
     ListaEntidades listaObstaculo;
+    GerenciadorColisao colisor;
 
 public:
     Jogo();

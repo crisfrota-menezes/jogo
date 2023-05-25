@@ -15,8 +15,9 @@ namespace Escape_the_room
                 sf::Texture textura;
 
             public:
-                Obstaculo(const sf::Vector2f pos, const sf::Vector2f tam);
+                Obstaculo(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs id);
                 ~Obstaculo();
+                virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
                 virtual void atualizar() = 0;
             };
         }

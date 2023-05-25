@@ -19,6 +19,7 @@ namespace Escape_the_room
             public:
                 Jogador(const sf::Vector2f pos, const sf::Vector2f tam);
                 ~Jogador();
+                void colisao(Entidade *outraEnt, sf::Vector2f ds);
                 void atualizar();
             };
         }

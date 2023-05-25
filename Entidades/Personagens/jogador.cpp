@@ -1,6 +1,6 @@
 #include "jogador.hpp"
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam)
+Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, IDs::IDs::jogador)
 {
     corpo.setFillColor(sf::Color::Green);
     inicializa();
@@ -27,6 +27,24 @@ void Jogador::atualizar()
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
     {
         corpo.move(0.0f, vel.y);
+    }
+}
+
+void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
+{
+    switch (outraEnt->getID())
+    {
+    case (IDs::IDs::inimigo):
+    {
+        std::cout << "Bateu no inimigo" << std::endl;
+    }
+    break;
+
+    case (IDs::IDs::obsGenerico):
+    {
+        std::cout << "Bateu no obstaculo generico" << std::endl;
+    }
+    break;
     }
 }
 

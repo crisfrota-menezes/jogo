@@ -1,7 +1,7 @@
 
 #include "principal.hpp"
 
-Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), listaPersonagem()
+Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), listaPersonagem(), colisor(&listaPersonagem, &listaObstaculo)
 {
     if (pGrafico == nullptr)
     {
@@ -56,6 +56,7 @@ void Jogo::run()
         pGrafico->getWindow()->draw(*bg);
         listaPersonagem.executar(pGrafico->getWindow());
         listaObstaculo.executar(pGrafico->getWindow());
+        colisor.executar();
         pGrafico->mostraElementos();
     }
 }
