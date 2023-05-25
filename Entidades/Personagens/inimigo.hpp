@@ -5,11 +5,10 @@
 #include "jogador.hpp"
 #include "Personagem.hpp"
 
-#define VELOCIDADE_INIMIGO_X 0.50f
-#define VELOCIDADE_INIMIGO_Y 0.50f
+#define VELOCIDADE_INIMIGO 60.0f
 
-#define VISAO_INIMIGO_X 300.0f
-#define VISAO_INIMIGO_Y 300.0f
+#define VISAO_INIMIGO_X 200.0f
+#define VISAO_INIMIGO_Y 200.0f
 
 namespace Escape_the_room
 {
@@ -21,15 +20,14 @@ namespace Escape_the_room
             {
             private:
                 Jogador *jogador;
-                sf::Clock relogio;
+                float dtAux;
                 int moveAleatorio;
                 void inicializa();
 
             public:
                 Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador);
                 ~Inimigo();
-                void perseguir(sf::Vector2f posJogador, sf::Vector2f posInimigo);
-                void movimentoAleatorio();
+                void atualizaMoveAleatorio();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 void atualizar();
             };

@@ -1,6 +1,6 @@
 #include "jogador.hpp"
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, IDs::IDs::jogador)
+Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false)
 {
     corpo.setFillColor(sf::Color::Green);
     inicializa();
@@ -12,22 +12,7 @@ Jogador::~Jogador()
 
 void Jogador::atualizar()
 {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-    {
-        corpo.move(-vel.x, 0.0f);
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-    {
-        corpo.move(vel.x, 0.0f);
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-    {
-        corpo.move(0.0f, -vel.y);
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-    {
-        corpo.move(0.0f, vel.y);
-    }
+    atualizarPos();
 }
 
 void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
@@ -50,5 +35,18 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 
 void Jogador::inicializa()
 {
-    vel = sf::Vector2f(1.0f, 1.0f);
+}
+
+void Jogador::pular()
+{
+    if (noChao)
+    {
+        velFinal.y = -sqrtf(2.0f * GRAVIDADE * ALTURA_PULO);
+        noChao = false;
+    }
+}
+
+void Jogador::podePular()
+{
+    noChao = true;
 }

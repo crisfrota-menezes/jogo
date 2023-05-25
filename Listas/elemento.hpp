@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 namespace Escape_the_room
 {
     namespace Listas

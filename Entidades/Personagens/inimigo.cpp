@@ -1,11 +1,23 @@
 #include "inimigo.hpp"
 
-Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam, IDs::IDs::inimigo), jogador(jogador)
+Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam, VELOCIDADE_INIMIGO, IDs::IDs::inimigo), jogador(jogador), dtAux(0.0f)
 {
     corpo.setFillColor(sf::Color::Red);
     inicializa();
     srand(time(NULL));
     moveAleatorio = rand() % 4;
+    if (moveAleatorio == 0)
+    {
+        parar();
+    }
+    else if (moveAleatorio == 1)
+    {
+        andar(true);
+    }
+    else
+    {
+        andar(false);
+    }
 }
 
 Inimigo::~Inimigo()
@@ -14,37 +26,26 @@ Inimigo::~Inimigo()
 
 void Inimigo::inicializa()
 {
-    vel = sf::Vector2f(VELOCIDADE_INIMIGO_X, VELOCIDADE_INIMIGO_Y);
 }
 
-void Inimigo::perseguir(sf::Vector2f posJogador, sf::Vector2f posInimigo)
+void Inimigo::atualizaMoveAleatorio()
 {
-    if (posJogador.x - posInimigo.x > 0.0f)
-        corpo.move(vel.x, 0.0f);
-    else
-        corpo.move(-vel.x, 0.0f);
-    if (posJogador.y - posInimigo.y > 0.0f)
-        corpo.move(0.0f, vel.y);
-    else
-        corpo.move(0.0f, -vel.y);
-}
-
-void Inimigo::movimentoAleatorio()
-{
-    if (moveAleatorio == 0)
-        corpo.move(vel.x, 0.0f);
-    else if (moveAleatorio == 1)
-        corpo.move(-vel.x, 0.0f);
-    else if (moveAleatorio == 2)
-        corpo.move(0.0f, vel.y);
-    else
-        corpo.move(0.0f, -vel.y);
-
-    float dt = relogio.getElapsedTime().asSeconds();
-    if (dt >= 1.0f)
+    if (dtAux > 3.0f)
     {
-        moveAleatorio = rand() % 4;
-        relogio.restart();
+        moveAleatorio = rand() % 3;
+        if (moveAleatorio == 0)
+        {
+            parar();
+        }
+        else if (moveAleatorio == 1)
+        {
+            andar(true);
+        }
+        else
+        {
+            andar(false);
+        }
+        dtAux = 0.0f;
     }
 }
 
@@ -67,15 +68,24 @@ void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 
 void Inimigo::atualizar()
 {
-    sf::Vector2f posJogador = jogador->getCorpo().getPosition();
-    sf::Vector2f posInimigo = corpo.getPosition();
-
+    sf::Vector2f posJogador = jogador->getPos();
+    sf::Vector2f posInimigo = getPos();
     if (fabs(posJogador.x - posInimigo.x) <= VISAO_INIMIGO_X && fabs(posJogador.y - posInimigo.y) <= VISAO_INIMIGO_Y)
     {
-        perseguir(posJogador, posInimigo);
+        if (posJogador.x - posInimigo.x > 0.0f)
+        {
+            andar(false);
+        }
+        else
+        {
+            andar(true);
+        }
     }
     else
     {
-        movimentoAleatorio();
+        atualizaMoveAleatorio();
     }
+    atualizarPos();
+    dtAux += relogio.getElapsedTime().asSeconds();
+    relogio.restart();
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "../Gerenciadores/gerenciadorGrafico.hpp"
 #include <iostream>
 using namespace std;
 #include "IDs.hpp"

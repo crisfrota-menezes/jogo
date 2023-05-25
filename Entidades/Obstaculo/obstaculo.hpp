@@ -1,7 +1,8 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
 #include "../entidade.hpp"
+#include "../Personagens/jogador.hpp"
+#include "../Personagens/inimigo.hpp"
 
 namespace Escape_the_room
 {

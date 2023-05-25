@@ -1,9 +1,8 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <iostream>
-using namespace std;
 #include "../entidade.hpp"
+
+#define GRAVIDADE 0.5f
 
 namespace Escape_the_room
 {
@@ -14,16 +13,21 @@ namespace Escape_the_room
             class Personagem : public Entidade
             {
             protected:
-                sf::Vector2f vel;
-                // bool podeMover;
-                // bool paraEsquerda;
+                sf::Vector2f velFinal;
+                const float velMax;
+                bool podeMover;
+                bool paraEsquerda;
+                sf::Clock relogio;
+                float dt;
 
             public:
-                Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs id);
+                Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs id);
                 ~Personagem();
-                const sf::Vector2f getVel();
-                // void andar(const bool esquerda);
-                // void parar();
+                void setVelFinal(const sf::Vector2f velFinal);
+                const sf::Vector2f getVelFinal();
+                void andar(const bool paraEsquerda);
+                void parar();
+                void atualizarPos();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
                 virtual void atualizar() = 0;
             };

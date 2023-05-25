@@ -4,9 +4,8 @@
 #include "../Entidades/Personagens/jogador.hpp"
 #include "../Entidades/Personagens/inimigo.hpp"
 #include "../Entidades/Personagens/Personagem.hpp"
-#include "../Gerenciadores/GerenciadorGrafico.hpp"
+#include "../Gerenciadores/gerenciadorGrafico.hpp"
 #include "../Listas/listaEntidade.hpp"
-#include "../Entidades/Obstaculo/obstaculo.hpp"
 #include "../Entidades/Obstaculo/obsGenerico.hpp"
 #include "../Gerenciadores/gerenciadorColisao.hpp"
 

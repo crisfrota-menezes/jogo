@@ -11,19 +11,20 @@ ObsGenerico::~ObsGenerico()
 
 void ObsGenerico::colisao(Entidade *outraEnt, sf::Vector2f ds)
 {
-    /*sf::Vector2f posOutro = outraEnt->getPos();
+    sf::Vector2f posOutro = outraEnt->getPos();
     sf::Vector2f tamOutro = outraEnt->getTam();
 
     if (outraEnt->getID() == IDs::IDs::jogador || outraEnt->getID() == IDs::IDs::inimigo)
     {
         colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
-    }*/
+    }
 }
 
-/*void ObsGenerico::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
+void ObsGenerico::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
 {
     sf::Vector2f posOutro = pPersonagem->getPos();
     sf::Vector2f tamOutro = pPersonagem->getTam();
+    sf::Vector2f velFinal = pPersonagem->getVelFinal();
 
     if (ds.x < 0.0f && ds.y < 0.0f)
     {
@@ -37,6 +38,7 @@ void ObsGenerico::colisao(Entidade *outraEnt, sf::Vector2f ds)
             {
                 posOutro.x -= ds.x;
             }
+            velFinal.x = 0.0f;
         }
         else
         {
@@ -52,10 +54,12 @@ void ObsGenerico::colisao(Entidade *outraEnt, sf::Vector2f ds)
             {
                 posOutro.y -= ds.y;
             }
+            velFinal.y = 0.0f;
         }
     }
     pPersonagem->setPos(posOutro);
-}*/
+    pPersonagem->setVelFinal(velFinal);
+}
 
 void ObsGenerico::atualizar()
 {
