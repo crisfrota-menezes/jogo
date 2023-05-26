@@ -23,8 +23,6 @@ namespace Escape_the_room
                 ~Jogador();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds);
                 void atualizar();
-                void pular();
-                void podePular();
             };
         }
         using namespace Personagens;

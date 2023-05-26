@@ -36,17 +36,3 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 void Jogador::inicializa()
 {
 }
-
-void Jogador::pular()
-{
-    if (noChao)
-    {
-        velFinal.y = -sqrtf(2.0f * GRAVIDADE * ALTURA_PULO);
-        noChao = false;
-    }
-}
-
-void Jogador::podePular()
-{
-    noChao = true;
-}
