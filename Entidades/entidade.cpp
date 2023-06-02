@@ -30,12 +30,14 @@ const sf::Vector2f Entidade::getTam()
     return tam;
 }
 
-/*sf::Vector2f Entidade::posicaoAleatoria(float larguraJanela, float alturaJanela)
+sf::Vector2f Entidade::posicaoAleatoria(float larguraJanela, float alturaJanela)
 {
-    float x = rand() % static_cast<int>(larguraJanela - tam.x);
-    float y = rand() % static_cast<int>(alturaJanela - tam.y);
-    return sf::Vector2f(x, y);
-}*/
+    float posX = 0.0f;
+    float posY = 0.0f;
+    posX = (float)(rand() % (int)(larguraJanela - tam.x));
+    posY = (float)(rand() % (int)(alturaJanela - tam.y));
+    return sf::Vector2f(posX, posY);
+}
 
 const IDs::IDs Entidade::getID() const
 {

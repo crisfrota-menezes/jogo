@@ -2,8 +2,8 @@
 
 Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam, VELOCIDADE_INIMIGO, IDs::IDs::inimigo), jogador(jogador), dtAux(0.0f)
 {
-    //sf::Vector2f posAleatoria = posicaoAleatoria(1920, 1080);
-    //setPos(posAleatoria);
+    sf::Vector2f posAleatoria = posicaoAleatoria(1920, 1080);
+    setPos(posAleatoria);
     corpo.setFillColor(sf::Color::Red);
     inicializa();
     srand(time(NULL));

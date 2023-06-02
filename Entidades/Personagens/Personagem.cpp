@@ -54,4 +54,32 @@ void Personagem::atualizarPos()
 
     // atualiza velocidade na horizontal
     velFinal.x = velMax;
+
+    // para de cair quando chega no chão
+    if (pos.y + tam.y >= 1080)
+    {
+        velFinal.y = 0.0f;
+        setPos(sf::Vector2f(pos.x, 1080 - tam.y));
+    }
+
+    // para de cair quando chega no teto
+    if (pos.y <= 0)
+    {
+        velFinal.y = 0.0f;
+        setPos(sf::Vector2f(pos.x, 0));
+    }
+
+    // para de andar quando chega na parede
+    if (pos.x + tam.x >= 1920)
+    {
+        velFinal.x = 0.0f;
+        setPos(sf::Vector2f(1920 - tam.x, pos.y));
+    }
+
+    // para de andar quando chega na parede
+    if (pos.x <= 0)
+    {
+        velFinal.x = 0.0f;
+        setPos(sf::Vector2f(0, pos.y));
+    }
 }

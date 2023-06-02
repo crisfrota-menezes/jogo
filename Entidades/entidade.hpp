@@ -25,7 +25,7 @@ namespace Escape_the_room
             void setPos(const sf::Vector2f pos);
             const sf::Vector2f getPos();
             const sf::Vector2f getTam();
-            //sf::Vector2f posicaoAleatoria(float larguraJanela, float alturaJanela);
+            sf::Vector2f posicaoAleatoria(float larguraJanela, float alturaJanela);
             const IDs::IDs getID() const;
             virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
             virtual void atualizar() = 0;
