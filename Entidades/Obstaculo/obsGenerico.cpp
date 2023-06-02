@@ -2,6 +2,8 @@
 
 ObsGenerico::ObsGenerico(const sf::Vector2f pos, const sf::Vector2f tam) : Obstaculo(pos, tam, IDs::IDs::obsGenerico)
 {
+    //sf::Vector2f posAleatoria = posicaoAleatoria(1920, 1080);
+    //setPos(posAleatoria);
     corpo.setFillColor(sf::Color::Blue);
 }
 

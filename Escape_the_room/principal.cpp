@@ -60,5 +60,9 @@ void Jogo::run()
         listaObstaculo.executar(pGrafico->getWindow());
         colisor.executar();
         pGrafico->mostraElementos();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+        {
+            pGrafico->fechaJanela();
+        }
     }
 }
