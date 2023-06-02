@@ -3,8 +3,13 @@
 #include "obstaculo.hpp"
 #include "../Personagens/Personagem.hpp"
 
+#define CAMINHO_TEXTURA "../Midia/obstaculoGenerico.jpg"
+
 #define ESCALA_X 1.0f
 #define ESCALA_Y 1.0f
+
+#define TAM_OBS_X 300.0f
+#define TAM_OBS_Y 50.0f
 
 namespace Escape_the_room
 {

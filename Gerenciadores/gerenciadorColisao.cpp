@@ -37,7 +37,7 @@ void GerenciadorColisao::executar()
         {
             Entidade *ent2 = listaPersonagem->operator[](j);
             sf::Vector2f dist = calculaColisao(ent1, ent2);
-            if (dist.x < 0.0f && dist.y < 0.0f)
+            if (dist.x <= 0.0f && dist.y <= 0.0f)
                 ent1->colisao(ent2);
         }
     }
@@ -45,11 +45,11 @@ void GerenciadorColisao::executar()
     for (int i = 0; i < listaPersonagem->getTam(); i++)
     {
         Entidade *ent1 = listaPersonagem->operator[](i);
-        for (int j = 0; j < listaObstaculo->getTam(); j++)
+        for (int j = 0; j < listaObstaculo->getTam() - 1; j++)
         {
             Entidade *ent2 = listaObstaculo->operator[](j);
             sf::Vector2f dist = calculaColisao(ent1, ent2);
-            if (dist.x < 0.0f && dist.y < 0.0f)
+            if (dist.x <= 0.0f && dist.y <= 0.0f)
             {
                 if (ent2->getID() == IDs::IDs::obsGenerico)
                     ent2->colisao(ent1, dist);

@@ -24,6 +24,7 @@ namespace Escape_the_room
             void desenhaElemento(sf::RectangleShape corpo);
             void mostraElementos();
             void fechaJanela();
+            sf::Texture carregarTextura(const char* caminho);
             const bool janelaAberta();
         };
     }

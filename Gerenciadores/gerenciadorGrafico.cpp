@@ -54,6 +54,17 @@ void GerenciadorGrafico::fechaJanela()
     window->close();
 }
 
+sf::Texture GerenciadorGrafico::carregarTextura(const char* caminho)
+{
+    sf::Texture textura;
+    if (!textura.loadFromFile(caminho))
+    {
+        cout << "Erro ao carregar textura" << endl;
+        exit(1);
+    }
+    return textura;
+}
+
 const bool GerenciadorGrafico::janelaAberta()
 {
     return window->isOpen();

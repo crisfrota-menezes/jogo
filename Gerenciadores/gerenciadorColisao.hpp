@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "../Listas/listaEntidade.hpp"
+#include "../Entidades/entidade.hpp"
 #include <cmath>
 
 namespace Escape_the_room

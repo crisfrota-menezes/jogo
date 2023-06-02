@@ -19,20 +19,7 @@ void Jogador::atualizar()
 
 void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 {
-    switch (outraEnt->getID())
-    {
-    case (IDs::IDs::inimigo):
-    {
-        std::cout << "Bateu no inimigo" << std::endl;
-    }
-    break;
-
-    case (IDs::IDs::obsGenerico):
-    {
-        std::cout << "Bateu no obstaculo generico" << std::endl;
-    }
-    break;
-    }
+    
 }
 
 void Jogador::inicializa()

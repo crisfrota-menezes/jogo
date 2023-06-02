@@ -20,6 +20,7 @@ Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogado
     {
         andar(false);
     }
+    inicializa();
 }
 
 Inimigo::~Inimigo()
@@ -53,26 +54,13 @@ void Inimigo::atualizaMoveAleatorio()
 
 void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
-    switch (outraEntidade->getID())
-    {
-    case (IDs::IDs::jogador):
-    {
-        std::cout << "Bate jogador e jogador pode bater no inimigo" << std::endl;
-    }
-    break;
-    case (IDs::IDs::inimigo):
-    {
-        std::cout << "Empurra inimigo" << std::endl;
-    }
-    break;
-    }
 }
 
 void Inimigo::atualizar()
 {
     sf::Vector2f posJogador = jogador->getPos();
     sf::Vector2f posInimigo = getPos();
-    if (fabs(posJogador.x - posInimigo.x) <= VISAO_INIMIGO_X && fabs(posJogador.y - posInimigo.y) <= VISAO_INIMIGO_Y)
+    if (fabs(posJogador.x - posInimigo.x) < VISAO_INIMIGO_X && fabs(posJogador.y - posInimigo.y) < VISAO_INIMIGO_Y)
     {
         if (posJogador.x - posInimigo.x > 0.0f)
         {
