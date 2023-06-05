@@ -47,13 +47,8 @@ void GerenciadorEvento::verificaTeclaPressionada(sf::Keyboard::Key tecla)
 
 void GerenciadorEvento::verificaTeclaSolta(sf::Keyboard::Key tecla)
 {
-    if (tecla == sf::Keyboard::A)
-    {
-        pJogador->andar(true);
-    }
-    else if (tecla == sf::Keyboard::D)
-    {
-        pJogador->andar(false);
+    if(tecla == sf::Keyboard::A || tecla == sf::Keyboard::D){
+        pJogador->parar();
     }
 }
 

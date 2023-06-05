@@ -1,6 +1,6 @@
 #include "Personagem.hpp"
 
-Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), velFinal(sf::Vector2f(vel, 0.0f)), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velMax(vel), noChao(false)
+Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), velFinal(sf::Vector2f(vel, 0.0f)), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velMax(vel)
 {
 }
 
@@ -27,26 +27,7 @@ void Personagem::andar(const bool paraEsquerda)
 void Personagem::parar()
 {
     podeMover = false;
-    velFinal.x = 0.0f;
-}
-
-void Personagem::pular()
-{
-    sf::Vector2f ds(0.0f, 0.0f);
-    if (noChao)
-    {
-        ds.y = velFinal.y * dt;
-        ds.y *= -(2 * tam.y);
-        setPos(sf::Vector2f(pos.x, pos.y - (2 * tam.y)));
-        noChao = false;
-        desenhar();
-    }
-}
-
-void Personagem::podePular()
-{
-    podeMover = true;
-    noChao = true;
+    // velFinal.x = 0.0f;
 }
 
 void Personagem::atualizarPos()
@@ -80,12 +61,12 @@ void Personagem::atualizarPos()
     velFinal.x = velMax;
 
     // para de cair quando chega no chão
-    if (pos.y + tam.y >= 1080)
+    /*if (pos.y + tam.y >= 1080)
     {
         velFinal.y = 0.0f;
         setPos(sf::Vector2f(pos.x, 1080 - tam.y));
         noChao = true;
-    }
+    }*/
 
     // desenhar
     desenhar();

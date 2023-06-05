@@ -8,4 +8,3 @@ link:
 
 clean:
 	del *.o
-	cls

@@ -17,9 +17,6 @@ Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), listaPersonagem(), l
 
     instanciaEntidades();
 
-    image = new sf::Texture();
-    bg = new sf::Sprite();
-
     run();
 }
 
@@ -27,15 +24,13 @@ Jogo::~Jogo()
 {
     listaObstaculo.limpar();
     listaPersonagem.limpar();
-    delete image;
-    delete bg;
 }
 
 void Jogo::instanciaEntidades()
 {
     Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
     Inimigo *inimigo = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f), jogador);
-    Plataforma *obstaculo = new Plataforma(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f), IDs::IDs::plataforma, "./Midia/obstaculoGenerico.jpg");
+    Plataforma *obstaculo = new Plataforma(sf::Vector2f(350.0f, 300.0f), sf::Vector2f(400.0f, 40.0f));
 
     Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
     Entidade *e2 = static_cast<Entidades::Entidade *>(inimigo);
@@ -51,13 +46,10 @@ void Jogo::instanciaEntidades()
 
 void Jogo::run()
 {
-    image->loadFromFile("./Midia/background.png");
-    bg->setTexture(*image);
     while (pGrafico->janelaAberta())
     {
         pEvento->executar();
         pGrafico->limpar();
-        pGrafico->getWindow()->draw(*bg);
         listaPersonagem.executar();
         listaObstaculo.executar();
         colisor.executar();

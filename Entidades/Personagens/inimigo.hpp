@@ -22,12 +22,13 @@ namespace Escape_the_room
                 Jogador *jogador;
                 float dtAux;
                 int moveAleatorio;
-                void moveInimigo();
-                void atualizaMoveAleatorio();
+                void inicializa();
+                // void moveInimigo();
 
             public:
                 Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador);
                 ~Inimigo();
+                void atualizaMoveAleatorio();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 void atualizar();
             };

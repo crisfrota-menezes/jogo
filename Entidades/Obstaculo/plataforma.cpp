@@ -1,8 +1,8 @@
 #include "plataforma.hpp"
 
-Plataforma::Plataforma(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID, const char *caminhoTextura) : Obstaculo(pos, tam, ID, caminhoTextura)
+Plataforma::Plataforma(const sf::Vector2f pos, const sf::Vector2f tam) : Obstaculo(pos, tam, IDs::IDs::plataforma)
 {
-    corpo.setPosition(800.0f, 980.0f);
+    corpo.setFillColor(sf::Color::White);
 }
 
 Plataforma::~Plataforma()
@@ -14,12 +14,49 @@ void Plataforma::colisao(Entidade *outraEnt, sf::Vector2f ds)
     sf::Vector2f posOutro = outraEnt->getPos();
     sf::Vector2f tamOutro = outraEnt->getTam();
 
-    if (outraEnt->getID() == IDs::IDs::jogador)
+    if (outraEnt->getID() == IDs::IDs::jogador || outraEnt->getID() == IDs::IDs::inimigo)
     {
         colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
     }
-    else if (outraEnt->getID() == IDs::IDs::inimigo)
+}
+
+void Plataforma::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
+{
+    sf::Vector2f posOutro = pPersonagem->getPos();
+    sf::Vector2f tamOutro = pPersonagem->getTam();
+    sf::Vector2f velFinal = pPersonagem->getVelFinal();
+
+    if (ds.x < 0.0f && ds.y < 0.0f)
     {
-        colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
+        if (ds.x > ds.y)
+        {
+            if (posOutro.x < pos.x)
+            {
+                posOutro.x += ds.x;
+            }
+            else
+            {
+                posOutro.x -= ds.x;
+            }
+            velFinal.x = 0.0f;
+        }
+        else
+        {
+            if (posOutro.y < pos.y)
+            {
+                posOutro.y += ds.y;
+                if (pPersonagem->getID() == IDs::IDs::jogador)
+                {
+                    Jogador *pJogador = static_cast<Jogador *>(pPersonagem);
+                }
+            }
+            else
+            {
+                posOutro.y -= ds.y;
+            }
+            velFinal.y = 0.0f;
+        }
     }
+    pPersonagem->setPos(posOutro);
+    pPersonagem->setVelFinal(velFinal);
 }

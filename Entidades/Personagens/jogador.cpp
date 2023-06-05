@@ -1,6 +1,6 @@
 #include "jogador.hpp"
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador)
+Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false)
 {
     corpo.setFillColor(sf::Color::Green);
     inicializa();
@@ -12,10 +12,7 @@ Jogador::~Jogador()
 
 void Jogador::atualizar()
 {
-    if (podeMover)
-        atualizarPos();
-
-    relogio.restart();
+    atualizarPos();
 }
 
 void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
@@ -31,9 +28,24 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
     {
         cout << "Bateu na plataforma" << endl;
     }
+    break;
     }
 }
 
 void Jogador::inicializa()
 {
+}
+
+void Jogador::pular()
+{
+    if (noChao)
+    {
+        velFinal.y = -sqrt(2.0f * GRAVIDADE * ALTURA_PULO);
+        noChao = false;
+    }
+}
+
+void Jogador::podePular()
+{
+    noChao = true;
 }

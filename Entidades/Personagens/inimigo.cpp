@@ -23,6 +23,10 @@ Inimigo::~Inimigo()
 {
 }
 
+void Inimigo::inicializa()
+{
+}
+
 void Inimigo::atualizaMoveAleatorio()
 {
     if (dtAux > 1.0f)
@@ -44,7 +48,7 @@ void Inimigo::atualizaMoveAleatorio()
     }
 }
 
-void Inimigo::moveInimigo()
+/*void Inimigo::moveInimigo()
 {
     sf::Vector2f posJogador = jogador->getPos();
     sf::Vector2f posInimigo = getPos();
@@ -63,7 +67,7 @@ void Inimigo::moveInimigo()
     {
         atualizaMoveAleatorio();
     }
-}
+}*/
 
 void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
@@ -83,8 +87,25 @@ void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 
 void Inimigo::atualizar()
 {
-    moveInimigo();
+    sf::Vector2f posJogador = jogador->getPos();
+    sf::Vector2f posInimigo = getPos();
+    if (fabs(posJogador.x - posInimigo.x) <= VISAO_INIMIGO_X && fabs(posJogador.y - posInimigo.y) <= VISAO_INIMIGO_Y)
+    {
+        if (posJogador.x - posInimigo.x > 0.0f)
+        {
+            andar(false);
+        }
+        else
+        {
+            andar(true);
+        }
+    }
+    else
+    {
+        atualizaMoveAleatorio();
+    }
+    //moveInimigo();
     atualizarPos();
-    dtAux += relogio.getElapsedTime().asSeconds() * 100;
+    dtAux += relogio.getElapsedTime().asSeconds();
     relogio.restart();
 }

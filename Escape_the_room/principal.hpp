@@ -16,9 +16,6 @@ class Jogo
 private:
     GerenciadorGrafico *pGrafico;
     GerenciadorEvento *pEvento;
-    /*Falta colocar a parte de background dentro do gerenciador gráfico*/
-    sf::Texture *image;
-    sf::Sprite *bg;
     ListaEntidades listaPersonagem;
     ListaEntidades listaObstaculo;
     GerenciadorColisao colisor;

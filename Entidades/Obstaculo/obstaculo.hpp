@@ -3,7 +3,6 @@
 #include "../entidade.hpp"
 #include "../Personagens/jogador.hpp"
 #include "../Personagens/inimigo.hpp"
-#include "../../Gerenciadores/gerenciadorGrafico.hpp"
 
 namespace Escape_the_room
 {
@@ -17,12 +16,10 @@ namespace Escape_the_room
                 sf::Texture textura;
 
             public:
-                Obstaculo(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs id, const char *caminhoTextura);
+                Obstaculo(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID);
                 ~Obstaculo();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
                 void atualizar();
-                void colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem);
-                void parar();
             };
         }
         using namespace Obstaculos;
