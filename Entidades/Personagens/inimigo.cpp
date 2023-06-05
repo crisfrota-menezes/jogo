@@ -48,27 +48,6 @@ void Inimigo::atualizaMoveAleatorio()
     }
 }
 
-/*void Inimigo::moveInimigo()
-{
-    sf::Vector2f posJogador = jogador->getPos();
-    sf::Vector2f posInimigo = getPos();
-    if (fabs(posJogador.x - posInimigo.x) <= VISAO_INIMIGO_X && fabs(posJogador.y - posInimigo.y) <= VISAO_INIMIGO_Y)
-    {
-        if (posJogador.x - posInimigo.x > 0.0f)
-        {
-            andar(false);
-        }
-        else
-        {
-            andar(true);
-        }
-    }
-    else
-    {
-        atualizaMoveAleatorio();
-    }
-}*/
-
 void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
     switch (outraEntidade->getID())

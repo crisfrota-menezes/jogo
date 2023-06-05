@@ -47,5 +47,11 @@ void Jogador::pular()
 
 void Jogador::podePular()
 {
+    if (pos.y + tam.y >= 1080)
+    {
+        velFinal.y = 0.0f;
+        setPos(sf::Vector2f(pos.x, 1080 - tam.y));
+        noChao = true;
+    }
     noChao = true;
 }

@@ -12,7 +12,6 @@ namespace Escape_the_room
         {
         private:
             GerenciadorGrafico *pGrafico;
-            //Personagem *pPersonagem;
             Jogador *pJogador;
             // padrão de projeto singleton
             static GerenciadorEvento *pEvento;

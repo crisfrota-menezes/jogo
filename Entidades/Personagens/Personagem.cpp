@@ -27,7 +27,6 @@ void Personagem::andar(const bool paraEsquerda)
 void Personagem::parar()
 {
     podeMover = false;
-    // velFinal.x = 0.0f;
 }
 
 void Personagem::atualizarPos()
@@ -59,14 +58,6 @@ void Personagem::atualizarPos()
 
     // atualiza velocidade na horizontal
     velFinal.x = velMax;
-
-    // para de cair quando chega no chão
-    /*if (pos.y + tam.y >= 1080)
-    {
-        velFinal.y = 0.0f;
-        setPos(sf::Vector2f(pos.x, 1080 - tam.y));
-        noChao = true;
-    }*/
 
     // desenhar
     desenhar();

@@ -23,7 +23,6 @@ namespace Escape_the_room
                 float dtAux;
                 int moveAleatorio;
                 void inicializa();
-                // void moveInimigo();
 
             public:
                 Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador);
