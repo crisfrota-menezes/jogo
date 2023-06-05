@@ -36,7 +36,7 @@ void Personagem::pular()
     if (noChao)
     {
         ds.y = velFinal.y * dt;
-        ds.y *= -tam.y;
+        ds.y *= -(2 * tam.y);
         setPos(sf::Vector2f(pos.x, pos.y - (2 * tam.y)));
         noChao = false;
         desenhar();
@@ -85,13 +85,6 @@ void Personagem::atualizarPos()
         velFinal.y = 0.0f;
         setPos(sf::Vector2f(pos.x, 1080 - tam.y));
         noChao = true;
-    }
-
-    // para de subir quando chega no teto
-    if (pos.y <= 0)
-    {
-        velFinal.y = 0.0f;
-        setPos(sf::Vector2f(pos.x, 0));
     }
 
     // desenhar
