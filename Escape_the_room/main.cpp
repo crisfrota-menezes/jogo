@@ -7,7 +7,7 @@ int main()
     control = menu->run();
     delete menu;
     menu = nullptr;
-    if (control) 
+    if (control)
     {
         Jogo start;
         start.run();

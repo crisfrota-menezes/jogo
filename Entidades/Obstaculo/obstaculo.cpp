@@ -2,7 +2,7 @@
 
 GerenciadorGrafico *pGrafico = GerenciadorGrafico::getGerenciadorGrafico();
 
-Obstaculo::Obstaculo(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID, const char* caminhoTextura) : Entidade(pos, tam, ID)
+Obstaculo::Obstaculo(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID, const char *caminhoTextura) : Entidade(pos, tam, ID)
 {
     textura = pGrafico->carregarTextura(caminhoTextura);
     corpo.setTexture(&textura);

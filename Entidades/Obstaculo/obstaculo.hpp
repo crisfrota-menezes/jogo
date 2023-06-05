@@ -5,7 +5,6 @@
 #include "../Personagens/inimigo.hpp"
 #include "../../Gerenciadores/gerenciadorGrafico.hpp"
 
-
 namespace Escape_the_room
 {
     namespace Entidades
