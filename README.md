@@ -17,6 +17,10 @@ Até o momento o que foi desenvolvido.
 
 5 - Criado e implementado, template de Listas e elemento, assim como Lista Entidades e Entidade (Cristiano).
 
+6 - Criado e implementado, função Ente (Cristiano).
+
+7 - Criado e implementado, gerenciador de eventos (Cristiano).
+
 Refêrencia usada até agora os videos do monitor Giovane, apenas como refêrencias de utilização do SFML e implementar as mesmas.
 Foi utilizado também o canal Terminal Root no youtube, como base para o funcionamento do menu e instruções de como anexar as imagens de background.
 
@@ -26,5 +30,5 @@ Observações:
           
   Reuniões - 1ª Reunião feita com o monitor Daniel, a respeito da estrutura de Personagem, classes Abstratas e Polimorfismo.
            - 2ª Reunião feita com o monitor Giovane, a respeito da relação de Personagem com as filhas, assim como a estrutura de Entidade e classes futuras.
-           - 3ª A marcar. 
-           - 4ª A marcar.
+           - 3ª Reunião feita com o monitor Giovane, a respeito de Diagrama UML, gerenciador de colisões, como implementa-lo e Ente. 
+           - 4ª Reunião feita com o monitor Daniel, a respeito de Github e trabalho simultâneo, nuances do gerenciador de colisão e finalização do mesmo, função Clock e como utilizá-la melhor.
