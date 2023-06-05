@@ -2,12 +2,9 @@
 
 Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam, VELOCIDADE_INIMIGO, IDs::IDs::inimigo), jogador(jogador), dtAux(0.0f)
 {
-    sf::Vector2f posAleatoria = posicaoAleatoria(1920, 1080);
-    setPos(posAleatoria);
     corpo.setFillColor(sf::Color::Red);
-    inicializa();
     srand(time(NULL));
-    moveAleatorio = rand() % 4;
+    moveAleatorio = rand() % 3;
     if (moveAleatorio == 0)
     {
         parar();
@@ -20,20 +17,15 @@ Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogado
     {
         andar(false);
     }
-    inicializa();
 }
 
 Inimigo::~Inimigo()
 {
 }
 
-void Inimigo::inicializa()
-{
-}
-
 void Inimigo::atualizaMoveAleatorio()
 {
-    if (dtAux > 3.0f)
+    if (dtAux > 1.0f)
     {
         moveAleatorio = rand() % 3;
         if (moveAleatorio == 0)
@@ -52,15 +44,11 @@ void Inimigo::atualizaMoveAleatorio()
     }
 }
 
-void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
-{
-}
-
-void Inimigo::atualizar()
+void Inimigo::moveInimigo()
 {
     sf::Vector2f posJogador = jogador->getPos();
     sf::Vector2f posInimigo = getPos();
-    if (fabs(posJogador.x - posInimigo.x) < VISAO_INIMIGO_X && fabs(posJogador.y - posInimigo.y) < VISAO_INIMIGO_Y)
+    if (fabs(posJogador.x - posInimigo.x) <= VISAO_INIMIGO_X && fabs(posJogador.y - posInimigo.y) <= VISAO_INIMIGO_Y)
     {
         if (posJogador.x - posInimigo.x > 0.0f)
         {
@@ -75,7 +63,28 @@ void Inimigo::atualizar()
     {
         atualizaMoveAleatorio();
     }
+}
+
+void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
+{
+    switch (outraEntidade->getID())
+    {
+    case (IDs::IDs::jogador):
+    {
+        cout << "Bateu no jogador" << endl;
+    }
+    break;
+    case (IDs::IDs::plataforma):
+    {
+        cout << "Bateu na plataforma" << endl;
+    }
+    }
+}
+
+void Inimigo::atualizar()
+{
+    moveInimigo();
     atualizarPos();
-    dtAux += relogio.getElapsedTime().asSeconds();
+    dtAux += relogio.getElapsedTime().asSeconds() * 100;
     relogio.restart();
 }

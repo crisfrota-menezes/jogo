@@ -1,10 +1,8 @@
 #pragma once
 
 #include "Personagem.hpp"
-#include <cmath>
 
 #define VELOCIDADE_JOGADOR 150.0f
-#define ALTURA_PULO 0.08f
 
 namespace Escape_the_room
 {
@@ -16,7 +14,6 @@ namespace Escape_the_room
             {
             private:
                 void inicializa();
-                bool noChao;
 
             public:
                 Jogador(const sf::Vector2f pos, const sf::Vector2f tam);

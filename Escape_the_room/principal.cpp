@@ -1,7 +1,7 @@
 
 #include "principal.hpp"
 
-Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), listaPersonagem(), listaObstaculo(), colisor(&listaPersonagem, &listaObstaculo)
+Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), listaPersonagem(), listaObstaculo(), colisor(&listaPersonagem, &listaObstaculo), pEvento(pEvento->getGerenciadorEvento())
 {
     if (pGrafico == nullptr)
     {
@@ -9,10 +9,18 @@ Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), listaPersonagem(), l
         exit(1);
     }
 
+    if (pEvento == nullptr)
+    {
+        cout << "Erro ao criar o gerenciador de eventos" << endl;
+        exit(1);
+    }
+
     instanciaEntidades();
 
     image = new sf::Texture();
     bg = new sf::Sprite();
+
+    run();
 }
 
 Jogo::~Jogo()
@@ -27,10 +35,7 @@ void Jogo::instanciaEntidades()
 {
     Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
     Inimigo *inimigo = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f), jogador);
-    ObsGenerico *obstaculo = new ObsGenerico(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
-
-    // Personagem *p1 = static_cast<Entidades::Personagens::Personagem *>(jogador);
-    // Personagem *p2 = static_cast<Entidades::Personagens::Personagem *>(inimigo);
+    Plataforma *obstaculo = new Plataforma(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f), IDs::IDs::plataforma, "./Midia/obstaculoGenerico.jpg");
 
     Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
     Entidade *e2 = static_cast<Entidades::Entidade *>(inimigo);
@@ -40,6 +45,8 @@ void Jogo::instanciaEntidades()
     listaPersonagem.inserir(e2);
 
     listaObstaculo.inserir(e3);
+
+    pEvento->setJogador(jogador);
 }
 
 void Jogo::run()
@@ -48,21 +55,12 @@ void Jogo::run()
     bg->setTexture(*image);
     while (pGrafico->janelaAberta())
     {
-        sf::Event event;
-        while (pGrafico->getWindow()->pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                pGrafico->fechaJanela();
-        }
+        pEvento->executar();
         pGrafico->limpar();
         pGrafico->getWindow()->draw(*bg);
-        listaPersonagem.executar(pGrafico->getWindow());
-        listaObstaculo.executar(pGrafico->getWindow());
+        listaPersonagem.executar();
+        listaObstaculo.executar();
         colisor.executar();
         pGrafico->mostraElementos();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-        {
-            pGrafico->fechaJanela();
-        }
     }
 }

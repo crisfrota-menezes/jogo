@@ -54,7 +54,7 @@ void GerenciadorGrafico::fechaJanela()
     window->close();
 }
 
-sf::Texture GerenciadorGrafico::carregarTextura(const char* caminho)
+sf::Texture GerenciadorGrafico::carregarTextura(const char *caminho)
 {
     sf::Texture textura;
     if (!textura.loadFromFile(caminho))

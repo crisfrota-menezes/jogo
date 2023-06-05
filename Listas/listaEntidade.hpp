@@ -20,7 +20,7 @@ namespace Escape_the_room
             void remover(Entidade *ent);
             Entidade *operator[](int pos);
             int getTam();
-            void executar(sf::RenderWindow *window);
+            void executar();
             void limpar();
         };
     }

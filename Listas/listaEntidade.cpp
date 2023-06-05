@@ -1,6 +1,6 @@
 #include "listaEntidade.hpp"
 
-ListaEntidades::ListaEntidades()
+ListaEntidades::ListaEntidades() : lista()
 {
 }
 
@@ -33,7 +33,7 @@ int ListaEntidades::getTam()
     return lista.getTam();
 }
 
-void ListaEntidades::executar(sf::RenderWindow *window)
+void ListaEntidades::executar()
 {
     int tam = lista.getTam();
     Entidade *aux = nullptr;
@@ -41,7 +41,6 @@ void ListaEntidades::executar(sf::RenderWindow *window)
     {
         aux = lista.operator[](i);
         aux->atualizar();
-        window->draw(aux->getCorpo());
     }
 }
 

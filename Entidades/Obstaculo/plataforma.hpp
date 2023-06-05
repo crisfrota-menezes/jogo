@@ -17,14 +17,12 @@ namespace Escape_the_room
     {
         namespace Obstaculos
         {
-            class ObsGenerico : public Obstaculo
+            class Plataforma : public Obstaculo
             {
             public:
-                ObsGenerico(const sf::Vector2f pos, const sf::Vector2f tam);
-                ~ObsGenerico();
+                Plataforma(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID, const char *caminhoTextura = CAMINHO_TEXTURA);
+                ~Plataforma();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
-                void colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem);
-                void atualizar();
             };
         }
         using namespace Obstaculos;

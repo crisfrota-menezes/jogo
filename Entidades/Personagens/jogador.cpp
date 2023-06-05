@@ -1,9 +1,7 @@
 #include "jogador.hpp"
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false)
+Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador)
 {
-    sf::Vector2f posAleatoria = posicaoAleatoria(1920, 1080);
-    setPos(posAleatoria);
     corpo.setFillColor(sf::Color::Green);
     inicializa();
 }
@@ -14,12 +12,26 @@ Jogador::~Jogador()
 
 void Jogador::atualizar()
 {
-    atualizarPos();
+    if (podeMover)
+        atualizarPos();
+
+    relogio.restart();
 }
 
 void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 {
-    
+    switch (outraEnt->getID())
+    {
+    case (IDs::IDs::inimigo):
+    {
+        cout << "Bateu no inimigo" << endl;
+    }
+    break;
+    case (IDs::IDs::plataforma):
+    {
+        cout << "Bateu na plataforma" << endl;
+    }
+    }
 }
 
 void Jogador::inicializa()
