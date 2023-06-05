@@ -22,10 +22,10 @@ const sf::Vector2f GerenciadorColisao::calculaColisao(Entidade *ent1, Entidade *
     sf::Vector2f distanciaEntreCentros(
         fabs((pos1.x + tam1.x / 2.0f) - fabs(pos2.x + tam2.x / 2.0f)),
         fabs((pos1.y + tam1.y / 2.0f) - fabs(pos2.y + tam2.y / 2.0f)));
-    sf::Vector2f somaMetadeRectangulo(tam1.x / 2.0f + tam2.x / 2.0f, tam1.y / 2.0f + tam2.y / 2.0f);
+    sf::Vector2f somaMetadeRetangulo(tam1.x / 2.0f + tam2.x / 2.0f, tam1.y / 2.0f + tam2.y / 2.0f);
     return sf::Vector2f(
-        somaMetadeRectangulo.x - distanciaEntreCentros.x,
-        somaMetadeRectangulo.y - distanciaEntreCentros.y);
+        somaMetadeRetangulo.x - distanciaEntreCentros.x,
+        somaMetadeRetangulo.y - distanciaEntreCentros.y);
 }
 
 void GerenciadorColisao::executar()
