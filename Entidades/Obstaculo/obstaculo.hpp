@@ -22,6 +22,7 @@ namespace Escape_the_room
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
                 void atualizar();
                 void colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem);
+                void parar();
             };
         }
         using namespace Obstaculos;

@@ -55,6 +55,8 @@ void GerenciadorColisao::executar()
             {
                 if (ent2->getID() == IDs::IDs::plataforma)
                 {
+                    // Parar de andar
+                    ent1->parar();
                     ent2->colisao(ent1, dist);
                 }
                 else

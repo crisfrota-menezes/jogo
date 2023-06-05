@@ -57,3 +57,7 @@ void Obstaculo::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
     pPersonagem->setPos(posOutro);
     pPersonagem->setVelFinal(velFinal);
 }
+
+void Obstaculo::parar()
+{
+}
