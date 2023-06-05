@@ -2,6 +2,7 @@
 
 Plataforma::Plataforma(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID, const char *caminhoTextura) : Obstaculo(pos, tam, ID, caminhoTextura)
 {
+    corpo.setPosition(800.0f, 980.0f);
 }
 
 Plataforma::~Plataforma()

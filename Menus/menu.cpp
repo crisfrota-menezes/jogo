@@ -19,7 +19,7 @@ Menu::~Menu()
 
 void Menu::set_values()
 {
-    window->create(sf::VideoMode(1920, 1080), "Menu");
+    window->create(sf::VideoMode(1920, 1080), "Menu", sf::Style::Fullscreen);
     pos = 0;
     pressed = false;
     select = false;

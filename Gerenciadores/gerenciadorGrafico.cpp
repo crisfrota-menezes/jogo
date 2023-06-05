@@ -2,7 +2,7 @@
 
 GerenciadorGrafico *GerenciadorGrafico::pGrafico = nullptr;
 
-GerenciadorGrafico::GerenciadorGrafico() : window(new sf::RenderWindow(sf::VideoMode(1920, 1080), "Escape the room"))
+GerenciadorGrafico::GerenciadorGrafico() : window(new sf::RenderWindow(sf::VideoMode(1920, 1080), "Escape the room", sf::Style::Fullscreen))
 {
     if (window == nullptr)
     {
