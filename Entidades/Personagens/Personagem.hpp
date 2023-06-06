@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../entidade.hpp"
+#include "../../Gerenciadores/gerenciadorColisao.hpp"
 #include <cmath>
 
 #define GRAVIDADE 0.5f
@@ -34,6 +35,7 @@ namespace Escape_the_room
                 void podePular();
                 void pular();
                 void atualizarPos();
+                void verificaColisao();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
                 virtual void atualizar() = 0;
             };

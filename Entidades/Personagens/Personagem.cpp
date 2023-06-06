@@ -34,9 +34,10 @@ void Personagem::pular()
     sf::Vector2f ds(0.0f, 0.0f);
     if (noChao)
     {
+        velFinal.y = -sqrtf(2.0f * GRAVIDADE * ALTURA_PULO);
         ds.y = velFinal.y * dt;
-        ds.y *= -(2 * tam.y);
-        setPos(sf::Vector2f(pos.x, pos.y - (2 * tam.y)));
+        ds.y *= -1;
+        setPos(sf::Vector2f(pos.x + ds.x, pos.y + ds.y));
         noChao = false;
         desenhar();
     }
@@ -77,15 +78,6 @@ void Personagem::atualizarPos()
     // atualiza velocidade na horizontal
     velFinal.x = velMax;
 
-    // verifica se está no chão
-    if (pos.y + tam.y >= 1080)
-    {
-        velFinal.y = 0.0f;
-        setPos(sf::Vector2f(pos.x, 1080 - tam.y));
-        podePular();
-    }
-
-    // ISSO AQUI TA ERRADO TEM QUE HABILITAR PRA QUANDO TIVER EM CIMA DO OBSTACULO
     podePular();
 
     // desenhar
