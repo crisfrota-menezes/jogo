@@ -1,8 +1,7 @@
 #include "jogador.hpp"
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador)
+Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador), animacao(&corpo)
 {
-    corpo.setFillColor(sf::Color::Green);
     inicializa();
 }
 
@@ -13,7 +12,7 @@ Jogador::~Jogador()
 void Jogador::atualizar()
 {
     atualizarPos();
-    // animar();
+    animar();
 }
 
 void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
@@ -43,13 +42,13 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
     }
 }
 
-/*void Jogador::animar()
+void Jogador::animar()
 {
     if (!noChao && velFinal.y > 0.0f)
     {
         animacao.atualizar(paraEsquerda, "CAI");
     }
-    else if (noChao)
+    else if (!noChao)
     {
         animacao.atualizar(paraEsquerda, "PULA");
     }
@@ -61,9 +60,13 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
     {
         animacao.atualizar(paraEsquerda, "PARADO");
     }
-}*/
+}
 
 void Jogador::inicializa()
 {
-    // animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Anda.png", "ANDA", 10, 0.12f, sf::Vector2f(6, 2));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Anda.png", "ANDA", 1, 0.12f, sf::Vector2f(2, 1));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Parado.png", "PARADO", 1, 0.12f, sf::Vector2f(2, 1));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Pula.png", "PULA", 1, 0.12f, sf::Vector2f(2, 1));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Cai.png", "CAI", 1, 0.12f, sf::Vector2f(2, 1));
+    corpo.setOrigin(tam.x / 3.0f, tam.y / 3.0f);
 }
