@@ -3,8 +3,6 @@
 #include "obstaculo.hpp"
 #include "../Personagens/Personagem.hpp"
 
-#define CAMINHO_TEXTURA "../Midia/obstaculoGenerico.jpg"
-
 #define ESCALA_X 1.0f
 #define ESCALA_Y 1.0f
 
