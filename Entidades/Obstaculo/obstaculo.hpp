@@ -4,6 +4,8 @@
 #include "../Personagens/jogador.hpp"
 #include "../Personagens/inimigo.hpp"
 
+#define CAMINHO_TEXTURA "C:/Users/crisn/Desktop/projetoTecProg/Midia/obstaculoGenerico.jpg"
+
 namespace Escape_the_room
 {
     namespace Entidades
@@ -14,6 +16,7 @@ namespace Escape_the_room
             {
             protected:
                 sf::Texture textura;
+                const char *caminho;
 
             public:
                 Obstaculo(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID);
