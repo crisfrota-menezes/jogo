@@ -63,17 +63,17 @@ void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         cout << "Bateu na plataforma" << endl;
     }
     break;
-    case (IDs::IDs::inimigoF):
+    case (IDs::IDs::Crianca):
     {
         cout << "Bateu no inimigoF" << endl;
     }
     break;
-    case (IDs::IDs::inimigoM):
+    case (IDs::IDs::Mae):
     {
         cout << "Bateu no inimigoM" << endl;
     }
     break;
-    case (IDs::IDs::inimigoD):
+    case (IDs::IDs::Pai):
     {
         cout << "Bateu no inimigoD" << endl;
     }

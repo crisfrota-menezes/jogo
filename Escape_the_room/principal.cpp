@@ -29,9 +29,9 @@ Jogo::~Jogo()
 void Jogo::instanciaEntidades()
 {
     Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
-    Inimigo *inimigo1 = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(50.0f, 50.0f), jogador, IDs::IDs::inimigoF);
-    Inimigo *inimigo2 = new Inimigo(sf::Vector2f(200.0f, 200.0f), sf::Vector2f(60.0f, 60.0f), jogador, IDs::IDs::inimigoM);
-    Inimigo *inimigo3 = new Inimigo(sf::Vector2f(300.0f, 300.0f), sf::Vector2f(70.0f, 70.0f), jogador, IDs::IDs::inimigoD);
+    Inimigo *inimigo1 = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(50.0f, 50.0f), jogador, IDs::IDs::Crianca);
+    Inimigo *inimigo2 = new Inimigo(sf::Vector2f(200.0f, 200.0f), sf::Vector2f(60.0f, 60.0f), jogador, IDs::IDs::Mae);
+    Inimigo *inimigo3 = new Inimigo(sf::Vector2f(300.0f, 300.0f), sf::Vector2f(70.0f, 70.0f), jogador, IDs::IDs::Pai);
     Plataforma *obstaculo = new Plataforma(sf::Vector2f(300.0f, 900.0f), sf::Vector2f(400.0f, 40.0f));
 
     Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
