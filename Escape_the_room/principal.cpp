@@ -56,6 +56,7 @@ void Jogo::run()
     {
         pEvento->executar();
         pGrafico->limpar();
+        //pGrafico->carregarBackground();
         listaPersonagem.executar();
         listaObstaculo.executar();
         colisor.executar();

@@ -12,6 +12,8 @@ namespace Escape_the_room
         {
         private:
             sf::RenderWindow *window;
+            sf::Texture *imagem;
+            sf::Sprite *bg;
             static GerenciadorGrafico *pGrafico;
             /*utilizando padrão de projeto singleton na implementação*/
             GerenciadorGrafico();
@@ -24,6 +26,7 @@ namespace Escape_the_room
             void desenhaElemento(sf::RectangleShape corpo);
             void mostraElementos();
             void fechaJanela();
+            void carregarBackground();
             sf::Texture carregarTextura(const char *caminho);
             const bool janelaAberta();
         };

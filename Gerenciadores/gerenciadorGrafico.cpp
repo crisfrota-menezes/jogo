@@ -4,6 +4,8 @@ GerenciadorGrafico *GerenciadorGrafico::pGrafico = nullptr;
 
 GerenciadorGrafico::GerenciadorGrafico() : window(new sf::RenderWindow(sf::VideoMode(1920, 1080), "Escape the room"))
 {
+    imagem = new sf::Texture();
+    bg = new sf::Sprite();
     if (window == nullptr)
     {
         cout << "Erro ao criar janela" << endl;
@@ -63,6 +65,17 @@ sf::Texture GerenciadorGrafico::carregarTextura(const char *caminho)
         exit(1);
     }
     return textura;
+}
+
+void GerenciadorGrafico::carregarBackground()
+{
+    if (!imagem->loadFromFile("C:/Users/crisn/Desktop/projetoTecProg/Midia/background.png"))
+    {
+        cout << "Erro ao carregar imagem" << endl;
+        exit(1);
+    }
+    bg->setTexture(*imagem);
+    window->draw(*bg);
 }
 
 const bool GerenciadorGrafico::janelaAberta()
