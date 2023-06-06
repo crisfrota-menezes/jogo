@@ -36,7 +36,7 @@ void GerenciadorColisao::executar()
         {
             Entidade *ent2 = listaPersonagem->operator[](j);
             sf::Vector2f dist = calculaColisao(ent1, ent2);
-            if (dist.x <= 0.0f && dist.y <= 0.0f)
+            if (dist.x < 0.0f && dist.y < 0.0f)
             {
                 ent1->colisao(ent2);
             }
