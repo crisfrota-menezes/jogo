@@ -34,10 +34,13 @@ void Personagem::pular()
     sf::Vector2f ds(0.0f, 0.0f);
     if (noChao)
     {
+        // atualiza velocidade
         velFinal.y = -sqrtf(2.0f * GRAVIDADE * ALTURA_PULO);
+        // atualiza posição
         ds.y = velFinal.y * dt;
         ds.y *= -1;
         setPos(sf::Vector2f(pos.x + ds.x, pos.y + ds.y));
+
         noChao = false;
         desenhar();
     }
@@ -51,10 +54,6 @@ void Personagem::podePular()
 void Personagem::atualizarPos()
 {
     dt = relogio.getElapsedTime().asSeconds();
-    if (dt > 0.3f)
-    {
-        dt = 0.0f;
-    }
     relogio.restart();
     sf::Vector2f ds(0.0f, 0.0f);
 
@@ -78,6 +77,14 @@ void Personagem::atualizarPos()
     // atualiza velocidade na horizontal
     velFinal.x = velMax;
 
+    // verifica se esta no chão
+    if (pos.y + tam.y >= 1080.0f)
+    {
+        noChao = true;
+        setPos(sf::Vector2f(pos.x, 1080.0f - tam.y));
+    }
+
+    // habilita o pulo (*precisa achar uma maneira de fazer isso melhor*)
     podePular();
 
     // desenhar
