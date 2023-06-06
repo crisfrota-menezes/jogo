@@ -30,7 +30,7 @@ void Jogo::instanciaEntidades()
 {
     Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
     Inimigo *inimigo = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f), jogador);
-    Plataforma *obstaculo = new Plataforma(sf::Vector2f(350.0f, 300.0f), sf::Vector2f(400.0f, 40.0f));
+    Plataforma *obstaculo = new Plataforma(sf::Vector2f(300.0f, 900.0f), sf::Vector2f(400.0f, 40.0f));
 
     Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
     Entidade *e2 = static_cast<Entidades::Entidade *>(inimigo);

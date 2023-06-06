@@ -1,6 +1,6 @@
 #include "jogador.hpp"
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false)
+Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador)
 {
     corpo.setFillColor(sf::Color::Green);
     inicializa();
@@ -34,24 +34,4 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 
 void Jogador::inicializa()
 {
-}
-
-void Jogador::pular()
-{
-    if (noChao)
-    {
-        velFinal.y = -sqrt(2.0f * GRAVIDADE * ALTURA_PULO);
-        noChao = false;
-    }
-}
-
-void Jogador::podePular()
-{
-    if (pos.y + tam.y >= 1080)
-    {
-        velFinal.y = 0.0f;
-        setPos(sf::Vector2f(pos.x, 1080 - tam.y));
-        noChao = true;
-    }
-    noChao = true;
 }

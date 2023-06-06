@@ -29,6 +29,24 @@ void Personagem::parar()
     podeMover = false;
 }
 
+void Personagem::pular()
+{
+    sf::Vector2f ds(0.0f, 0.0f);
+    if (noChao)
+    {
+        ds.y = velFinal.y * dt;
+        ds.y *= -(2 * tam.y);
+        setPos(sf::Vector2f(pos.x, pos.y - (2 * tam.y)));
+        noChao = false;
+        desenhar();
+    }
+}
+
+void Personagem::podePular()
+{
+    noChao = true;
+}
+
 void Personagem::atualizarPos()
 {
     dt = relogio.getElapsedTime().asSeconds();
@@ -58,6 +76,16 @@ void Personagem::atualizarPos()
 
     // atualiza velocidade na horizontal
     velFinal.x = velMax;
+
+    // verifica se está no chão
+    if (pos.y + tam.y >= 1080)
+    {
+        velFinal.y = 0.0f;
+        setPos(sf::Vector2f(pos.x, 1080 - tam.y));
+        podePular();
+    }
+
+    podePular();
 
     // desenhar
     desenhar();
