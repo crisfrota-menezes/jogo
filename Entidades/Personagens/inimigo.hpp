@@ -30,6 +30,7 @@ namespace Escape_the_room
                 void atualizaMoveAleatorio();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 void atualizar();
+                //void animar();
             };
         }
         using namespace Personagens;

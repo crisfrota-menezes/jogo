@@ -1,6 +1,6 @@
 #include "Personagem.hpp"
 
-Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), velFinal(sf::Vector2f(vel, 0.0f)), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velMax(vel)
+Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), velFinal(sf::Vector2f(vel, 0.0f)), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velMax(vel)//, animacao(&corpo)
 {
 }
 

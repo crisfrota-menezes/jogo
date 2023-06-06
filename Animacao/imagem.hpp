@@ -10,7 +10,7 @@ namespace Escape_the_room
         class Imagem
         {
         private:
-            Gerenciador::GerenciadorGrafico *pGrafico;
+            GerenciadorGrafico *pGrafico;
             sf::Texture textura;
             sf::IntRect tamanho;
             const sf::Vector2f escala;

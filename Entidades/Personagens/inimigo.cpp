@@ -25,6 +25,7 @@ Inimigo::~Inimigo()
 
 void Inimigo::inicializa()
 {
+    // animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Anda.png", "ANDA", 10, 0.12f, sf::Vector2f(6, 2));
 }
 
 void Inimigo::atualizaMoveAleatorio()
@@ -83,8 +84,30 @@ void Inimigo::atualizar()
     {
         atualizaMoveAleatorio();
     }
-    //moveInimigo();
+    // moveInimigo();
     atualizarPos();
     dtAux += relogio.getElapsedTime().asSeconds();
     relogio.restart();
+    // animar();
 }
+
+/*void Inimigo::animar()
+{
+    if (!noChao && velFinal.y > 0.0f)
+    {
+        animacao.atualizar(paraEsquerda, "CAI");
+    }
+    else if (noChao)
+    {
+        animacao.atualizar(paraEsquerda, "PULA");
+    }
+    else
+    if (podeMover)
+    {
+        animacao.atualizar(paraEsquerda, "ANDA");
+    }
+    else
+    {
+        animacao.atualizar(paraEsquerda, "PARADO");
+    }
+}*/

@@ -2,6 +2,7 @@
 
 #include "../entidade.hpp"
 #include "../../Gerenciadores/gerenciadorColisao.hpp"
+#include "../../Animacao/animacao.hpp"
 #include <cmath>
 
 #define GRAVIDADE 0.5f
@@ -24,6 +25,8 @@ namespace Escape_the_room
                 sf::Clock relogio;
                 float dt;
                 bool noChao;
+                //Animacao animacao;
+                //virtual void animar() = 0;
 
             public:
                 Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID);
