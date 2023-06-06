@@ -85,6 +85,7 @@ void Personagem::atualizarPos()
         podePular();
     }
 
+    // ISSO AQUI TA ERRADO TEM QUE HABILITAR PRA QUANDO TIVER EM CIMA DO OBSTACULO
     podePular();
 
     // desenhar
