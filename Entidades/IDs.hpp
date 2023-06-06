@@ -6,7 +6,7 @@ namespace IDs
     {
         vazio = 0,
         jogador,
-        inimigoF,
+        Crianca,
         inimigoM,
         inimigoD,
         plataforma,
