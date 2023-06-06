@@ -25,7 +25,7 @@ namespace Escape_the_room
                 void inicializa();
 
             public:
-                Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador);
+                Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador, IDs::IDs ID);
                 ~Inimigo();
                 void atualizaMoveAleatorio();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));

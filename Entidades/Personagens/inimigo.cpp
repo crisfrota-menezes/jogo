@@ -1,8 +1,8 @@
 #include "inimigo.hpp"
 
-Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador) : Personagem(pos, tam, VELOCIDADE_INIMIGO, IDs::IDs::inimigo), jogador(jogador), dtAux(0.0f)
+Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador, IDs::IDs ID) : Personagem(pos, tam, VELOCIDADE_INIMIGO, ID), jogador(jogador), dtAux(0.0f)
 {
-    corpo.setFillColor(sf::Color::Red);
+    corpo.setFillColor(sf::Color::Yellow);
     srand(time(NULL));
     moveAleatorio = rand() % 3;
     if (moveAleatorio == 0)
@@ -62,6 +62,22 @@ void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     {
         cout << "Bateu na plataforma" << endl;
     }
+    break;
+    case (IDs::IDs::inimigoF):
+    {
+        cout << "Bateu no inimigoF" << endl;
+    }
+    break;
+    case (IDs::IDs::inimigoM):
+    {
+        cout << "Bateu no inimigoM" << endl;
+    }
+    break;
+    case (IDs::IDs::inimigoD):
+    {
+        cout << "Bateu no inimigoD" << endl;
+    }
+    break;
     }
 }
 

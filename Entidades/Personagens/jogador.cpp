@@ -20,9 +20,19 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 {
     switch (outraEnt->getID())
     {
-    case (IDs::IDs::inimigo):
+    case (IDs::IDs::inimigoF):
     {
-        cout << "Bateu no inimigo" << endl;
+        cout << "Bateu no inimigoF" << endl;
+    }
+    break;
+    case (IDs::IDs::inimigoM):
+    {
+        cout << "Bateu no inimigoM" << endl;
+    }
+    break;
+    case (IDs::IDs::inimigoD):
+    {
+        cout << "Bateu no inimigoD" << endl;
     }
     break;
     case (IDs::IDs::plataforma):
