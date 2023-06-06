@@ -1,16 +1,15 @@
-#pragma once
+#pragma once 
 
 #include "../Gerenciadores/gerenciadorGrafico.hpp"
 #include <SFML/Graphics.hpp>
 
-namespace Escape_the_room
-{
-    namespace Animador
-    {
-        class Imagem
-        {
+namespace Escape_the_room {
+
+    namespace Animador {
+
+        class Imagem {
         private:
-            GerenciadorGrafico *pGrafico;
+            GerenciadorGrafico* pGrafico;
             sf::Texture textura;
             sf::IntRect tamanho;
             const sf::Vector2f escala;
@@ -20,13 +19,14 @@ namespace Escape_the_room
             float tempoTotal;
 
         public:
-            Imagem(const char *caminhoTextura, const unsigned int qtdImagem, const float tempoTroca, const sf::Vector2f escala);
+            Imagem(const char* caminhoTextura, const unsigned int qtdImagem, const float tempoTroca, const sf::Vector2f escala);
             ~Imagem();
             void atualizar(const bool paraEsquerda, const float dt);
             void resetar();
             const sf::IntRect getTamanho() const;
-            const sf::Texture *getTextura() const;
+            const sf::Texture* getTextura() const;
             const sf::Vector2f getEscala() const;
+
         };
     }
     using namespace Animador;

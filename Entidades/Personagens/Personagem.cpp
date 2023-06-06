@@ -1,6 +1,6 @@
 #include "Personagem.hpp"
 
-Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), velFinal(sf::Vector2f(vel, 0.0f)), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velMax(vel)//, animacao(&corpo)
+Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), velFinal(sf::Vector2f(vel, 0.0f)), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velMax(vel), animacao(&corpo)
 {
 }
 
@@ -29,28 +29,6 @@ void Personagem::parar()
     podeMover = false;
 }
 
-void Personagem::pular()
-{
-    sf::Vector2f ds(0.0f, 0.0f);
-    if (noChao)
-    {
-        // atualiza velocidade
-        velFinal.y = -sqrtf(2.0f * GRAVIDADE * ALTURA_PULO);
-        // atualiza posição
-        ds.y = velFinal.y * dt;
-        ds.y *= -1;
-        setPos(sf::Vector2f(pos.x + ds.x, pos.y + ds.y));
-
-        noChao = false;
-        desenhar();
-    }
-}
-
-void Personagem::podePular()
-{
-    noChao = true;
-}
-
 void Personagem::atualizarPos()
 {
     dt = relogio.getElapsedTime().asSeconds();
@@ -77,16 +55,18 @@ void Personagem::atualizarPos()
     // atualiza velocidade na horizontal
     velFinal.x = velMax;
 
-    // verifica se esta no chão
-    if (pos.y + tam.y >= 1080.0f)
-    {
-        noChao = true;
-        setPos(sf::Vector2f(pos.x, 1080.0f - tam.y));
-    }
-
-    // habilita o pulo (*precisa achar uma maneira de fazer isso melhor*)
-    podePular();
-
     // desenhar
     desenhar();
+}
+
+void Personagem::animar()
+{
+    if (podeMover)
+    {
+        animacao.atualizar(paraEsquerda, "ANDA");
+    }
+    else
+    {
+        animacao.atualizar(paraEsquerda, "PARADO");
+    }
 }

@@ -4,7 +4,7 @@
 #include "../Personagens/jogador.hpp"
 #include "../Personagens/inimigo.hpp"
 
-#define CAMINHO_TEXTURA "C:/Users/crisn/Desktop/projetoTecProg/Midia/obstaculoGenerico.jpg"
+#include "../../Animacao/animacao.hpp"
 
 namespace Escape_the_room
 {
@@ -16,13 +16,13 @@ namespace Escape_the_room
             {
             protected:
                 sf::Texture textura;
-                const char *caminho;
 
             public:
-                Obstaculo(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID);
+                Obstaculo(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID, const char *caminhoTextura);
                 ~Obstaculo();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
                 void atualizar();
+                virtual void colisaoObstaculo(sf::Vector2f ds, Personagem* pPersonagem);
             };
         }
         using namespace Obstaculos;

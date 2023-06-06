@@ -3,7 +3,10 @@
 #include "Personagem.hpp"
 #include "../../Animacao/Animacao.hpp"
 
-#define VELOCIDADE_JOGADOR 150.0f
+#define VELOCIDADE_JOGADOR 200.0f
+#define TAMANHO_PULO 0.1f
+#define TAMANHO_JOGADOR_X 50.0f
+#define TAMANHO_JOGADOR_Y 90.0f
 
 namespace Escape_the_room
 {
@@ -15,13 +18,15 @@ namespace Escape_the_room
             {
             private:
                 void inicializa();
-                Animacao animacao;
+                bool noChao;
 
             public:
-                Jogador(const sf::Vector2f pos, const sf::Vector2f tam);
+                Jogador(const sf::Vector2f pos);
                 ~Jogador();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 void atualizar();
+                void pular();
+                void podePular();
                 void animar();
             };
         }

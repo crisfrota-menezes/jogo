@@ -4,6 +4,9 @@
 #include <iostream>
 using namespace std;
 
+#define LARGURA_TELA 1920.0f
+#define ALTURA_TELA 1080.0f
+
 namespace Escape_the_room
 {
     namespace Gerenciadores

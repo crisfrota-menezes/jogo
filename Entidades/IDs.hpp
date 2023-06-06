@@ -6,9 +6,9 @@ namespace IDs
     {
         vazio = 0,
         jogador,
-        Crianca,
-        Mae,
-        Pai,
-        plataforma,
+        Alien1,
+        Alien2,
+        Alien3,
+        plataforma
     };
 }

@@ -2,8 +2,8 @@
 
 #include "inimigo.hpp"
 
-#define TAMANHO_Mae_X 60.0f
-#define TAMANHO_Mae_Y 60.0f
+#define TAMANHO_Alien2_X 50.0f
+#define TAMANHO_Alien2_Y 90.0f
 
 namespace Escape_the_room
 {
@@ -11,14 +11,14 @@ namespace Escape_the_room
     {
         namespace Personagens
         {
-            class Mae : public Inimigo
+            class Alien2 : public Inimigo
             {
             private:
                 void inicializa();
 
             public:
-                Mae(const sf::Vector2f pos, Jogador *jogador);
-                ~Mae();
+                Alien2(const sf::Vector2f pos, Jogador *jogador);
+                ~Alien2();
 
             };
         }

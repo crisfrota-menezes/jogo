@@ -1,6 +1,7 @@
 #include "jogador.hpp"
+#include <cmath>
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador), animacao(&corpo)
+Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos, sf::Vector2f(TAMANHO_JOGADOR_X, TAMANHO_JOGADOR_Y), VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false)
 {
     inicializa();
 }
@@ -19,17 +20,17 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 {
     switch (outraEnt->getID())
     {
-    case (IDs::IDs::Crianca):
+    case (IDs::IDs::Alien1):
     {
         cout << "Bateu no inimigoF" << endl;
     }
     break;
-    case (IDs::IDs::Mae):
+    case (IDs::IDs::Alien2):
     {
         cout << "Bateu no inimigoM" << endl;
     }
     break;
-    case (IDs::IDs::Pai):
+    case (IDs::IDs::Alien3):
     {
         cout << "Bateu no inimigoD" << endl;
     }
@@ -64,9 +65,23 @@ void Jogador::animar()
 
 void Jogador::inicializa()
 {
-    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Anda.png", "ANDA", 1, 0.12f, sf::Vector2f(2, 1));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Parado.png", "PARADO", 1, 0.12f, sf::Vector2f(2, 1));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Pula.png", "PULA", 1, 0.12f, sf::Vector2f(2, 1));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Cai.png", "CAI", 1, 0.12f, sf::Vector2f(2, 1));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/AndaJ.png", "ANDA", 1, 0.12f, sf::Vector2f(2, 1));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/ParadoJ.png", "PARADO", 1, 0.12f, sf::Vector2f(2, 1));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/PulaJ.png", "PULA", 1, 0.12f, sf::Vector2f(2, 1));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/CaiJ.png", "CAI", 1, 0.12f, sf::Vector2f(2, 1));
     corpo.setOrigin(tam.x / 3.0f, tam.y / 3.0f);
+}
+
+void Jogador::pular()
+{
+    if (noChao)
+    {
+        velFinal.y = -sqrtf(2.0f * GRAVIDADE * TAMANHO_PULO);
+        noChao = false;
+    }
+}
+
+void Jogador::podePular()
+{
+    noChao = true;
 }

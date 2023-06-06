@@ -2,7 +2,7 @@
 
 GerenciadorGrafico *GerenciadorGrafico::pGrafico = nullptr;
 
-GerenciadorGrafico::GerenciadorGrafico() : window(new sf::RenderWindow(sf::VideoMode(1920, 1080), "Escape the room"))
+GerenciadorGrafico::GerenciadorGrafico() : window(new sf::RenderWindow(sf::VideoMode(LARGURA_TELA, ALTURA_TELA), "Escape the room"))
 {
     imagem = new sf::Texture();
     bg = new sf::Sprite();
@@ -40,7 +40,7 @@ void GerenciadorGrafico::limpar()
 {
     window->clear();
 }
-
+    
 void GerenciadorGrafico::desenhaElemento(sf::RectangleShape corpo)
 {
     window->draw(corpo);

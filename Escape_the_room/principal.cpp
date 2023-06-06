@@ -28,16 +28,16 @@ Jogo::~Jogo()
 
 void Jogo::instanciaEntidades()
 {
-    Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(100.0f, 100.0f));
-    Inimigo *inimigo1 = new Inimigo(sf::Vector2f(100.0f, 100.0f), sf::Vector2f(50.0f, 50.0f), jogador, IDs::IDs::Crianca);
-    Inimigo *inimigo2 = new Inimigo(sf::Vector2f(200.0f, 200.0f), sf::Vector2f(60.0f, 60.0f), jogador, IDs::IDs::Mae);
-    Inimigo *inimigo3 = new Inimigo(sf::Vector2f(300.0f, 300.0f), sf::Vector2f(70.0f, 70.0f), jogador, IDs::IDs::Pai);
-    Plataforma *obstaculo = new Plataforma(sf::Vector2f(300.0f, 900.0f), sf::Vector2f(400.0f, 40.0f));
+    Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f));
+    Alien1 *alien1 = new Alien1(sf::Vector2f(100.0f, 100.0f), jogador);
+    Alien2 *alien2 = new Alien2(sf::Vector2f(200.0f, 200.0f), jogador);
+    Alien3 *alien3 = new Alien3(sf::Vector2f(300.0f, 300.0f), jogador);
+    Plataforma *obstaculo = new Plataforma(sf::Vector2f(300.0f, 900.0f));
 
     Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
-    Entidade *e2 = static_cast<Entidades::Entidade *>(inimigo1);
-    Entidade *e3 = static_cast<Entidades::Entidade *>(inimigo2);
-    Entidade *e4 = static_cast<Entidades::Entidade *>(inimigo3);
+    Entidade *e2 = static_cast<Entidades::Entidade *>(alien1);
+    Entidade *e3 = static_cast<Entidades::Entidade *>(alien2);
+    Entidade *e4 = static_cast<Entidades::Entidade *>(alien3);
     Entidade *e5 = static_cast<Entidades::Entidade *>(obstaculo);
 
     listaPersonagem.inserir(e1);

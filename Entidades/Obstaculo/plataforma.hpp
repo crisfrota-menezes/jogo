@@ -3,8 +3,13 @@
 #include "obstaculo.hpp"
 #include "../Personagens/Personagem.hpp"
 
-#define ESCALA_X 1.0f
-#define ESCALA_Y 1.0f
+#define CAMINHO_PLATAFORMA "C:/Users/crisn/Desktop/projetoTecProg/Midia/obstaculoGenerico.jpg"
+
+#define ESCALA_X 1
+#define ESCALA_Y 1
+
+#define TAMANHO_PLATAFORMA_X 300.0f
+#define TAMANHO_PLATAFORMA_Y 50.0f
 
 namespace Escape_the_room
 {
@@ -15,10 +20,9 @@ namespace Escape_the_room
             class Plataforma : public Obstaculo
             {
             public:
-                Plataforma(const sf::Vector2f pos, const sf::Vector2f tam);
+                Plataforma(const sf::Vector2f pos);
                 ~Plataforma();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
-                void colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem);
             };
         }
         using namespace Obstaculos;

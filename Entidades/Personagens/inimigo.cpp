@@ -2,7 +2,6 @@
 
 Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador, IDs::IDs ID) : Personagem(pos, tam, VELOCIDADE_INIMIGO, ID), jogador(jogador), dtAux(0.0f)
 {
-    corpo.setFillColor(sf::Color::Yellow);
     srand(time(NULL));
     moveAleatorio = rand() % 3;
     if (moveAleatorio == 0)
@@ -21,11 +20,6 @@ Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogado
 
 Inimigo::~Inimigo()
 {
-}
-
-void Inimigo::inicializa()
-{
-    // animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/Anda.png", "ANDA", 10, 0.12f, sf::Vector2f(6, 2));
 }
 
 void Inimigo::atualizaMoveAleatorio()
@@ -49,39 +43,7 @@ void Inimigo::atualizaMoveAleatorio()
     }
 }
 
-void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
-{
-    switch (outraEntidade->getID())
-    {
-    case (IDs::IDs::jogador):
-    {
-        cout << "Bateu no jogador" << endl;
-    }
-    break;
-    case (IDs::IDs::plataforma):
-    {
-        cout << "Bateu na plataforma" << endl;
-    }
-    break;
-    case (IDs::IDs::Crianca):
-    {
-        cout << "Bateu no inimigoF" << endl;
-    }
-    break;
-    case (IDs::IDs::Mae):
-    {
-        cout << "Bateu no inimigoM" << endl;
-    }
-    break;
-    case (IDs::IDs::Pai):
-    {
-        cout << "Bateu no inimigoD" << endl;
-    }
-    break;
-    }
-}
-
-void Inimigo::atualizar()
+void Inimigo::moveInimigo()
 {
     sf::Vector2f posJogador = jogador->getPos();
     sf::Vector2f posInimigo = getPos();
@@ -100,30 +62,45 @@ void Inimigo::atualizar()
     {
         atualizaMoveAleatorio();
     }
-    // moveInimigo();
-    atualizarPos();
-    dtAux += relogio.getElapsedTime().asSeconds();
-    relogio.restart();
-    // animar();
 }
 
-/*void Inimigo::animar()
+void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
-    if (!noChao && velFinal.y > 0.0f)
+    switch (outraEntidade->getID())
     {
-        animacao.atualizar(paraEsquerda, "CAI");
-    }
-    else if (noChao)
+    case (IDs::IDs::jogador):
     {
-        animacao.atualizar(paraEsquerda, "PULA");
+        cout << "Bateu no jogador" << endl;
     }
-    else
-    if (podeMover)
+    break;
+    case (IDs::IDs::plataforma):
     {
-        animacao.atualizar(paraEsquerda, "ANDA");
+        cout << "Bateu na plataforma" << endl;
     }
-    else
+    break;
+    case (IDs::IDs::Alien1):
     {
-        animacao.atualizar(paraEsquerda, "PARADO");
+        cout << "Bateu no inimigoF" << endl;
     }
-}*/
+    break;
+    case (IDs::IDs::Alien2):
+    {
+        cout << "Bateu no inimigoM" << endl;
+    }
+    break;
+    case (IDs::IDs::Alien3):
+    {
+        cout << "Bateu no inimigoD" << endl;
+    }
+    break;
+    }
+}
+
+void Inimigo::atualizar()
+{
+    moveInimigo();
+    atualizarPos();
+    dtAux += relogio.getElapsedTime().asSeconds() * 100;
+    relogio.restart();
+    animar();
+}
