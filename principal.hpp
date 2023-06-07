@@ -25,16 +25,12 @@ namespace SpaceHunt
     private:
         GerenciadorGrafico *pGrafico;
         GerenciadorEvento *pEvento;
-        //ListaEntidades listaPersonagem;
-        //ListaEntidades listaObstaculo;
-        //GerenciadorColisao colisor;
         Fase *fase;
         void criarFase();
 
     public:
         Jogo();
         ~Jogo();
-        //void instanciaEntidades();
         void run();
     };
 }
