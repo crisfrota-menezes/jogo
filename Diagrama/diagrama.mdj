@@ -195,7 +195,7 @@
 											"fillColor": "#a9a9a9",
 											"font": "Arial;13;1",
 											"left": 69,
-											"top": 86,
+											"top": 118,
 											"width": 487,
 											"height": 13,
 											"text": "Listas"
@@ -236,7 +236,7 @@
 									"fillColor": "#a9a9a9",
 									"font": "Arial;13;0",
 									"left": 64,
-									"top": 79,
+									"top": 111,
 									"width": 497,
 									"height": 25,
 									"stereotypeLabel": {
@@ -269,9 +269,9 @@
 							"font": "Arial;13;0",
 							"containerChangeable": true,
 							"left": 64,
-							"top": 64,
+							"top": 96,
 							"width": 497,
-							"height": 345,
+							"height": 313,
 							"nameCompartment": {
 								"$ref": "AAAAAAGIlAd9Qc86RXY="
 							}
@@ -15074,6 +15074,45 @@
 							"headQualifiersCompartment": {
 								"$ref": "AAAAAAGIlvxVo1HTvcE="
 							}
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAGIlyN/0VYNaSE=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 1824,
+							"top": 192,
+							"width": 60,
+							"height": 25,
+							"text": "gerencia"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAGIlyODsFdMM3g=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 1944,
+							"top": 448,
+							"width": 60,
+							"height": 25,
+							"text": "gerencia"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAGIlyOGX1iLDOw=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 2032,
+							"top": 416,
+							"width": 60,
+							"height": 25,
+							"text": "gerencia"
 						}
 					]
 				},
@@ -15398,7 +15437,8 @@
 													"_parent": {
 														"$ref": "AAAAAAGIlkAgmUDDnGE="
 													},
-													"name": "pos int"
+													"name": "pos int",
+													"type": ""
 												}
 											]
 										},
@@ -16249,7 +16289,8 @@
 													"_parent": {
 														"$ref": "AAAAAAGIlqvGPQ0K5OM="
 													},
-													"name": "ID_Fase IDs"
+													"name": "ID_Fase IDs",
+													"type": ""
 												}
 											]
 										},
@@ -17481,7 +17522,8 @@
 															"_parent": {
 																"$ref": "AAAAAAGIlrR39ghJroI="
 															},
-															"name": "ID IDs"
+															"name": "ID IDs",
+															"type": ""
 														},
 														{
 															"_type": "UMLParameter",
