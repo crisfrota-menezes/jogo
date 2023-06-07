@@ -94,11 +94,13 @@ bool Menu::loop_events()
             }
             else if (pos == 1)
             {
-                /* code */
+                Ranking ranking;
+                ranking.run();
             }
             else if (pos == 2)
             {
-                /* code */
+                Opcoes opcoes;
+                opcoes.run();
             }
         }
     }

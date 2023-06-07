@@ -39,6 +39,18 @@ void GerenciadorEvento::verificaTeclaPressionada(sf::Keyboard::Key tecla)
     {
         pJogador->pular();
     }
+    else if (tecla == sf::Keyboard::Up)
+    {
+        pJogador->pular();
+    }
+    else if (tecla == sf::Keyboard::Right)
+    {
+        pJogador->andar(false);
+    }
+    else if (tecla == sf::Keyboard::Left)
+    {
+        pJogador->andar(true);
+    }
     else if (tecla == sf::Keyboard::Escape)
     {
         pGrafico->fechaJanela();
@@ -47,7 +59,8 @@ void GerenciadorEvento::verificaTeclaPressionada(sf::Keyboard::Key tecla)
 
 void GerenciadorEvento::verificaTeclaSolta(sf::Keyboard::Key tecla)
 {
-    if(tecla == sf::Keyboard::A || tecla == sf::Keyboard::D){
+    if (tecla == sf::Keyboard::A || tecla == sf::Keyboard::D || tecla == sf::Keyboard::Left || tecla == sf::Keyboard::Right)
+    {
         pJogador->parar();
     }
 }

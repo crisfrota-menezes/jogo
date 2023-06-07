@@ -28,7 +28,13 @@ Jogo::~Jogo()
 
 void Jogo::instanciaEntidades()
 {
+    //bool coop = true;
     Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f));
+    /*if (coop == true)
+    {
+        Jogador2 *jogador = new Jogador2(sf::Vector2f(200.0f, 100.0f));
+        listaPersonagem.inserir(static_cast<Entidades::Entidade *>(jogador));
+    }*/
     Alien1 *alien1 = new Alien1(sf::Vector2f(100.0f, 100.0f), jogador);
     Alien2 *alien2 = new Alien2(sf::Vector2f(200.0f, 200.0f), jogador);
     Alien3 *alien3 = new Alien3(sf::Vector2f(300.0f, 300.0f), jogador);

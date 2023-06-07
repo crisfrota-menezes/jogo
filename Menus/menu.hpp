@@ -2,6 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "ranking.hpp"
+#include "opcoes.hpp"
 
 class Menu
 {
