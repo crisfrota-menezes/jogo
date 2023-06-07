@@ -11,7 +11,7 @@ Alien1::~Alien1()
 
 void Alien1::inicializa()
 {
-    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/AndaA1.png", "ANDA", 1, 0.12f, sf::Vector2f(2, 1));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/ParadoA1.png", "PARADO", 1, 0.12f, sf::Vector2f(2, 1));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/AndaA1.png", "ANDA", 1, 0.12f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/ParadoA1.png", "PARADO", 1, 0.12f, sf::Vector2f(3, 1.5));
     corpo.setOrigin(tam.x / 3.0f, tam.y / 3.0f);
 }

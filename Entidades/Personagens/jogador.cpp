@@ -65,11 +65,11 @@ void Jogador::animar()
 
 void Jogador::inicializa()
 {
-    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/AndaJ.png", "ANDA", 1, 0.12f, sf::Vector2f(2, 1));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/ParadoJ.png", "PARADO", 1, 0.12f, sf::Vector2f(2, 1));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/PulaJ.png", "PULA", 1, 0.12f, sf::Vector2f(2, 1));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/CaiJ.png", "CAI", 1, 0.12f, sf::Vector2f(2, 1));
-    corpo.setOrigin(tam.x / 3.0f, tam.y / 3.0f);
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/AndaJ.png", "ANDA", 1, 0.12f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/ParadoJ.png", "PARADO", 1, 0.12f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/PulaJ.png", "PULA", 1, 0.12f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/projetoTecProg/Midia/CaiJ.png", "CAI", 1, 0.12f, sf::Vector2f(3, 1.5));
+    corpo.setOrigin(tam.x / 2.0f, tam.y / 4.7f);
 }
 
 void Jogador::pular()

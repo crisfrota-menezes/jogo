@@ -24,7 +24,7 @@ void Menu::set_values()
     pressed = false;
     select = false;
     font->loadFromFile("./Midia/PressStart2P-Regular.ttf");
-    image->loadFromFile("./Midia/background.png");
+    image->loadFromFile("./Midia/background.jpg");
     bg->setTexture(*image);
     mousePos = sf::Mouse::getPosition(*window);
     mouseCoord = window->mapPixelToCoords(mousePos);

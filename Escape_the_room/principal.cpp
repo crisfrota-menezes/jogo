@@ -32,7 +32,13 @@ void Jogo::instanciaEntidades()
     Alien1 *alien1 = new Alien1(sf::Vector2f(100.0f, 100.0f), jogador);
     Alien2 *alien2 = new Alien2(sf::Vector2f(200.0f, 200.0f), jogador);
     Alien3 *alien3 = new Alien3(sf::Vector2f(300.0f, 300.0f), jogador);
-    Plataforma *obstaculo = new Plataforma(sf::Vector2f(300.0f, 900.0f));
+    Plataforma *obstaculo = new Plataforma(sf::Vector2f(300.0f, 1000.0f));
+    // cria chão com plataformas
+    for (int i = 0; i < 10; i++)
+    {
+        Plataforma *chao = new Plataforma(sf::Vector2f(300.0f * i, 1000.0f));
+        listaObstaculo.inserir(static_cast<Entidades::Entidade *>(chao));
+    }
 
     Entidade *e1 = static_cast<Entidades::Entidade *>(jogador);
     Entidade *e2 = static_cast<Entidades::Entidade *>(alien1);
