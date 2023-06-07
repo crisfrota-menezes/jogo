@@ -98,6 +98,16 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos){
             criaAlien1(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
         }
         break;
+        case ('k'):
+        {
+            criaAlien2(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
+        }
+        break;
+        case ('l'):
+        {
+            criaAlien3(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
+        }
+        break;
         case('c'):
         {
             criarArvore(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
@@ -111,6 +121,11 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos){
         case('j'):{
             criarJogador(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
         }
+        break;
+        case('r'):{
+            criarRochas(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
+        }
+        break;
     }
 }
 

@@ -4,7 +4,7 @@
 #include "../../Animacao/Animacao.hpp"
 
 #define VELOCIDADE_JOGADOR 200.0f
-#define TAMANHO_PULO 0.1f
+#define TAMANHO_PULO 5.0f
 #define TAMANHO_JOGADOR_X 50.0f
 #define TAMANHO_JOGADOR_Y 90.0f
 
