@@ -29,7 +29,7 @@ void Menu::set_values()
     mousePos = sf::Mouse::getPosition(*window);
     mouseCoord = window->mapPixelToCoords(mousePos);
     options = {"Fase 1", "Fase 2", "Ranking", "Opcoes", "Sair"};
-    textos.resize(4);
+    textos.resize(5);
     coords = {{100, 100}, {100, 200}, {100, 300}, {100, 400}, {100, 500}};
     sizes = {50, 50, 50, 50, 50};
     for (std::size_t i{}; i < textos.size(); i++)
@@ -82,7 +82,7 @@ bool Menu::loop_events()
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && !select)
         {
             select = true;
-            if (pos == 3)
+            if (pos == 4)
             {
                 window->close();
                 return false;
