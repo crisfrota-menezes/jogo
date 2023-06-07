@@ -18,3 +18,7 @@ void Plataforma::colisao(Entidade *outraEnt, sf::Vector2f ds)
         colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
     }
 }
+
+void Plataforma::setVida(bool vida)
+{
+}

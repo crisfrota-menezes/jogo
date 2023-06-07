@@ -15,3 +15,7 @@ void Alien1::inicializa()
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/ParadoA1.png", "PARADO", 1, 0.12f, sf::Vector2f(3, 1.5));
     corpo.setOrigin(tam.x / 3.0f, tam.y / 3.0f);
 }
+
+void Alien1::setVida(bool vida)
+{
+}

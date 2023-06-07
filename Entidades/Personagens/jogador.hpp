@@ -28,6 +28,7 @@ namespace SpaceHunt
                 void pular();
                 void podePular();
                 void animar();
+                void setVida(bool vida);
             };
         }
         using namespace Personagens;

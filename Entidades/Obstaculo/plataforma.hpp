@@ -23,6 +23,7 @@ namespace SpaceHunt
                 Plataforma(const sf::Vector2f pos);
                 ~Plataforma();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
+                void setVida(bool vida);
             };
         }
         using namespace Obstaculos;

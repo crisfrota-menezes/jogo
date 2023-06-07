@@ -22,7 +22,8 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
     {
     case (IDs::IDs::Alien1):
     {
-        cout << "Bateu no inimigoF" << endl;
+        // deleta o inimigo caso haja colisão
+        outraEnt->setVida(false);
     }
     break;
     case (IDs::IDs::Alien2):
@@ -94,4 +95,8 @@ void Jogador::pular()
 void Jogador::podePular()
 {
     noChao = true;
+}
+
+void Jogador::setVida(bool vida)
+{
 }

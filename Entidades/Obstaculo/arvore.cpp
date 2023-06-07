@@ -18,3 +18,7 @@ void Arvore::colisao(Entidade *outraEnt, sf::Vector2f ds)
         colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
     }
 }
+
+void Arvore::setVida(bool vida)
+{
+}

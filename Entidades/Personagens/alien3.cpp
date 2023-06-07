@@ -19,3 +19,7 @@ void Alien3::inicializa()
 void Alien3::disparar()
 {
 }
+
+void Alien3::setVida(bool vida)
+{
+}

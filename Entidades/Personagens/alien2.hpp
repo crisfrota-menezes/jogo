@@ -20,6 +20,7 @@ namespace SpaceHunt
             public:
                 Alien2(const sf::Vector2f pos, Jogador *jogador);
                 ~Alien2();
+                void setVida(bool vida);
 
             };
         }

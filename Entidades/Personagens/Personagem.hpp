@@ -15,6 +15,7 @@ namespace SpaceHunt
             class Personagem : public Entidade
             {
             protected:
+                int numVidas;
                 sf::Vector2f velFinal;
                 const float velMax;
                 bool podeMover;
@@ -35,6 +36,7 @@ namespace SpaceHunt
                 void verificaColisao();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
                 virtual void atualizar() = 0;
+                virtual void setVida(bool vida) = 0;
             };
         }
         using namespace Personagens;

@@ -65,3 +65,7 @@ void Rochas::colisao(Entidade *outraEnt, sf::Vector2f ds)
     pPersonagem->setVelFinal(velFinal);
     // pPersonagem->setVida(vidaEnt);
 }*/
+
+void Rochas::setVida(bool vida)
+{
+}

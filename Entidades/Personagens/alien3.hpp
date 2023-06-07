@@ -21,7 +21,8 @@ namespace SpaceHunt
                 Alien3(const sf::Vector2f pos, Jogador *jogador);
                 ~Alien3();
                 void disparar();
-
+                void setVida(bool vida);
+                
             };
         }
         using namespace Personagens;
