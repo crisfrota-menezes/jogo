@@ -13,7 +13,7 @@
 #include "Entidades/Obstaculo/arvore.hpp"
 #include "Entidades/Obstaculo/rochas.hpp"
 #include "Gerenciadores/gerenciadorColisao.hpp"
-#include "Entidades/IDs.hpp"
+#include "IDs.hpp"
 #include "Gerenciadores/gerenciadorEvento.hpp"
 #include "Fases/fase1.hpp"
 #include "Fases/fase2.hpp"

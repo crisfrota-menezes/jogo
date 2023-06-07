@@ -3,7 +3,7 @@
 #include <SFML\Graphics.hpp>
 #include <iostream>
 
-#include "Entidades/IDs.hpp"
+#include "IDs.hpp"
 #include "Gerenciadores/gerenciadorGrafico.hpp"
 
 namespace SpaceHunt

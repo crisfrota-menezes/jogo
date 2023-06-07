@@ -11,7 +11,6 @@ namespace SpaceHunt
         public:
             Fase2();
             ~Fase2();
-            void criarBackground();
             void criarMapa();
         };
     }
