@@ -2,7 +2,7 @@
 
 #include "elemento.hpp"
 
-namespace Escape_the_room
+namespace SpaceHunt
 {
     namespace Listas
     {
@@ -151,4 +151,4 @@ namespace Escape_the_room
     }
     using namespace Listas;
 }
-using namespace Escape_the_room;
+using namespace SpaceHunt;

@@ -4,7 +4,7 @@
 #include "../Listas/listaEntidade.hpp"
 #include <cmath>
 
-namespace Escape_the_room
+namespace SpaceHunt
 {
     namespace Gerenciadores
     {
@@ -23,4 +23,4 @@ namespace Escape_the_room
     }
     using namespace Gerenciadores;
 }
-using namespace Escape_the_room;
+using namespace SpaceHunt;

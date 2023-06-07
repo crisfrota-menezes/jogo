@@ -11,7 +11,7 @@
 #define TAMANHO_Rochas_X 100.0f
 #define TAMANHO_Rochas_Y 100.0f
 
-namespace Escape_the_room
+namespace SpaceHunt
 {
     namespace Entidades
     {
@@ -32,4 +32,4 @@ namespace Escape_the_room
     }
     using namespace Entidades;
 }
-using namespace Escape_the_room;
+using namespace SpaceHunt;

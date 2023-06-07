@@ -6,7 +6,7 @@
 #include "Entidades/IDs.hpp"
 #include "Gerenciadores/gerenciadorGrafico.hpp"
 
-namespace Escape_the_room
+namespace SpaceHunt
 {
     class Ente
     {
@@ -21,4 +21,4 @@ namespace Escape_the_room
         virtual void desenhar() = 0;
     };
 }
-using namespace Escape_the_room;
+using namespace SpaceHunt;

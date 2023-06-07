@@ -11,7 +11,7 @@
 #define TAMANHO_PLATAFORMA_X 300.0f
 #define TAMANHO_PLATAFORMA_Y 128.0f
 
-namespace Escape_the_room
+namespace SpaceHunt
 {
     namespace Entidades
     {
@@ -29,4 +29,4 @@ namespace Escape_the_room
     }
     using namespace Entidades;
 }
-using namespace Escape_the_room;
+using namespace SpaceHunt;

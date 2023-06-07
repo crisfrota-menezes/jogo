@@ -8,7 +8,7 @@
 #define TAMANHO_JOGADOR_X 50.0f
 #define TAMANHO_JOGADOR_Y 90.0f
 
-namespace Escape_the_room
+namespace SpaceHunt
 {
     namespace Entidades
     {
@@ -34,4 +34,4 @@ namespace Escape_the_room
     }
     using namespace Entidades;
 }
-using namespace Escape_the_room;
+using namespace SpaceHunt;

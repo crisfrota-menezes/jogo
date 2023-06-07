@@ -5,7 +5,7 @@
 #define TAMANHO_Alien3_X 60.0f
 #define TAMANHO_Alien3_Y 110.0f
 
-namespace Escape_the_room
+namespace SpaceHunt
 {
     namespace Entidades
     {
@@ -26,3 +26,4 @@ namespace Escape_the_room
     }
     using namespace Entidades;
 }
+using namespace SpaceHunt;

@@ -3,7 +3,7 @@
 #include "../Gerenciadores/gerenciadorGrafico.hpp"
 #include <SFML/Graphics.hpp>
 
-namespace Escape_the_room {
+namespace SpaceHunt {
 
     namespace Animador {
 
@@ -31,4 +31,4 @@ namespace Escape_the_room {
     }
     using namespace Animador;
 }
-using namespace Escape_the_room;
+using namespace SpaceHunt;

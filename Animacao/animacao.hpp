@@ -3,7 +3,7 @@
 #include "imagem.hpp"
 #include <map>
 
-namespace Escape_the_room {
+namespace SpaceHunt {
     namespace Animador {
         class Animacao {
         private:
@@ -22,4 +22,4 @@ namespace Escape_the_room {
     }
     using namespace Animador;
 }
-using namespace Escape_the_room;
+using namespace SpaceHunt;

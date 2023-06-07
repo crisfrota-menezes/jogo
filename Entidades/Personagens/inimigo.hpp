@@ -10,7 +10,7 @@
 #define VISAO_INIMIGO_X 200.0f
 #define VISAO_INIMIGO_Y 200.0f
 
-namespace Escape_the_room
+namespace SpaceHunt
 {
     namespace Entidades
     {
@@ -36,4 +36,4 @@ namespace Escape_the_room
     }
     using namespace Entidades;
 }
-using namespace Escape_the_room;
+using namespace SpaceHunt;
