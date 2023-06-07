@@ -14,11 +14,13 @@ namespace SpaceHunt
             class Alien3 : public Inimigo
             {
             private:
+                int nivel = 2;
                 void inicializa();
 
             public:
                 Alien3(const sf::Vector2f pos, Jogador *jogador);
                 ~Alien3();
+                disparar();
 
             };
         }

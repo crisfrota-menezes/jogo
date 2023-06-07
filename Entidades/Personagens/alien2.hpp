@@ -14,6 +14,7 @@ namespace SpaceHunt
             class Alien2 : public Inimigo
             {
             private:
+                int nivel = 1;
                 void inicializa();
 
             public:
