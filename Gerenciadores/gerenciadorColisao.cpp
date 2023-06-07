@@ -60,6 +60,10 @@ void GerenciadorColisao::executar()
                 {
                     ent2->colisao(ent1, ds);
                 }
+                else if (ent2->getID() == IDs::IDs::Rochas)
+                {
+                    ent2->colisao(ent1, ds);
+                }
             }
         }
     }

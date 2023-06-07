@@ -10,6 +10,7 @@ namespace IDs
         Alien2,
         Alien3,
         plataforma,
-        Arvore
+        Arvore,
+        Rochas
     };
 }
