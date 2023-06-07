@@ -28,10 +28,10 @@ void Menu::set_values()
     bg->setTexture(*image);
     mousePos = sf::Mouse::getPosition(*window);
     mouseCoord = window->mapPixelToCoords(mousePos);
-    options = {"Jogar", "Ranking", "Opcoes", "Sair"};
+    options = {"Fase 1", "Fase 2", "Ranking", "Opcoes", "Sair"};
     textos.resize(4);
-    coords = {{100, 100}, {100, 200}, {100, 300}, {100, 400}};
-    sizes = {50, 50, 50, 50};
+    coords = {{100, 100}, {100, 200}, {100, 300}, {100, 400}, {100, 500}};
+    sizes = {50, 50, 50, 50, 50};
     for (std::size_t i{}; i < textos.size(); i++)
     {
         textos[i].setFont(*font);
@@ -55,7 +55,7 @@ bool Menu::loop_events()
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !pressed)
         {
-            if (pos < 3)
+            if (pos < 4)
             {
                 pos++;
                 pressed = true;
@@ -94,10 +94,15 @@ bool Menu::loop_events()
             }
             else if (pos == 1)
             {
+                window->close();
+                return true;
+            }
+            else if (pos == 2)
+            {
                 Ranking ranking;
                 ranking.run();
             }
-            else if (pos == 2)
+            else if (pos == 3)
             {
                 Opcoes opcoes;
                 opcoes.run();

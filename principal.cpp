@@ -30,7 +30,7 @@ Jogo::~Jogo()
 
 void Jogo::criarFase()
 {
-    Fase2 *aux = new Fase2();
+    Fase1 *aux = new Fase1();
     if (aux == nullptr)
     {
         cout << "Erro ao criar a fase" << endl;
