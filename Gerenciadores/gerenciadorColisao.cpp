@@ -56,9 +56,9 @@ void GerenciadorColisao::executar()
                 {
                     ent2->colisao(ent1, ds);
                 }
-                else
+                else if (ent2->getID() == IDs::IDs::Arvore)
                 {
-                    // outro obstáculo
+                    ent2->colisao(ent1, ds);
                 }
             }
         }

@@ -27,11 +27,11 @@ void Obstaculo::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
         {
             if (posOutro.x < pos.x)
             {
-                posOutro.x += ds.x;
+                posOutro.x -= ds.x;
             }
             else
             {
-                posOutro.x -= ds.x;
+                posOutro.x += ds.x;
             }
             velFinal.x = 0.0f;
         }

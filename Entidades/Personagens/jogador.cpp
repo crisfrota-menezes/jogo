@@ -40,6 +40,11 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
         cout << "Bateu na plataforma" << endl;
     }
     break;
+    case (IDs::IDs::Arvore):
+    {
+        cout << "Bateu na plataforma" << endl;
+    }
+    break;
     }
 }
 

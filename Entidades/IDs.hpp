@@ -9,6 +9,7 @@ namespace IDs
         Alien1,
         Alien2,
         Alien3,
-        plataforma
+        plataforma,
+        Arvore
     };
 }

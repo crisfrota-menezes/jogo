@@ -10,6 +10,7 @@
 #include "../Gerenciadores/gerenciadorGrafico.hpp"
 #include "../Listas/listaEntidade.hpp"
 #include "../Entidades/Obstaculo/plataforma.hpp"
+#include "../Entidades/Obstaculo/arvore.hpp"
 #include "../Gerenciadores/gerenciadorColisao.hpp"
 #include "../Entidades/IDs.hpp"
 #include "../Gerenciadores/gerenciadorEvento.hpp"
