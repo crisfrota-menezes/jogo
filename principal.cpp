@@ -1,7 +1,7 @@
 
 #include "principal.hpp"
 
-Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), listaPersonagem(), listaObstaculo(), colisor(&listaPersonagem, &listaObstaculo), pEvento(pEvento->getGerenciadorEvento())
+Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), /*listaPersonagem(), listaObstaculo(), colisor(&listaPersonagem, &listaObstaculo),*/ pEvento(pEvento->getGerenciadorEvento()), fase(nullptr)
 {
     if (pGrafico == nullptr)
     {
@@ -15,26 +15,43 @@ Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), listaPersonagem(), l
         exit(1);
     }
 
-    instanciaEntidades();
-
+    // instanciaEntidades();
+    criarFase();
     run();
 }
 
 Jogo::~Jogo()
 {
-    listaObstaculo.limpar();
-    listaPersonagem.limpar();
+    if (fase)
+    {
+        delete fase;
+        fase = nullptr;
+    }
+    // listaObstaculo.limpar();
+    // listaPersonagem.limpar();
 }
 
-void Jogo::instanciaEntidades()
+void Jogo::criarFase()
+{
+    Fase2 *aux = new Fase2();
+    if (aux == nullptr)
+    {
+        cout << "Erro ao criar a fase" << endl;
+        exit(1);
+    }
+    fase = static_cast<Fase *>(aux);
+    fase->criarMapa();
+}
+
+/*void Jogo::instanciaEntidades()
 {
     // bool coop = true;
     Jogador *jogador = new Jogador(sf::Vector2f(100.0f, 100.0f));
-    /*if (coop == true)
-    {
-        Jogador2 *jogador = new Jogador2(sf::Vector2f(200.0f, 100.0f));
-        listaPersonagem.inserir(static_cast<Entidades::Entidade *>(jogador));
-    }*/
+    //if (coop == true)
+    //{
+    //    Jogador2 *jogador = new Jogador2(sf::Vector2f(200.0f, 100.0f));
+    //    listaPersonagem.inserir(static_cast<Entidades::Entidade *>(jogador));
+    //}
     Alien1 *alien1 = new Alien1(sf::Vector2f(100.0f, 100.0f), jogador);
     Alien2 *alien2 = new Alien2(sf::Vector2f(200.0f, 200.0f), jogador);
     Alien3 *alien3 = new Alien3(sf::Vector2f(300.0f, 300.0f), jogador);
@@ -67,7 +84,7 @@ void Jogo::instanciaEntidades()
     }
 
     pEvento->setJogador(jogador);
-}
+}*/
 
 void Jogo::run()
 {
@@ -76,9 +93,10 @@ void Jogo::run()
         pEvento->executar();
         pGrafico->limpar();
         pGrafico->carregarBackground();
-        listaPersonagem.executar();
-        listaObstaculo.executar();
-        colisor.executar();
+        //listaPersonagem.executar();
+        //listaObstaculo.executar();
+        //colisor.executar();
+        fase->executar();
         pGrafico->mostraElementos();
     }
 }

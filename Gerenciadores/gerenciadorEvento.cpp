@@ -25,6 +25,11 @@ void GerenciadorEvento::setJogador(Jogador *pJogador)
     this->pJogador = pJogador;
 }
 
+Jogador *GerenciadorEvento::getJogador()
+{
+    return pJogador;
+}
+
 void GerenciadorEvento::verificaTeclaPressionada(sf::Keyboard::Key tecla)
 {
     if (tecla == sf::Keyboard::A)

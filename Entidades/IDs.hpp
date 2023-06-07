@@ -13,7 +13,9 @@ namespace SpaceHunt
             Alien3,
             plataforma,
             Arvore,
-            Rochas
+            Rochas,
+            fase_Fase1,
+            fase_Fase2
         };
     }
     using namespace IDs;

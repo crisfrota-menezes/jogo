@@ -20,7 +20,7 @@ namespace SpaceHunt
             public:
                 Alien3(const sf::Vector2f pos, Jogador *jogador);
                 ~Alien3();
-                disparar();
+                void disparar();
 
             };
         }

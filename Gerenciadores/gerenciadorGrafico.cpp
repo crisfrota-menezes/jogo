@@ -69,7 +69,7 @@ sf::Texture GerenciadorGrafico::carregarTextura(const char *caminho)
 
 void GerenciadorGrafico::carregarBackground()
 {
-    if (!imagem->loadFromFile("C:/Users/crisn/Desktop/projetoTecProg/Midia/background.jpg"))
+    if (!imagem->loadFromFile("C:/Users/crisn/Desktop/SpaceHunt/Midia/background.jpg"))
     {
         cout << "Erro ao carregar imagem" << endl;
         exit(1);

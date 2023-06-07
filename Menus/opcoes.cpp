@@ -3,8 +3,8 @@
 Opcoes::Opcoes()
 {
     window.create(sf::VideoMode(800, 600), "Opcoes");
-    font.loadFromFile("C:/Users/crisn/Desktop/projetoTecProg/Midia/PressStart2P-Regular.ttf");
-    image.loadFromFile("C:/Users/crisn/Desktop/projetoTecProg/Midia/background.jpg");
+    font.loadFromFile("C:/Users/crisn/Desktop/SpaceHunt/Midia/PressStart2P-Regular.ttf");
+    image.loadFromFile("C:/Users/crisn/Desktop/SpaceHunt/Midia/background.jpg");
     bg.setTexture(image);
     mousePos = sf::Mouse::getPosition(window);
     mouseCoord = window.mapPixelToCoords(mousePos);

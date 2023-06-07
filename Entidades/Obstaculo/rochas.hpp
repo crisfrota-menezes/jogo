@@ -3,7 +3,7 @@
 #include "obstaculo.hpp"
 #include "../Personagens/Personagem.hpp"
 
-#define CAMINHO_Rochas "C:/Users/crisn/Desktop/projetoTecProg/Midia/Rochas.png"
+#define CAMINHO_Rochas "C:/Users/crisn/Desktop/SpaceHunt/Midia/Rochas.png"
 
 #define ESCALA_X 1
 #define ESCALA_Y 1

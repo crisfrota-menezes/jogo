@@ -3,7 +3,7 @@
 #include "obstaculo.hpp"
 #include "../Personagens/Personagem.hpp"
 
-#define CAMINHO_TEXTURA_Arvore "C:/Users/crisn/Desktop/projetoTecProg/Midia/arvore.png"
+#define CAMINHO_TEXTURA_Arvore "C:/Users/crisn/Desktop/SpaceHunt/Midia/arvore.png"
 #define ESCALA_Arvore_X 1
 #define ESCALA_Arvore_Y 1
 #define TAMANHO_Arvore_X 200.0f

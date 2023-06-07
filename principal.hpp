@@ -15,6 +15,8 @@
 #include "Gerenciadores/gerenciadorColisao.hpp"
 #include "Entidades/IDs.hpp"
 #include "Gerenciadores/gerenciadorEvento.hpp"
+#include "Fases/fase1.hpp"
+#include "Fases/fase2.hpp"
 
 namespace SpaceHunt
 {
@@ -23,14 +25,16 @@ namespace SpaceHunt
     private:
         GerenciadorGrafico *pGrafico;
         GerenciadorEvento *pEvento;
-        ListaEntidades listaPersonagem;
-        ListaEntidades listaObstaculo;
-        GerenciadorColisao colisor;
+        //ListaEntidades listaPersonagem;
+        //ListaEntidades listaObstaculo;
+        //GerenciadorColisao colisor;
+        Fase *fase;
+        void criarFase();
 
     public:
         Jogo();
         ~Jogo();
-        void instanciaEntidades();
+        //void instanciaEntidades();
         void run();
     };
 }

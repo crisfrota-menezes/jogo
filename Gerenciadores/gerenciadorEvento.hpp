@@ -21,6 +21,7 @@ namespace SpaceHunt
             ~GerenciadorEvento();
             static GerenciadorEvento *getGerenciadorEvento();
             void setJogador(Jogador *pJogador);
+            Jogador* getJogador();
             void verificaTeclaPressionada(sf::Keyboard::Key tecla);
             void verificaTeclaSolta(sf::Keyboard::Key tecla);
             void executar();
