@@ -3248,7 +3248,7 @@
 											"top": 48,
 											"width": 73.67724609375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from Lista)"
 										},
 										{
 											"_type": "LabelView",
@@ -4120,7 +4120,7 @@
 											"top": 258,
 											"width": 199,
 											"height": 13,
-											"text": "+ListaEntidades()",
+											"text": "«create»+ListaEntidades()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4139,7 +4139,7 @@
 											"top": 273,
 											"width": 199,
 											"height": 13,
-											"text": "+ListaEntidades()",
+											"text": "«destroy»+ListaEntidades()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4849,8 +4849,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 359,
-									"top": 710,
+									"left": 364,
+									"top": 715,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -4870,8 +4870,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 345,
-									"top": 705,
+									"left": 349,
+									"top": 715,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -4891,8 +4891,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 388,
-									"top": 721,
+									"left": 393,
+									"top": 716,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -4910,8 +4910,7 @@
 							"tail": {
 								"$ref": "AAAAAAGIlky0n2585yQ="
 							},
-							"lineStyle": 1,
-							"points": "369:735;379:709",
+							"points": "379:736;379:708",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGIllcs9xW/ND8="
@@ -4944,8 +4943,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 466,
-									"top": 723,
+									"left": 456,
+									"top": 715,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -4965,8 +4964,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 453,
-									"top": 731,
+									"left": 441,
+									"top": 715,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -4986,8 +4985,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 491,
-									"top": 708,
+									"left": 485,
+									"top": 716,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -5005,8 +5004,7 @@
 							"tail": {
 								"$ref": "AAAAAAGIlky/fXBMIVQ="
 							},
-							"lineStyle": 1,
-							"points": "487:735;471:709",
+							"points": "471:736;471:708",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGIlldenhpTids="
@@ -12314,17 +12312,18 @@
 									"model": {
 										"$ref": "AAAAAAGIluAjdqynxmc="
 									},
-									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1092,
+									"left": 1089,
 									"top": 116,
+									"width": 7.22998046875,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
 									"hostEdge": {
 										"$ref": "AAAAAAGIluAjdqyqHhs="
 									},
-									"edgePosition": 2
+									"edgePosition": 2,
+									"text": "1"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -12375,16 +12374,17 @@
 									"model": {
 										"$ref": "AAAAAAGIluAjdqyogyw="
 									},
-									"visible": false,
 									"font": "Arial;13;0",
-									"left": 219,
+									"left": 216,
 									"top": 908,
+									"width": 7.22998046875,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
 									"hostEdge": {
 										"$ref": "AAAAAAGIluAjdqyqHhs="
-									}
+									},
+									"text": "1"
 								},
 								{
 									"_type": "UMLQualifierCompartmentView",
@@ -15183,6 +15183,65 @@
 												},
 												"aggregation": "composite"
 											}
+										},
+										{
+											"_type": "UMLClass",
+											"_id": "AAAAAAGIlkeK20zdZKM=",
+											"_parent": {
+												"$ref": "AAAAAAGIlYZNQm5SnDA="
+											},
+											"name": "Elemento",
+											"ownedElements": [
+												{
+													"_type": "UMLAssociation",
+													"_id": "AAAAAAGIlknx+1HbtE4=",
+													"_parent": {
+														"$ref": "AAAAAAGIlkeK20zdZKM="
+													},
+													"end1": {
+														"_type": "UMLAssociationEnd",
+														"_id": "AAAAAAGIlknx+1Hcrbw=",
+														"_parent": {
+															"$ref": "AAAAAAGIlknx+1HbtE4="
+														},
+														"name": "Conhecer Prox",
+														"reference": {
+															"$ref": "AAAAAAGIlkeK20zdZKM="
+														}
+													},
+													"end2": {
+														"_type": "UMLAssociationEnd",
+														"_id": "AAAAAAGIlknx+1HdT6Q=",
+														"_parent": {
+															"$ref": "AAAAAAGIlknx+1HbtE4="
+														},
+														"reference": {
+															"$ref": "AAAAAAGIlkeK20zdZKM="
+														},
+														"navigable": "navigable"
+													}
+												}
+											],
+											"attributes": [
+												{
+													"_type": "UMLAttribute",
+													"_id": "AAAAAAGIlkfE6k3UENs=",
+													"_parent": {
+														"$ref": "AAAAAAGIlkeK20zdZKM="
+													},
+													"name": "elemento",
+													"type": "TE*"
+												},
+												{
+													"_type": "UMLAttribute",
+													"_id": "AAAAAAGIlkfWoU3+0bg=",
+													"_parent": {
+														"$ref": "AAAAAAGIlkeK20zdZKM="
+													},
+													"name": "prox",
+													"type": "Elemento <TE>*"
+												}
+											]
 										}
 									],
 									"stereotype": "Encadeamento Simples",
@@ -15364,7 +15423,8 @@
 											"_parent": {
 												"$ref": "AAAAAAGIlWg6S1K7MNQ="
 											},
-											"name": "ListaEntidades"
+											"name": "ListaEntidades",
+											"stereotype": "create"
 										},
 										{
 											"_type": "UMLOperation",
@@ -15372,7 +15432,8 @@
 											"_parent": {
 												"$ref": "AAAAAAGIlWg6S1K7MNQ="
 											},
-											"name": "ListaEntidades"
+											"name": "ListaEntidades",
+											"stereotype": "destroy"
 										},
 										{
 											"_type": "UMLOperation",
@@ -15824,7 +15885,8 @@
 												},
 												"reference": {
 													"$ref": "AAAAAAGIlVm9EOhdoBM="
-												}
+												},
+												"multiplicity": "1"
 											},
 											"end2": {
 												"_type": "UMLAssociationEnd",
@@ -15835,7 +15897,8 @@
 												"reference": {
 													"$ref": "AAAAAAGIlBAoN9EaBzE="
 												},
-												"aggregation": "composite"
+												"aggregation": "composite",
+												"multiplicity": "1"
 											}
 										}
 									],
@@ -18331,65 +18394,6 @@
 									]
 								}
 							]
-						}
-					]
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAGIlkeK20zdZKM=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Elemento",
-					"ownedElements": [
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAGIlknx+1HbtE4=",
-							"_parent": {
-								"$ref": "AAAAAAGIlkeK20zdZKM="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAGIlknx+1Hcrbw=",
-								"_parent": {
-									"$ref": "AAAAAAGIlknx+1HbtE4="
-								},
-								"name": "Conhecer Prox",
-								"reference": {
-									"$ref": "AAAAAAGIlkeK20zdZKM="
-								}
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAGIlknx+1HdT6Q=",
-								"_parent": {
-									"$ref": "AAAAAAGIlknx+1HbtE4="
-								},
-								"reference": {
-									"$ref": "AAAAAAGIlkeK20zdZKM="
-								},
-								"navigable": "navigable"
-							}
-						}
-					],
-					"attributes": [
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGIlkfE6k3UENs=",
-							"_parent": {
-								"$ref": "AAAAAAGIlkeK20zdZKM="
-							},
-							"name": "elemento",
-							"type": "TE*"
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGIlkfWoU3+0bg=",
-							"_parent": {
-								"$ref": "AAAAAAGIlkeK20zdZKM="
-							},
-							"name": "prox",
-							"type": "Elemento <TE>*"
 						}
 					]
 				}
