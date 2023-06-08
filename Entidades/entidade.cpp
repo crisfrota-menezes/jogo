@@ -20,7 +20,7 @@ void Entidade::setPos(const sf::Vector2f pos)
     this->pos = pos;
 }
 
-const sf::Vector2f Entidade::getPos()
+sf::Vector2f Entidade::getPos()
 {
     return pos;
 }

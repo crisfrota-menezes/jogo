@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Personagem.hpp"
-#include "../../Animacao/Animacao.hpp"
 
 #define VELOCIDADE_JOGADOR 200.0f
 #define TAMANHO_PULO 5.0f
@@ -28,7 +27,7 @@ namespace SpaceHunt
                 void pular();
                 void podePular();
                 void animar();
-                void setVida(bool vida);
+                //void setVida(bool vida);
             };
         }
         using namespace Personagens;

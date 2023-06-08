@@ -11,7 +11,7 @@ namespace SpaceHunt
         {
         private:
             Elemento<TL> *inicio;
-            Elemento<TL> *fim;
+            Elemento<TL> *ultimo;
             unsigned int tam;
 
         public:
@@ -27,7 +27,7 @@ namespace SpaceHunt
 
         template <class TL>
         Lista<TL>::Lista() : inicio(nullptr),
-                             fim(nullptr),
+                             ultimo(nullptr),
                              tam(0)
         {
         }
@@ -57,12 +57,12 @@ namespace SpaceHunt
             if (this->inicio == nullptr)
             {
                 this->inicio = novo;
-                this->fim = novo;
+                this->ultimo = novo;
             }
             else
             {
-                this->fim->setProximo(novo);
-                this->fim = novo;
+                this->ultimo->setProximo(novo);
+                this->ultimo = novo;
             }
             this->tam++;
         }
@@ -95,9 +95,9 @@ namespace SpaceHunt
                 {
                     inicio = aux->getProximo();
                 }
-                else if (aux == fim)
+                else if (aux == ultimo)
                 {
-                    fim = aux2;
+                    ultimo = aux2;
                 }
                 else
                 {
@@ -139,7 +139,7 @@ namespace SpaceHunt
                 aux2 = nullptr;
             }
             inicio = nullptr;
-            fim = nullptr;
+            ultimo = nullptr;
             tam = 0;
         }
 

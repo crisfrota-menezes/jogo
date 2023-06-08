@@ -1,7 +1,6 @@
 #pragma once
 
 #include "obstaculo.hpp"
-#include "../Personagens/Personagem.hpp"
 
 #define CAMINHO_Rochas "C:/Users/crisn/Desktop/SpaceHunt/Midia/Rochas.png"
 
@@ -20,12 +19,12 @@ namespace SpaceHunt
             class Rochas : public Obstaculo
             {
             private:
-                int dano = 10;
+                //int dano = 10;
             public:
                 Rochas(const sf::Vector2f pos);
                 ~Rochas();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
-                void setVida(bool vida);
+                //void setVida(bool vida);
                 //void colisaoObstaculo(sf::Vector2f ds, Personagem *ent);
             };
         }

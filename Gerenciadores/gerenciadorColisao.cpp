@@ -52,18 +52,12 @@ void GerenciadorColisao::executar()
             sf::Vector2f ds = calculaColisao(ent1, ent2);
             if (ds.x < 0.0f && ds.y < 0.0f)
             {
-                if (ent2->getID() == IDs::IDs::plataforma)
+                if (ent2->getID() == IDs::IDs::plataforma || ent2->getID() == IDs::IDs::Arvore || ent2->getID() == IDs::IDs::Rochas)
                 {
                     ent2->colisao(ent1, ds);
                 }
-                else if (ent2->getID() == IDs::IDs::Arvore)
-                {
-                    ent2->colisao(ent1, ds);
-                }
-                else if (ent2->getID() == IDs::IDs::Rochas)
-                {
-                    ent2->colisao(ent1, ds);
-                }
+                else 
+                {}
             }
         }
     }

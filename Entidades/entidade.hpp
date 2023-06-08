@@ -18,11 +18,11 @@ namespace SpaceHunt
             ~Entidade();
             const sf::RectangleShape getCorpo();
             void setPos(const sf::Vector2f pos);
-            const sf::Vector2f getPos();
+            sf::Vector2f getPos();
             const sf::Vector2f getTam();
             virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
             virtual void atualizar() = 0;
-            virtual void setVida(bool vida) = 0;
+            //virtual void setVida(bool vida) = 0;
             void desenhar();
         };
     }

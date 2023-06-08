@@ -43,7 +43,24 @@ void Inimigo::atualizaMoveAleatorio()
     }
 }
 
-void Inimigo::moveInimigo()
+void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
+{
+    switch (outraEntidade->getID())
+    {
+    case (IDs::IDs::jogador):
+    {
+        // std::cout << "Bate jogador e jogador pode bater no inimigo" << std::endl;
+    }
+    break;
+    case (IDs::IDs::Alien1):
+    {
+        // std::cout << "Empurra inimigo" << std::endl;
+    }
+    break;
+    }
+}
+
+void Inimigo::atualizar()
 {
     sf::Vector2f posJogador = jogador->getPos();
     sf::Vector2f posInimigo = getPos();
@@ -62,53 +79,6 @@ void Inimigo::moveInimigo()
     {
         atualizaMoveAleatorio();
     }
-}
-
-void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
-{
-    switch (outraEntidade->getID())
-    {
-    case (IDs::IDs::jogador):
-    {
-        cout << "Bateu no jogador" << endl;
-    }
-    break;
-    case (IDs::IDs::plataforma):
-    {
-        cout << "Bateu na plataforma" << endl;
-    }
-    break;
-    case (IDs::IDs::Alien1):
-    {
-        cout << "Bateu no inimigoF" << endl;
-    }
-    break;
-    case (IDs::IDs::Alien2):
-    {
-        cout << "Bateu no inimigoM" << endl;
-    }
-    break;
-    case (IDs::IDs::Alien3):
-    {
-        cout << "Bateu no inimigoD" << endl;
-    }
-    break;
-    case (IDs::IDs::Arvore):
-    {
-        cout << "Bateu na plataforma" << endl;
-    }
-    break;
-    case (IDs::IDs::Rochas):
-    {
-        cout << "Bateu na plataforma" << endl;
-    }
-    break;
-    }
-}
-
-void Inimigo::atualizar()
-{
-    moveInimigo();
     atualizarPos();
     dtAux += relogio.getElapsedTime().asSeconds() * 100;
     relogio.restart();

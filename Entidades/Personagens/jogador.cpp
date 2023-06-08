@@ -22,33 +22,26 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
     {
     case (IDs::IDs::Alien1):
     {
-        // deleta o inimigo caso haja colisão
-        outraEnt->setVida(false);
     }
     break;
     case (IDs::IDs::Alien2):
     {
-        cout << "Bateu no inimigoM" << endl;
     }
     break;
     case (IDs::IDs::Alien3):
     {
-        cout << "Bateu no inimigoD" << endl;
     }
     break;
     case (IDs::IDs::plataforma):
     {
-        cout << "Bateu na plataforma" << endl;
     }
     break;
     case (IDs::IDs::Arvore):
     {
-        cout << "Bateu na plataforma" << endl;
     }
     break;
     case (IDs::IDs::Rochas):
     {
-        cout << "Bateu na plataforma" << endl;
     }
     break;
     }
@@ -63,6 +56,10 @@ void Jogador::animar()
     else if (!noChao)
     {
         animacao.atualizar(paraEsquerda, "PULA");
+    }
+    else if(atacando)
+    {
+        animacao.atualizar(paraEsquerda, "ATACA");
     }
     else if (podeMover)
     {
@@ -80,6 +77,7 @@ void Jogador::inicializa()
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/ParadoJ.png", "PARADO", 1, 0.12f, sf::Vector2f(3, 1.5));
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/PulaJ.png", "PULA", 1, 0.12f, sf::Vector2f(3, 1.5));
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/CaiJ.png", "CAI", 1, 0.12f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AtacaJ.png", "ATACA", 1, 0.12f, sf::Vector2f(3, 1.5));
     corpo.setOrigin(tam.x / 2.0f, tam.y / 4.7f);
 }
 
@@ -95,8 +93,4 @@ void Jogador::pular()
 void Jogador::podePular()
 {
     noChao = true;
-}
-
-void Jogador::setVida(bool vida)
-{
 }

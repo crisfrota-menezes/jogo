@@ -22,15 +22,14 @@ namespace SpaceHunt
                 Jogador *jogador;
                 float dtAux;
                 int moveAleatorio;
-                void moveInimigo();
-                void atualizaMoveAleatorio();
 
             public:
                 Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador, IDs::IDs ID);
                 ~Inimigo();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 void atualizar();
-                virtual void setVida(bool vida) = 0;
+                void atualizaMoveAleatorio();
+                //virtual void setVida(bool vida) = 0;
             };
         }
         using namespace Personagens;

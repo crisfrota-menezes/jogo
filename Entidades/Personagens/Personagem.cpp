@@ -1,6 +1,7 @@
 #include "Personagem.hpp"
 
-Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), velFinal(sf::Vector2f(vel, 0.0f)), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velMax(vel), animacao(&corpo)
+Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : 
+Entidade(pos, tam, ID), velFinal(sf::Vector2f(vel, 0.0f)), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velMax(vel), animacao(&corpo), atacando(false)
 {
 }
 
@@ -13,13 +14,14 @@ void Personagem::setVelFinal(const sf::Vector2f vel)
     this->velFinal = velFinal;
 }
 
-const sf::Vector2f Personagem::getVelFinal()
+const sf::Vector2f Personagem::getVelFinal() const
 {
     return velFinal;
 }
 
 void Personagem::andar(const bool paraEsquerda)
 {
+    atacando = false;
     podeMover = true;
     this->paraEsquerda = paraEsquerda;
 }
@@ -27,6 +29,12 @@ void Personagem::andar(const bool paraEsquerda)
 void Personagem::parar()
 {
     podeMover = false;
+}
+
+void Personagem::atacar(const bool atacando)
+{
+    podeMover = false;
+    this->atacando = atacando;
 }
 
 void Personagem::atualizarPos()

@@ -44,6 +44,10 @@ void GerenciadorEvento::verificaTeclaPressionada(sf::Keyboard::Key tecla)
     {
         pJogador->pular();
     }
+    else if (tecla == sf::Keyboard::S)
+    {
+        pJogador->atacar(true);
+    }
     else if (tecla == sf::Keyboard::Up)
     {
         pJogador->pular();
@@ -55,6 +59,10 @@ void GerenciadorEvento::verificaTeclaPressionada(sf::Keyboard::Key tecla)
     else if (tecla == sf::Keyboard::Left)
     {
         pJogador->andar(true);
+    }
+    else if (tecla == sf::Keyboard::Down)
+    {
+        pJogador->atacar(true);
     }
     else if (tecla == sf::Keyboard::Escape)
     {

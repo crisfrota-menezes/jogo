@@ -14,13 +14,11 @@ namespace SpaceHunt
             class Alien2 : public Inimigo
             {
             private:
-                int nivel = 1;
                 void inicializa();
 
             public:
                 Alien2(const sf::Vector2f pos, Jogador *jogador);
                 ~Alien2();
-                void setVida(bool vida);
 
             };
         }
