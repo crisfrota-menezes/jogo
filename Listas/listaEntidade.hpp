@@ -20,6 +20,7 @@ namespace SpaceHunt
             void remover(Entidade *ent);
             Entidade *operator[](int pos);
             int getTam();
+            bool vazia();
             void executar();
             void limpar();
         };

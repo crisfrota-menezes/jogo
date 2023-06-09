@@ -33,6 +33,11 @@ int ListaEntidades::getTam()
     return lista.getTam();
 }
 
+bool ListaEntidades::vazia()
+{
+    return lista.vazia();
+}
+
 void ListaEntidades::executar()
 {
     int tam = lista.getTam();

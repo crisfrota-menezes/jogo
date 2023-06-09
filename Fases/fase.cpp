@@ -148,6 +148,11 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos)
     }
 }
 
+bool Fase::concluida()
+{
+    return listaPersonagens.vazia();
+}
+
 void Fase::desenhar()
 {
     listaPersonagens.executar();

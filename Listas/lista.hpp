@@ -23,6 +23,7 @@ namespace SpaceHunt
             TL *operator[](int pos);
             void limpar();
             int getTam();
+            bool vazia();
         };
 
         template <class TL>
@@ -147,6 +148,12 @@ namespace SpaceHunt
         int Lista<TL>::getTam()
         {
             return (int)tam;
+        }
+
+        template <class TL>
+        bool Lista<TL>::vazia()
+        {
+            return tam == 0;
         }
     }
     using namespace Listas;

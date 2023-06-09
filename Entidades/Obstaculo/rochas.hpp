@@ -19,7 +19,7 @@ namespace SpaceHunt
             class Rochas : public Obstaculo
             {
             private:
-                //int dano = 10;
+                int dano = 4;
             public:
                 Rochas(const sf::Vector2f pos);
                 ~Rochas();

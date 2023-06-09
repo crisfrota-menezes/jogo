@@ -47,6 +47,7 @@ namespace SpaceHunt {
             void criarEntidade(char letra, const sf::Vector2i pos);
             void executar();
             void desenhar();
+            bool concluida();
         };
     }
     using namespace Fases;

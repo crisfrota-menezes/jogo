@@ -49,5 +49,10 @@ void Jogo::run()
         pGrafico->carregarBackground();
         fase->executar();
         pGrafico->mostraElementos();
+        if(fase->concluida())
+        {
+            cout << "Fase concluida" << endl;
+            exit(1);
+        }
     }
 }
