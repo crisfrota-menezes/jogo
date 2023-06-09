@@ -5,7 +5,7 @@ Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos, sf::Vector2f(TAMANHO_
 {
     vida = 10;
     dano = 1;
-    //hit = false;
+    // hit = false;
     inicializa();
 }
 
@@ -26,10 +26,10 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
     {
     case (IDs::IDs::Uraniano):
     {
-        //hit = true;
+        // hit = true;
         danoTomado = outraEnt->getDano();
         vida -= danoTomado;
-        //animar();
+        // animar();
         if (vida <= 0)
         {
             delete this;
@@ -43,8 +43,23 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
         }
     }
     break;
-    case (IDs::IDs::Alien2):
+    case (IDs::IDs::Verme):
     {
+        // hit = true;
+        danoTomado = outraEnt->getDano();
+        vida -= danoTomado;
+        // animar();
+        if (vida <= 0)
+        {
+            delete this;
+            cout << "GAME OVER" << endl;
+            exit(0);
+        }
+        else
+        {
+            // Código que empurra o jogador para trás
+            setPos(sf::Vector2f(outraEnt->getPos().x - 75.0f, getPos().y - 25.0f));
+        }
     }
     break;
     case (IDs::IDs::Alien3):
@@ -73,7 +88,8 @@ void Jogador::animar()
         animacao.atualizar(paraEsquerda, "HIT");
         hit = false;
     }
-    else */if (!noChao && velFinal.y > 0.0f)
+    else */
+    if (!noChao && velFinal.y > 0.0f)
     {
         animacao.atualizar(paraEsquerda, "CAI");
     }

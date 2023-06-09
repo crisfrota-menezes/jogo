@@ -67,17 +67,17 @@ void Fase::criaUraniano(const sf::Vector2f pos)
     listaPersonagens.inserir(static_cast<Entidade *>(uraniano));
 }
 
-void Fase::criaAlien2(const sf::Vector2f pos)
+void Fase::criaVerme(const sf::Vector2f pos)
 {
     GerenciadorEvento *pEvento = pEvento->getGerenciadorEvento();
     Jogador *pJogador = pEvento->getJogador();
-    Alien2 *alien2 = new Alien2(pos, pJogador);
-    if (alien2 == nullptr)
+    Verme *verme = new Verme(pos, pJogador);
+    if (verme == nullptr)
     {
-        std::cout << "nao foi possivel criar um alien2" << std::endl;
+        std::cout << "nao foi possivel criar um Verme" << std::endl;
         exit(1);
     }
-    listaPersonagens.inserir(static_cast<Entidade *>(alien2));
+    listaPersonagens.inserir(static_cast<Entidade *>(verme));
 }
 
 void Fase::criaAlien3(const sf::Vector2f pos)
@@ -117,7 +117,7 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos)
     break;
     case ('k'):
     {
-        criaAlien2(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
+        criaVerme(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
     }
     break;
     case ('l'):

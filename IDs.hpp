@@ -9,7 +9,7 @@ namespace SpaceHunt
             vazio = 0,
             jogador,
             Uraniano,
-            Alien2,
+            Verme,
             Alien3,
             plataforma,
             Arvore,
