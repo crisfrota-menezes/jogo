@@ -17,6 +17,12 @@ void Rochas::colisao(Entidade *outraEnt, sf::Vector2f ds)
     {
         outraEnt->vida -= dano;
         outraEnt->setPos(sf::Vector2f(posOutro.x - 75.0f, posOutro.y - 25.0f));
+        if(outraEnt->vida <= 0)
+        {
+            delete outraEnt;
+            cout << "GAME OVER" << endl;
+            exit(0);
+        }
         colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
     }
     else if (outraEnt->getID() == IDs::IDs::Uraniano || outraEnt->getID() == IDs::IDs::Verme || outraEnt->getID() == IDs::IDs::Venusiano)
