@@ -19,35 +19,53 @@ void Arvore::colisao(Entidade *outraEnt, sf::Vector2f ds)
     }
 }
 
-void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem* pPersonagem){
+void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
+{
     sf::Vector2f posOutro = pPersonagem->getPos();
     sf::Vector2f tamOutro = pPersonagem->getTam();
     sf::Vector2f velFinal = pPersonagem->getVelFinal();
-    if(ds.x < 0.0f && ds.y < 0.0f){ //houve colisao
-        if(ds.x > ds.y){
-            if(pPersonagem->getID() == IDs::IDs::jogador){
+    if (ds.x < 0.0f && ds.y < 0.0f)
+    { // houve colisao
+        if (ds.x > ds.y)
+        {
+            if (pPersonagem->getID() == IDs::IDs::jogador)
+            {
                 velFinal.x *= flexibilidade;
-                if(posOutro.x < pos.x){ //colisão em x
+                if (posOutro.x < pos.x)
+                { // colisão em x
                     pos.x -= ds.x;
-                } else {
+                }
+                else
+                {
                     pos.x += ds.x;
                 }
                 setPos(pos);
-            } else {
-                if(posOutro.x < pos.x){ //colisão em x
+            }
+            else
+            {
+                if (posOutro.x < pos.x)
+                { // colisão em x
                     posOutro.x += ds.x;
-                } else {
+                }
+                else
+                {
                     posOutro.x -= ds.x;
                 }
             }
-        } else {
-            if(posOutro.y < pos.y){ //colisão em y
+        }
+        else
+        {
+            if (posOutro.y < pos.y)
+            { // colisão em y
                 posOutro.y += ds.y;
-                if(pPersonagem->getID() == IDs::IDs::jogador){
-                    Jogador* pJogador = static_cast<Jogador*>(pPersonagem);
+                if (pPersonagem->getID() == IDs::IDs::jogador)
+                {
+                    Jogador *pJogador = static_cast<Jogador *>(pPersonagem);
                     pJogador->podePular();
                 }
-            } else {
+            }
+            else
+            {
                 posOutro.y -= ds.y;
             }
             velFinal.y = 0.0f;
