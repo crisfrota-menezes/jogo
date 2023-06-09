@@ -8,8 +8,8 @@
 #define ESCALA_X 1
 #define ESCALA_Y 1
 
-#define TAMANHO_PLATAFORMA_X 300.0f
-#define TAMANHO_PLATAFORMA_Y 128.0f
+#define TAMANHO_PLATAFORMA_X 150.0f
+#define TAMANHO_PLATAFORMA_Y 130.0f
 
 namespace SpaceHunt
 {
