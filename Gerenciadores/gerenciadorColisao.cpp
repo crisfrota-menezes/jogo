@@ -40,6 +40,8 @@ void GerenciadorColisao::executar()
             {
                 ent1->colisao(ent2);
             }
+            else
+            {}
         }
     }
 
@@ -56,8 +58,6 @@ void GerenciadorColisao::executar()
                 {
                     ent2->colisao(ent1, ds);
                 }
-                else 
-                {}
             }
         }
     }
