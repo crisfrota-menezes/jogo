@@ -12,11 +12,12 @@ namespace SpaceHunt
             sf::RectangleShape corpo;
             sf::Vector2f pos;
             sf::Vector2f tam;
-            int vida;
             int dano;
             bool hit;
+            int danoTomado;
 
         public:
+            int vida;
             Entidade(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID);
             ~Entidade();
             const sf::RectangleShape getCorpo();

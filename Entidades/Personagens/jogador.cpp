@@ -5,6 +5,7 @@ Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos, sf::Vector2f(TAMANHO_
 {
     vida = 10;
     dano = 1;
+    danoTomado = 0;
     // hit = false;
     inicializa();
 }
@@ -21,7 +22,6 @@ void Jogador::atualizar()
 
 void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 {
-    int danoTomado = 0;
     switch (outraEnt->getID())
     {
     case (IDs::IDs::Uraniano):
@@ -91,6 +91,7 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
     break;
     case (IDs::IDs::Rochas):
     {
+        cout << "Rochas" << endl;
         // hit = true;
         danoTomado = outraEnt->getDano();
         vida -= danoTomado;
