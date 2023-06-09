@@ -8,7 +8,7 @@ namespace SpaceHunt
         {
             vazio = 0,
             jogador,
-            Alien1,
+            Uraniano,
             Alien2,
             Alien3,
             plataforma,

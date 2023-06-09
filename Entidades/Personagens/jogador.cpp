@@ -20,7 +20,7 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 {
     switch (outraEnt->getID())
     {
-    case (IDs::IDs::Alien1):
+    case (IDs::IDs::Uraniano):
     {
     }
     break;

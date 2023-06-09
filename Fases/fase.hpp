@@ -5,7 +5,7 @@
 
 //Personagens
 #include "../Entidades/Personagens/jogador.hpp"
-#include "../Entidades/Personagens/alien1.hpp"
+#include "../Entidades/Personagens/uraniano.hpp"
 #include "../Entidades/Personagens/alien2.hpp"
 #include "../Entidades/Personagens/alien3.hpp"
 
@@ -36,7 +36,7 @@ namespace SpaceHunt {
         public:
             Fase(const IDs::IDs ID_Fase);
             ~Fase();
-            void criaAlien1(const sf::Vector2f pos);
+            void criaUraniano(const sf::Vector2f pos);
             void criaAlien2(const sf::Vector2f pos);
             void criaAlien3(const sf::Vector2f pos);
             void criarJogador(const sf::Vector2f pos);

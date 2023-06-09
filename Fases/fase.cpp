@@ -46,15 +46,15 @@ void Fase::criarRochas(const sf::Vector2f pos){
     listaObstaculos.inserir(static_cast<Entidade*>(rochas));
 }
 
-void Fase::criaAlien1(const sf::Vector2f pos){
+void Fase::criaUraniano(const sf::Vector2f pos){
     GerenciadorEvento* pEvento = pEvento->getGerenciadorEvento();
     Jogador* pJogador = pEvento->getJogador();
-    Alien1* alien1 = new Alien1(pos, pJogador);
-    if(alien1 == nullptr){
-        std::cout << "nao foi possivel criar um alien1" << std::endl;
+    Uraniano* uraniano = new Uraniano(pos, pJogador);
+    if(uraniano == nullptr){
+        std::cout << "nao foi possivel criar um Uraniano" << std::endl;
         exit(1);
     }
-    listaPersonagens.inserir(static_cast<Entidade*>(alien1));
+    listaPersonagens.inserir(static_cast<Entidade*>(uraniano));
 }
 
 void Fase::criaAlien2(const sf::Vector2f pos){
@@ -95,7 +95,7 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos){
     {
         case ('i'):
         {
-            criaAlien1(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
+            criaUraniano(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
         }
         break;
         case ('k'):
