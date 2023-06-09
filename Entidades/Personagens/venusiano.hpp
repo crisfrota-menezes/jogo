@@ -2,8 +2,8 @@
 
 #include "inimigo.hpp"
 
-#define TAMANHO_Alien3_X 60.0f
-#define TAMANHO_Alien3_Y 110.0f
+#define TAMANHO_Venusiano_X 60.0f
+#define TAMANHO_Venusiano_Y 110.0f
 
 namespace SpaceHunt
 {
@@ -11,14 +11,14 @@ namespace SpaceHunt
     {
         namespace Personagens
         {
-            class Alien3 : public Inimigo
+            class Venusiano : public Inimigo
             {
             private:
                 void inicializa();
 
             public:
-                Alien3(const sf::Vector2f pos, Jogador *jogador);
-                ~Alien3();
+                Venusiano(const sf::Vector2f pos, Jogador *jogador);
+                ~Venusiano();
                 //void disparar();
                 //void setVida(bool vida);
                 

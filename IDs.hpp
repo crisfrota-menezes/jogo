@@ -10,7 +10,7 @@ namespace SpaceHunt
             jogador,
             Uraniano,
             Verme,
-            Alien3,
+            Venusiano,
             plataforma,
             Arvore,
             Rochas,

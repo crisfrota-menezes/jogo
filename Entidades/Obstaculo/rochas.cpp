@@ -13,7 +13,7 @@ void Rochas::colisao(Entidade *outraEnt, sf::Vector2f ds)
     sf::Vector2f posOutro = outraEnt->getPos();
     sf::Vector2f tamOutro = outraEnt->getTam();
 
-    if (outraEnt->getID() == IDs::IDs::jogador || outraEnt->getID() == IDs::IDs::Uraniano || outraEnt->getID() == IDs::IDs::Verme || outraEnt->getID() == IDs::IDs::Alien3)
+    if (outraEnt->getID() == IDs::IDs::jogador || outraEnt->getID() == IDs::IDs::Uraniano || outraEnt->getID() == IDs::IDs::Verme || outraEnt->getID() == IDs::IDs::Venusiano)
     {
         colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
     }

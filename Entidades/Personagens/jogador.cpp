@@ -62,8 +62,23 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
         }
     }
     break;
-    case (IDs::IDs::Alien3):
+    case (IDs::IDs::Venusiano):
     {
+        // hit = true;
+        danoTomado = outraEnt->getDano();
+        vida -= danoTomado;
+        // animar();
+        if (vida <= 0)
+        {
+            delete this;
+            cout << "GAME OVER" << endl;
+            exit(0);
+        }
+        else
+        {
+            // Código que empurra o jogador para trás
+            setPos(sf::Vector2f(outraEnt->getPos().x - 75.0f, getPos().y - 25.0f));
+        }
     }
     break;
     case (IDs::IDs::plataforma):

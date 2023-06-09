@@ -7,7 +7,7 @@
 #include "../Entidades/Personagens/jogador.hpp"
 #include "../Entidades/Personagens/uraniano.hpp"
 #include "../Entidades/Personagens/verme.hpp"
-#include "../Entidades/Personagens/alien3.hpp"
+#include "../Entidades/Personagens/venusiano.hpp"
 
 //Obstaculos
 #include "../Entidades/Obstaculo/arvore.hpp"
@@ -38,7 +38,7 @@ namespace SpaceHunt {
             ~Fase();
             void criaUraniano(const sf::Vector2f pos);
             void criaVerme(const sf::Vector2f pos);
-            void criaAlien3(const sf::Vector2f pos);
+            void criaVenusiano(const sf::Vector2f pos);
             void criarJogador(const sf::Vector2f pos);
             void criarPlataforma(const sf::Vector2f pos);
             void criarArvore(const sf::Vector2f pos);
