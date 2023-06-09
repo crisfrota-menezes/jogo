@@ -14,6 +14,7 @@ namespace SpaceHunt
             sf::Vector2f tam;
             int vida;
             int dano;
+            bool hit;
 
         public:
             Entidade(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID);

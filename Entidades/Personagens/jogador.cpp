@@ -5,6 +5,7 @@ Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos, sf::Vector2f(TAMANHO_
 {
     vida = 10;
     dano = 1;
+    //hit = false;
     inicializa();
 }
 
@@ -25,8 +26,10 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
     {
     case (IDs::IDs::Uraniano):
     {
+        //hit = true;
         danoTomado = outraEnt->getDano();
         vida -= danoTomado;
+        //animar();
         if (vida <= 0)
         {
             delete this;
@@ -36,7 +39,7 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
         else
         {
             // Código que empurra o jogador para trás
-            setPos(sf::Vector2f(outraEnt->getPos().x - 50.0f, getPos().y - 25.0f));
+            setPos(sf::Vector2f(outraEnt->getPos().x - 75.0f, getPos().y - 25.0f));
         }
     }
     break;
@@ -65,7 +68,12 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 
 void Jogador::animar()
 {
-    if (!noChao && velFinal.y > 0.0f)
+    /*if (hit)
+    {
+        animacao.atualizar(paraEsquerda, "HIT");
+        hit = false;
+    }
+    else */if (!noChao && velFinal.y > 0.0f)
     {
         animacao.atualizar(paraEsquerda, "CAI");
     }
@@ -89,11 +97,12 @@ void Jogador::animar()
 
 void Jogador::inicializa()
 {
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AndaJ.png", "ANDA", 1, 0.12f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/ParadoJ.png", "PARADO", 1, 0.12f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/PulaJ.png", "PULA", 1, 0.12f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/CaiJ.png", "CAI", 1, 0.12f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AtacaJ.png", "ATACA", 1, 0.12f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AndaJ.png", "ANDA", 3, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/ParadoJ.png", "PARADO", 10, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/PulaJ.png", "PULA", 8, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/CaiJ.png", "CAI", 1, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AtacaJ.png", "ATACA", 4, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/HitJ.png", "HIT", 3, 0.15f, sf::Vector2f(3, 1.5));
     corpo.setOrigin(tam.x / 2.0f, tam.y / 4.7f);
 }
 
