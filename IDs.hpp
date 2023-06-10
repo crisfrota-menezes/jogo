@@ -15,7 +15,8 @@ namespace SpaceHunt
             Arvore,
             Rochas,
             fase_Fase1,
-            fase_Fase2
+            fase_Fase2,
+            Projetil
         };
     }
     using namespace IDs;

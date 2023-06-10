@@ -106,6 +106,19 @@ void Fase::criarJogador(const sf::Vector2f pos)
     listaPersonagens.inserir(static_cast<Entidade *>(jogador));
 }
 
+void criarProjetil(const sf::Vector2f pos)
+{
+    GerenciadorEvento *pEvento = pEvento->getGerenciadorEvento();
+    Jogador *pJogador = pEvento->getJogador();
+    Projetil *projetil = new Projetil(pos, pJogador);
+    if (projetil == nullptr)
+    {
+        std::cout << "nao foi possivel criar um Venusiano" << std::endl;
+        exit(1);
+    }
+    listaPersonagens.inserir(static_cast<Entidade *>(projetil));
+}
+
 void Fase::criarEntidade(char letra, const sf::Vector2i pos)
 {
     switch (letra)
@@ -143,6 +156,11 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos)
     case ('r'):
     {
         criarRochas(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
+    }
+    break;
+    case ('p'):
+    {
+        criarProjetil(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
     }
     break;
     }

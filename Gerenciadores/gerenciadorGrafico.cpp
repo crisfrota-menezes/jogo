@@ -2,7 +2,7 @@
 
 GerenciadorGrafico *GerenciadorGrafico::pGrafico = nullptr;
 
-GerenciadorGrafico::GerenciadorGrafico() : window(new sf::RenderWindow(sf::VideoMode(LARGURA_TELA, ALTURA_TELA), "Escape the room"))
+GerenciadorGrafico::GerenciadorGrafico() : window(new sf::RenderWindow(sf::VideoMode(LARGURA_TELA, ALTURA_TELA), "Space Hunt"))
 {
     imagem = new sf::Texture();
     bg = new sf::Sprite();

@@ -8,6 +8,7 @@
 #include "../Entidades/Personagens/uraniano.hpp"
 #include "../Entidades/Personagens/verme.hpp"
 #include "../Entidades/Personagens/venusiano.hpp"
+#include "../Entidades/projetil.hpp"
 
 //Obstaculos
 #include "../Entidades/Obstaculo/arvore.hpp"
@@ -43,6 +44,7 @@ namespace SpaceHunt {
             void criarPlataforma(const sf::Vector2f pos);
             void criarArvore(const sf::Vector2f pos);
             void criarRochas(const sf::Vector2f pos);
+            void criarProjetil(const sf::Vector2f pos);
             virtual void criarMapa() = 0;
             void criarEntidade(char letra, const sf::Vector2i pos);
             void executar();
