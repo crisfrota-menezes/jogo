@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ente.hpp"
-#include "IDs.hpp"
+#include "../ente.hpp"
+#include "../IDs.hpp"
 
 #include "camada.hpp"
 

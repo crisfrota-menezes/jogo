@@ -3,7 +3,7 @@
 //Classe Base
 #include "../ente.hpp"
 
-#include "../fundo.hpp"
+#include "../Parallax/fundo.hpp"
 
 //Personagens
 #include "../Entidades/Personagens/jogador.hpp"

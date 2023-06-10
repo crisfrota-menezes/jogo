@@ -40,7 +40,7 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
         {
             delete this;
             cout << "GAME OVER" << endl;
-            exit(0);
+            //exit(0);
         }
         else
         {

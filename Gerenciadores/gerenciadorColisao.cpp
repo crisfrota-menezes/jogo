@@ -57,6 +57,7 @@ void GerenciadorColisao::executar()
             {
                 if (ent2->getID() == IDs::IDs::plataforma || ent2->getID() == IDs::IDs::Arvore || ent2->getID() == IDs::IDs::Rochas)
                 {
+                    ent1->setPos(sf::Vector2f(ent1->getPos().x, ent2->getPos().y - 1.0f));
                     ent2->colisao(ent1, ds);
                 }
             }

@@ -3,31 +3,7 @@
 Fundo::Fundo(const IDs::IDs ID):
     Ente(ID), posAnteriorCamera(pGrafico->getCamera().getCenter()),
     camadas()
-{  
-    /*
-    //floresta vermelha
-    addCamada("Jungle++/img/Fase/FlorestaVermelha/camada1.png", 0.0f);
-    addCamada("Jungle++/img/Fase/FlorestaVermelha/camada2.png", 0.0f);
-    addCamada("Jungle++/img/Fase/FlorestaVermelha/camada3.png", 0.1f);
-    addCamada("Jungle++/img/Fase/FlorestaVermelha/camada4.png", 0.2f);
-    addCamada("Jungle++/img/Fase/FlorestaVermelha/camada5.png", 0.3f);
-    addCamada("Jungle++/img/Fase/FlorestaVermelha/camada6.png", 0.5f);
-    addCamada("Jungle++/img/Fase/FlorestaVermelha/camada7.png", 0.75f);
-    addCamada("Jungle++/img/Fase/FlorestaVermelha/camada8.png", 1.5f);
-    */
-    
-    
-    /*
-    //floresta negra
-    addCamada("Jungle++/img/Fase/FlorestaNegra/camada1.png", 0.0f);
-    addCamada("Jungle++/img/Fase/FlorestaNegra/camada2.png", 0.05f);
-    addCamada("Jungle++/img/Fase/FlorestaNegra/camada3.png", 0.1f);
-    addCamada("Jungle++/img/Fase/FlorestaNegra/camada4.png", 0.15f);
-    addCamada("Jungle++/img/Fase/FlorestaNegra/camada5.png", 0.2f);
-    addCamada("Jungle++/img/Fase/FlorestaNegra/camada6.png", 0.4f);
-    addCamada("Jungle++/img/Fase/FlorestaNegra/camada7.png", 0.6f);
-    */
-    
+{ 
 }   
 
 Fundo::~Fundo(){
