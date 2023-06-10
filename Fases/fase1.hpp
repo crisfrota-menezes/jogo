@@ -12,6 +12,7 @@ namespace SpaceHunt
             Fase1();
             ~Fase1();
             void criarMapa();
+            void criarFundo();
         };
     }
     using namespace Fases;

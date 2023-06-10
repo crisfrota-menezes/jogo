@@ -18,6 +18,7 @@ void Jogador::atualizar()
 {
     atualizarPos();
     animar();
+    pGrafico->atualizarCamera(pos);
 }
 
 void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)

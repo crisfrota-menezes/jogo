@@ -14,7 +14,9 @@ namespace SpaceHunt
             plataforma,
             Arvore,
             Rochas,
+            fundo_Fase1,
             fase_Fase1,
+            fundo_Fase2,
             fase_Fase2,
             Projetil
         };

@@ -15,8 +15,7 @@ namespace SpaceHunt
         {
         private:
             sf::RenderWindow *window;
-            sf::Texture *imagem;
-            sf::Sprite *bg;
+            sf::View camera;
             static GerenciadorGrafico *pGrafico;
             /*utilizando padrão de projeto singleton na implementação*/
             GerenciadorGrafico();
@@ -29,9 +28,10 @@ namespace SpaceHunt
             void desenhaElemento(sf::RectangleShape corpo);
             void mostraElementos();
             void fechaJanela();
-            void carregarBackground();
             sf::Texture carregarTextura(const char *caminho);
             const bool janelaAberta();
+            void atualizarCamera(const sf::Vector2f posJogador);
+            const sf::View getCamera();
         };
     }
     using namespace Gerenciadores;

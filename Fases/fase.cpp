@@ -1,7 +1,11 @@
 #include "fase.hpp"
 
-Fase::Fase(const IDs::IDs ID_Fase) : Ente(ID_Fase), listaPersonagens(), listaObstaculos(),
-                                     pColisao(new GerenciadorColisao(&listaPersonagens, &listaObstaculos))
+Fase::Fase(const IDs::IDs ID_Fase, const IDs::IDs ID_Fundo) :
+                                                                Ente(ID_Fase),
+                                                                fundo(ID_Fundo), 
+                                                                listaPersonagens(), 
+                                                                listaObstaculos(),
+                                                                pColisao(new GerenciadorColisao(&listaPersonagens, &listaObstaculos))
 {
     if (pColisao == nullptr)
     {
@@ -179,6 +183,8 @@ void Fase::desenhar()
 
 void Fase::executar()
 {
+    fundo.executar();
+
     // atualiza entidade e desenha
     desenhar();
 

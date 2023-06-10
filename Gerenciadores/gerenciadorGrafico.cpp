@@ -2,10 +2,8 @@
 
 GerenciadorGrafico *GerenciadorGrafico::pGrafico = nullptr;
 
-GerenciadorGrafico::GerenciadorGrafico() : window(new sf::RenderWindow(sf::VideoMode(LARGURA_TELA, ALTURA_TELA), "Space Hunt"))
+GerenciadorGrafico::GerenciadorGrafico() : window(new sf::RenderWindow(sf::VideoMode(LARGURA_TELA, ALTURA_TELA), "Space Hunt")), camera(sf::Vector2f(LARGURA_TELA / 2.0f, ALTURA_TELA / 2.0f), sf::Vector2f(LARGURA_TELA, ALTURA_TELA))
 {
-    imagem = new sf::Texture();
-    bg = new sf::Sprite();
     if (window == nullptr)
     {
         cout << "Erro ao criar janela" << endl;
@@ -67,18 +65,18 @@ sf::Texture GerenciadorGrafico::carregarTextura(const char *caminho)
     return textura;
 }
 
-void GerenciadorGrafico::carregarBackground()
-{
-    if (!imagem->loadFromFile("C:/Users/crisn/Desktop/SpaceHunt/Midia/background.jpg"))
-    {
-        cout << "Erro ao carregar imagem" << endl;
-        exit(1);
-    }
-    bg->setTexture(*imagem);
-    window->draw(*bg);
-}
-
 const bool GerenciadorGrafico::janelaAberta()
 {
     return window->isOpen();
+}
+
+void GerenciadorGrafico::atualizarCamera(const sf::Vector2f posJogador)
+{
+    camera.setCenter(posJogador.x, 540.0f);
+    window->setView(camera);
+}
+
+const sf::View GerenciadorGrafico::getCamera()
+{
+    return camera;
 }

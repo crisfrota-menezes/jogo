@@ -37,6 +37,7 @@ void Jogo::criarFase()
         exit(1);
     }
     fase = static_cast<Fase *>(aux);
+    fase->criarFundo();
     fase->criarMapa();
 }
 
@@ -46,7 +47,6 @@ void Jogo::run()
     {
         pEvento->executar();
         pGrafico->limpar();
-        pGrafico->carregarBackground();
         fase->executar();
         pGrafico->mostraElementos();
         if(fase->concluida())

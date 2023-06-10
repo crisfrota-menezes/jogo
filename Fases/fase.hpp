@@ -3,6 +3,8 @@
 //Classe Base
 #include "../ente.hpp"
 
+#include "../fundo.hpp"
+
 //Personagens
 #include "../Entidades/Personagens/jogador.hpp"
 #include "../Entidades/Personagens/uraniano.hpp"
@@ -33,9 +35,10 @@ namespace SpaceHunt {
             ListaEntidades listaPersonagens;
             ListaEntidades listaObstaculos;
             GerenciadorColisao* pColisao;
+            Fundo fundo;
             
         public:
-            Fase(const IDs::IDs ID_Fase);
+            Fase(const IDs::IDs ID_Fase, const IDs::IDs ID_Fundo);
             ~Fase();
             void criaUraniano(const sf::Vector2f pos);
             void criaVerme(const sf::Vector2f pos);
@@ -50,6 +53,7 @@ namespace SpaceHunt {
             void executar();
             void desenhar();
             bool concluida();
+            virtual void criarFundo() = 0;
         };
     }
     using namespace Fases;
