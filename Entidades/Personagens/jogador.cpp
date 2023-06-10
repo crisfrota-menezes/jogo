@@ -24,11 +24,16 @@ void Jogador::colisao(Entidade *outraEnt, sf::Vector2f ds)
 {
     switch (outraEnt->getID())
     {
+    case (IDs::IDs::Projetil):
+    {
+        cout << "Jogador atingido" << endl;
+    }
     case (IDs::IDs::Uraniano):
     {
+        cout << "AI" << endl;
         // hit = true;
-        danoTomado = outraEnt->getDano();
-        vida -= danoTomado;
+        // danoTomado = outraEnt->getDano();
+        //vida -= danoTomado;
         // animar();
         if (vida <= 0)
         {

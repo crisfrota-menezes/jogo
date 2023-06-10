@@ -1,18 +1,20 @@
 #include "projetil.hpp"
 
-Projetil::Projetil(const sf::Vector2f &pos, Jogador *jogador)
-    : Entidade(pos, sf::Vector2f(10.0f, 10.0f), IDs::IDs::Projetil),
+Projetil::Projetil(const sf::Vector2f pos, Jogador *jogador)
+    : Entidade(pos, sf::Vector2f(100.0f, 100.0f), IDs::IDs::Projetil),
       velocidade(5.0f),
       jogador(jogador),
       dano(4)
 {
-    corpo.setFillColor(sf::Color::Red);
+    corpo.setFillColor(sf::Color::Yellow);
 }
 
 void Projetil::atualizar()
 {
     // Update projectile position based on velocity
     corpo.move(velocidade, 0.0f);
+
+    desenhar();
 
     // Destroy projectile if necessary
     if (corpo.getPosition().x > 1920.0f)
@@ -29,6 +31,7 @@ void Projetil::colisao(Entidade *outraEnt, sf::Vector2f ds)
     {
     case (IDs::IDs::jogador):
     {
+        cout << "Jogador atingido" << endl;
         outraEnt->vida -= dano;
         outraEnt->setPos(sf::Vector2f(posOutro.x - 75.0f, posOutro.y - 25.0f));
         delete this;

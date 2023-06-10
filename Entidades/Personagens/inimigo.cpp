@@ -49,7 +49,8 @@ void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     {
     case (IDs::IDs::jogador):
     {
-        
+        cout << "Bateu em mim toma" << endl;
+        outraEntidade->vida -= dano;
     }
     break;
     case (IDs::IDs::Uraniano):

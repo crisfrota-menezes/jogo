@@ -18,7 +18,7 @@ namespace SpaceHunt
             class Projetil : public Entidade
             {
             public:
-                Projetil(const sf::Vector2f &pos, Jogador *jogador);
+                Projetil(const sf::Vector2f pos, Jogador *jogador);
                 void atualizar();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds);
 

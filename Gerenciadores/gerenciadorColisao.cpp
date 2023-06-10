@@ -38,6 +38,7 @@ void GerenciadorColisao::executar()
             sf::Vector2f ds = calculaColisao(ent1, ent2);
             if (ds.x < 0.0f && ds.y < 0.0f)
             {
+                ent2->colisao(ent1);
                 ent1->colisao(ent2);
             }
             else

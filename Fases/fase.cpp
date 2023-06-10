@@ -106,7 +106,7 @@ void Fase::criarJogador(const sf::Vector2f pos)
     listaPersonagens.inserir(static_cast<Entidade *>(jogador));
 }
 
-void criarProjetil(const sf::Vector2f pos)
+void Fase::criarProjetil(const sf::Vector2f pos)
 {
     GerenciadorEvento *pEvento = pEvento->getGerenciadorEvento();
     Jogador *pJogador = pEvento->getJogador();
