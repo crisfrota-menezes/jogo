@@ -10,10 +10,12 @@ namespace SpaceHunt
     {
         class ConstrutorEstado
         {
+        private:
+            Fase* criarFase(const IDs::IDs ID);
         public:
             ConstrutorEstado();
             ~ConstrutorEstado();
-            Estado *addEstadoJogar(const IDs::IDs ID);
+            Estado *criarEstadoJogar(const IDs::IDs ID);
         };
     }
     using namespace Construtores;

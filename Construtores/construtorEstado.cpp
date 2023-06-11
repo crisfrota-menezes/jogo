@@ -8,7 +8,7 @@ ConstrutorEstado::~ConstrutorEstado()
 {
 }
 
-Estado *ConstrutorEstado::addEstadoJogar(const IDs::IDs ID)
+Fase *ConstrutorEstado::criarFase(const IDs::IDs ID)
 {
     Fase *fase = nullptr;
     if (ID == IDs::IDs::jogar_Fase1)
@@ -26,6 +26,12 @@ Estado *ConstrutorEstado::addEstadoJogar(const IDs::IDs ID)
     }
     fase->criarFundo();
     fase->criarMapa();
+    return fase;
+}
+
+Estado *ConstrutorEstado::criarEstadoJogar(const IDs::IDs ID)
+{
+    Fase *fase = criarFase(ID);
     EstadoJogar *estadoJogar = new EstadoJogar(fase);
     if (estadoJogar == nullptr)
     {

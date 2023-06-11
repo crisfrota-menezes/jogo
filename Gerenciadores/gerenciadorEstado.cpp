@@ -36,7 +36,7 @@ void GerenciadorEstado::addEstado(const IDs::IDs ID)
     Estado *estado = nullptr;
     if (ID == IDs::IDs::jogar_Fase1 || ID == IDs::IDs::jogar_Fase2)
     {
-        estado = construtor.addEstadoJogar(ID);
+        estado = construtor.criarEstadoJogar(ID);
     }
     pilhaEstados.push(estado);
 }
