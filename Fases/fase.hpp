@@ -3,16 +3,17 @@
 //Classe Base
 #include "../ente.hpp"
 
+//fundo
 #include "../Parallax/fundo.hpp"
-
-#include "../Construtores/construtorFase.hpp"
 
 //Gerenciadores
 #include "../Gerenciadores/GerenciadorColisao.hpp"
-#include "../Gerenciadores/GerenciadorEvento.hpp"
 
 //Listas
 #include "../Listas/listaEntidade.hpp"
+
+//Construtores
+#include "../Construtores/construtorEntidade.hpp"
 
 #include <fstream>
 
@@ -22,7 +23,7 @@ namespace SpaceHunt {
 
         class Fase : public Ente {
         protected:
-            Construtores::ConstrutorFase* construtor;
+            ConstrutorEntidade construtorEnt;
             ListaEntidades listaPersonagens;
             ListaEntidades listaObstaculos;
             GerenciadorColisao* pColisao;
@@ -35,8 +36,8 @@ namespace SpaceHunt {
             void criarEntidade(char letra, const sf::Vector2i pos);
             void executar();
             void desenhar();
-            bool concluida();
             virtual void criarFundo() = 0;
+            Jogador* getJogador();
         };
     }
     using namespace Fases;

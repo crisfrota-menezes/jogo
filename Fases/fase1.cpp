@@ -22,22 +22,22 @@ void Fase1::criarFundo()
 
 void Fase1::criarMapa()
 {
-    listaPersonagens.inserir(construtor->criarJogador(sf::Vector2f(100.0f, 400.0f)));
+    listaPersonagens.inserir(construtorEnt.criarJogador(sf::Vector2f(100.0f, 400.0f)));
 
     for (int i = 0; i < 10; i++)
     {
-        listaObstaculos.inserir(construtor->criarPlataforma(sf::Vector2f(i * 300.0f, 550.0f)));
+        listaObstaculos.inserir(construtorEnt.criarPlataforma(sf::Vector2f(i * 300.0f, 550.0f)));
     }
 
     for (int i = 0; i < 2; i++)
     {
-        listaPersonagens.inserir(construtor->criarUraniano(sf::Vector2f(500.0f * (i + 1), 0.0f)));
+        listaPersonagens.inserir(construtorEnt.criarUraniano(sf::Vector2f(500.0f * (i + 1), 0.0f)));
     }
 
-    listaObstaculos.inserir(construtor->criarPlataforma(sf::Vector2f(500.0f, 400.0f)));
-    listaObstaculos.inserir(construtor->criarPlataforma(sf::Vector2f(900.0f, 400.0f)));
-    listaObstaculos.inserir(construtor->criarPlataforma(sf::Vector2f(1200.0f, 400.0f)));
-    listaObstaculos.inserir(construtor->criarPlataforma(sf::Vector2f(1100.0f, 250.0f)));
-    listaObstaculos.inserir(construtor->criarRocha(sf::Vector2f(400.0f, 500.0f)));
-    listaObstaculos.inserir(construtor->criarRocha(sf::Vector2f(1000.0f, 350.0f)));
+    listaObstaculos.inserir(construtorEnt.criarPlataforma(sf::Vector2f(500.0f, 400.0f)));
+    listaObstaculos.inserir(construtorEnt.criarPlataforma(sf::Vector2f(900.0f, 400.0f)));
+    listaObstaculos.inserir(construtorEnt.criarPlataforma(sf::Vector2f(1200.0f, 400.0f)));
+    listaObstaculos.inserir(construtorEnt.criarPlataforma(sf::Vector2f(1100.0f, 250.0f)));
+    listaObstaculos.inserir(construtorEnt.criarRocha(sf::Vector2f(400.0f, 500.0f)));
+    listaObstaculos.inserir(construtorEnt.criarRocha(sf::Vector2f(1000.0f, 350.0f)));
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Construtores/construtorEstado.hpp"
+#include "gerenciadorGrafico.hpp"
 #include <stack>
 
 namespace SpaceHunt
@@ -12,7 +13,7 @@ namespace SpaceHunt
         private:
             std::stack<Estado *> pilhaEstados;
 
-            ConstrutorEstado construtor;
+            ConstrutorEstado construtorEstado;
 
             // padrão de projeto singleton
             static GerenciadorEstado *pGerenciadorEstado;
@@ -24,6 +25,7 @@ namespace SpaceHunt
             void executar();
             void addEstado(const IDs::IDs ID);
             void removerEstado();
+            Estado *getEstadoAtual();
         };
     }
     using namespace Gerenciadores;

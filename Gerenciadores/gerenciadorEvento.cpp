@@ -1,8 +1,9 @@
 #include "gerenciadorEvento.hpp"
+#include "gerenciadorEstado.hpp"
 
 GerenciadorEvento *GerenciadorEvento::pEvento = nullptr;
 
-GerenciadorEvento::GerenciadorEvento() : pGrafico(pGrafico->getGerenciadorGrafico()), pJogador(nullptr)
+GerenciadorEvento::GerenciadorEvento() : pGrafico(pGrafico->getGerenciadorGrafico()), pEstado(pEstado->getGerenciadorEstado())
 {
 }
 
@@ -19,61 +20,63 @@ GerenciadorEvento *GerenciadorEvento::getGerenciadorEvento()
     return pEvento;
 }
 
-void GerenciadorEvento::setJogador(Jogador *pJogador)
-{
-    this->pJogador = pJogador;
-}
-
-Jogador *GerenciadorEvento::getJogador()
-{
-    return pJogador;
-}
-
 void GerenciadorEvento::verificaTeclaPressionada(sf::Keyboard::Key tecla)
 {
-    if (tecla == sf::Keyboard::A)
+    if (pEstado->getEstadoAtual()->getID() == IDs::IDs::jogar_Fase1 || pEstado->getEstadoAtual()->getID() == IDs::IDs::jogar_Fase2)
     {
-        pJogador->andar(true);
-    }
-    else if (tecla == sf::Keyboard::D)
-    {
-        pJogador->andar(false);
-    }
-    else if (tecla == sf::Keyboard::W)
-    {
-        pJogador->pular();
-    }
-    else if (tecla == sf::Keyboard::S)
-    {
-        pJogador->atacar(true);
-    }
-    else if (tecla == sf::Keyboard::Up)
-    {
-        pJogador->pular();
-    }
-    else if (tecla == sf::Keyboard::Right)
-    {
-        pJogador->andar(false);
-    }
-    else if (tecla == sf::Keyboard::Left)
-    {
-        pJogador->andar(true);
-    }
-    else if (tecla == sf::Keyboard::Down)
-    {
-        pJogador->atacar(true);
-    }
-    else if (tecla == sf::Keyboard::Escape)
-    {
-        pGrafico->fechaJanela();
+        EstadoJogar *estadoJogar = dynamic_cast<EstadoJogar *>(pEstado->getEstadoAtual());
+        Jogador *pJogador = estadoJogar->getJogador();
+        if (pJogador == nullptr)
+        {
+            cout << "pJogador eh nullptr" << endl;
+            exit(1);
+        }
+        if (tecla == sf::Keyboard::A)
+        {
+            pJogador->andar(true);
+        }
+        else if (tecla == sf::Keyboard::D)
+        {
+            pJogador->andar(false);
+        }
+        else if (tecla == sf::Keyboard::W)
+        {
+            pJogador->pular();
+        }
+        else if (tecla == sf::Keyboard::S)
+        {
+            pJogador->atacar(true);
+        }
     }
 }
 
 void GerenciadorEvento::verificaTeclaSolta(sf::Keyboard::Key tecla)
 {
-    if (tecla == sf::Keyboard::A || tecla == sf::Keyboard::D || tecla == sf::Keyboard::Left || tecla == sf::Keyboard::Right)
+    if (pEstado->getEstadoAtual()->getID() == IDs::IDs::jogar_Fase1 || pEstado->getEstadoAtual()->getID() == IDs::IDs::jogar_Fase2)
     {
-        pJogador->parar();
+        EstadoJogar *estadoJogar = dynamic_cast<EstadoJogar *>(pEstado->getEstadoAtual());
+        Jogador *pJogador = estadoJogar->getJogador();
+        if (pJogador == nullptr)
+        {
+            cout << "pJogador eh nullptr" << endl;
+            exit(1);
+        }
+        if (tecla == sf::Keyboard::A || tecla == sf::Keyboard::D)
+        {
+            pJogador->parar();
+        }
+    }
+    if (tecla == sf::Keyboard::Escape)
+    {
+        pEstado->removerEstado();
+    }
+    else if (tecla == sf::Keyboard::R)
+    {
+        pEstado->addEstado(IDs::IDs::jogar_Fase1);
+    }
+    else if (tecla == sf::Keyboard::N)
+    {
+        pEstado->addEstado(IDs::IDs::jogar_Fase2);
     }
 }
 

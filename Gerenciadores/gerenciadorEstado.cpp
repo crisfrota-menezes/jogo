@@ -2,7 +2,7 @@
 
 GerenciadorEstado *GerenciadorEstado::pGerenciadorEstado = nullptr;
 
-GerenciadorEstado::GerenciadorEstado() : pilhaEstados(), construtor()
+GerenciadorEstado::GerenciadorEstado() : pilhaEstados(), construtorEstado()
 {
 }
 
@@ -33,24 +33,34 @@ GerenciadorEstado::~GerenciadorEstado()
 
 void GerenciadorEstado::addEstado(const IDs::IDs ID)
 {
-    Estado *estado = nullptr;
-    if (ID == IDs::IDs::jogar_Fase1 || ID == IDs::IDs::jogar_Fase2)
+    Estado *estado = construtorEstado.criarEstado(ID);
+    if (estado == nullptr)
     {
-        estado = construtor.criarEstadoJogar(ID);
+        cout << "Erro ao criar estado" << endl;
+        exit(0);
     }
     pilhaEstados.push(estado);
 }
 
 void GerenciadorEstado::removerEstado()
 {
-    delete (pilhaEstados.top());
-    pilhaEstados.top() = nullptr;
-    pilhaEstados.pop();
+    if (pilhaEstados.top() != nullptr)
+    {
+        delete (pilhaEstados.top());
+        pilhaEstados.top() = nullptr;
+        pilhaEstados.pop();
+    }
 
     if (pilhaEstados.empty())
     {
-        Gerenciadores::GerenciadorGrafico::getGerenciadorGrafico()->fechaJanela();
+        GerenciadorGrafico* pGrafico = pGrafico->getGerenciadorGrafico();
+        pGrafico->fechaJanela();
     }
+}
+
+Estado *GerenciadorEstado::getEstadoAtual()
+{
+    return pilhaEstados.top();
 }
 
 void GerenciadorEstado::executar()

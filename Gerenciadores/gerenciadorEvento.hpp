@@ -7,11 +7,13 @@ namespace SpaceHunt
 {
     namespace Gerenciadores
     {
+        class GerenciadorEstado;
+
         class GerenciadorEvento
         {
         private:
             GerenciadorGrafico *pGrafico;
-            Jogador *pJogador;
+            GerenciadorEstado *pEstado;
             // padrão de projeto singleton
             static GerenciadorEvento *pEvento;
             GerenciadorEvento();
@@ -19,8 +21,6 @@ namespace SpaceHunt
         public:
             ~GerenciadorEvento();
             static GerenciadorEvento *getGerenciadorEvento();
-            void setJogador(Jogador *pJogador);
-            Jogador* getJogador();
             void verificaTeclaPressionada(sf::Keyboard::Key tecla);
             void verificaTeclaSolta(sf::Keyboard::Key tecla);
             void executar();

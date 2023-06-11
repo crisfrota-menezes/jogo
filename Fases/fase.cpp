@@ -5,7 +5,7 @@ Fase::Fase(const IDs::IDs ID_Fase, const IDs::IDs ID_Fundo) : Ente(ID_Fase),
                                                               listaPersonagens(),
                                                               listaObstaculos(),
                                                               pColisao(new GerenciadorColisao(&listaPersonagens, &listaObstaculos)),
-                                                              construtor()
+                                                              construtorEnt()
 {
     if (pColisao == nullptr)
     {
@@ -32,7 +32,7 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos)
     {
     case ('u'):
     {
-        listaPersonagens.inserir(construtor->criarUraniano(posAux));
+        listaPersonagens.inserir(construtorEnt.criarUraniano(posAux));
     }
     break;
     /*case ('k'):
@@ -42,27 +42,27 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos)
     break;*/
     case ('V'):
     {
-        listaPersonagens.inserir(construtor->criarVenusiano(posAux));
+        listaPersonagens.inserir(construtorEnt.criarVenusiano(posAux));
     }
     break;
     case ('a'):
     {
-        listaPersonagens.inserir(construtor->criarArvore(posAux));
+        //listaPersonagens.inserir(construtorEnt.criarArvore(posAux));
     }
     break;
     case ('#'):
     {
-        listaPersonagens.inserir(construtor->criarPlataforma(posAux));
+        listaPersonagens.inserir(construtorEnt.criarPlataforma(posAux));
     }
     break;
     case ('j'):
     {
-        listaPersonagens.inserir(construtor->criarJogador(posAux));
+        listaPersonagens.inserir(construtorEnt.criarJogador(posAux));
     }
     break;
     case ('r'):
     {
-        listaObstaculos.inserir(construtor->criarRocha(posAux));
+        listaObstaculos.inserir(construtorEnt.criarRocha(posAux));
     }
     break;
     /*case ('p'):
@@ -73,9 +73,17 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos)
     }
 }
 
-bool Fase::concluida()
+Jogador *Fase::getJogador()
 {
-    return listaPersonagens.vazia();
+    for(int i = 0; i < listaPersonagens.getTam(); i++)
+    {
+        Entidade *entidade = listaPersonagens.operator[](i);
+        if(entidade->getID() == IDs::IDs::jogador)
+        {
+            return static_cast<Jogador *>(entidade);
+        }
+    }
+    return nullptr;
 }
 
 void Fase::desenhar()

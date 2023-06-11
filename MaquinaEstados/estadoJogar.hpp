@@ -10,6 +10,12 @@
 #include "../Fases/fase1.hpp"
 #include "../Fases/fase2.hpp"
 
+// Personagens
+#include "../Entidades/Personagens/jogador.hpp"
+
+// Construtores
+#include "../Construtores/construtorEstado.hpp"
+
 namespace SpaceHunt
 {
     namespace Estados
@@ -20,10 +26,10 @@ namespace SpaceHunt
             Fase *fase;
 
         public:
-            EstadoJogar(Fase *fase);
+            EstadoJogar(const IDs::IDs ID, Fase *fase);
             ~EstadoJogar();
             void executar();
-            // void desenhar();
+            Jogador *getJogador();
         };
     }
     using namespace Estados;
