@@ -15,6 +15,7 @@ Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), pEvento(pEvento->get
         exit(1);
     }
 
+    //criarMenu();
     criarFase();
     run();
 }
@@ -26,6 +27,17 @@ Jogo::~Jogo()
         delete fase;
         fase = nullptr;
     }
+}
+
+void Jogo::criarMenu()
+{
+    MenuPrincipal *aux = new MenuPrincipal();
+    if (aux == nullptr)
+    {
+        cout << "Erro ao criar o menu" << endl;
+        exit(1);
+    }
+    menu = static_cast<MenuPrincipal *>(aux);
 }
 
 void Jogo::criarFase()
@@ -43,23 +55,30 @@ void Jogo::criarFase()
 
 void Jogo::run()
 {
-    while (pGrafico->janelaAberta())
+    try
     {
-        try
+        //bool controle = false;
+        while (pGrafico->janelaAberta())
         {
-        pEvento->executar();
-        pGrafico->limpar();
-        fase->executar();
-        pGrafico->mostraElementos();
-        /*if(fase->concluida())
-        {
-            cout << "Fase concluida" << endl;
-            exit(1);
-        }*/
+            //controle = menu->run();
+            //if (controle)
+            //{
+                //delete menu;
+                //menu = nullptr;
+                pEvento->executar();
+                pGrafico->limpar();
+                fase->executar();
+                pGrafico->mostraElementos();
+            //}
+            /*if(fase->concluida())
+            {
+                cout << "Fase concluida" << endl;
+                exit(1);
+            }*/
         }
-        catch(const char* msg)
-        {
-            cout << "SUPER ERRO" << endl;
-        }
+    }
+    catch (const char *msg)
+    {
+        cout << "SUPER ERRO" << endl;
     }
 }

@@ -80,3 +80,13 @@ const sf::View GerenciadorGrafico::getCamera()
 {
     return camera;
 }
+
+void GerenciadorGrafico::desenhaTexto(sf::Text texto)
+{
+    window->draw(texto);
+}
+
+void GerenciadorGrafico::desenhaBackground(sf::Sprite *bg)
+{
+    window->draw(*bg);
+}
