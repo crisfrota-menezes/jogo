@@ -13,7 +13,6 @@ int main()
     if (control)
     {
         Jogo start;
-        start.run();
     }
     return 0;
 }

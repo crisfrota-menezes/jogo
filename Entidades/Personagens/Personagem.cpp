@@ -1,22 +1,13 @@
 #include "Personagem.hpp"
 
-Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : 
-Entidade(pos, tam, ID), velFinal(sf::Vector2f(vel, 0.0f)), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velMax(vel), animacao(&corpo), atacando(false)
+Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), podeMover(false), paraEsquerda(false), relogio(),
+                                                                                                             dt(0.0f), velFinal(sf::Vector2f(vel, 0.0f)), velMax(vel), atacando(false),
+                                                                                                             animacao(&corpo)
 {
 }
 
 Personagem::~Personagem()
 {
-}
-
-void Personagem::setVelFinal(const sf::Vector2f vel)
-{
-    this->velFinal = velFinal;
-}
-
-const sf::Vector2f Personagem::getVelFinal() const
-{
-    return velFinal;
 }
 
 void Personagem::andar(const bool paraEsquerda)
@@ -63,8 +54,18 @@ void Personagem::atualizarPos()
     // atualiza velocidade na horizontal
     velFinal.x = velMax;
 
-    // desenhar
+    // desenha na janela
     desenhar();
+}
+
+void Personagem::setVelFinal(sf::Vector2f velFinal)
+{
+    this->velFinal = velFinal;
+}
+
+const sf::Vector2f Personagem::getVelFinal() const
+{
+    return velFinal;
 }
 
 void Personagem::animar()
@@ -77,4 +78,10 @@ void Personagem::animar()
     {
         animacao.atualizar(paraEsquerda, "PARADO");
     }
+}
+
+bool Personagem::getAtacando()
+{
+    atacando = true;
+    return atacando;
 }

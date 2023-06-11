@@ -1,7 +1,7 @@
 #include "projetil.hpp"
 
 Projetil::Projetil(const sf::Vector2f pos, Jogador *jogador)
-    : Entidade(pos, sf::Vector2f(100.0f, 100.0f), IDs::IDs::Projetil),
+    : Entidade(pos, sf::Vector2f(20.0f, 20.0f), IDs::IDs::Projetil),
       velocidade(5.0f),
       jogador(jogador),
       dano(4)
@@ -19,7 +19,10 @@ void Projetil::atualizar()
     // Destroy projectile if necessary
     if (corpo.getPosition().x > 1920.0f)
     {
-        delete this;
+        cout << "sai da tela" << endl;
+        velocidade = 0.0f;
+        corpo.setFillColor(sf::Color::Transparent);
+        //delete this;
     }
 }
 

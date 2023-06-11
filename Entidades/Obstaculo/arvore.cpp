@@ -1,21 +1,22 @@
 #include "arvore.hpp"
 
-Arvore::Arvore(sf::Vector2f pos) : Obstaculo(pos, sf::Vector2f(TAMANHO_Arvore_X, TAMANHO_Arvore_Y), IDs::IDs::Arvore, CAMINHO_TEXTURA_Arvore), flexibilidade(0.25f)
+Arvore::Arvore(sf::Vector2f pos, sf::Vector2f tam) : Obstaculo(pos, tam, IDs::IDs::Arvore, CAMINHO_TEXTURA_Arvore), flexibilidade(0.25f)
 {
+    // terminar...
 }
 
 Arvore::~Arvore()
 {
 }
 
-void Arvore::colisao(Entidade *outraEnt, sf::Vector2f ds)
+void Arvore::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
-    sf::Vector2f posOutro = outraEnt->getPos();
-    sf::Vector2f tamOutro = outraEnt->getTam();
+    sf::Vector2f posOutro = outraEntidade->getPos();
+    sf::Vector2f tamOutro = outraEntidade->getTam();
 
-    if (outraEnt->getID() == IDs::IDs::jogador || outraEnt->getID() == IDs::IDs::Uraniano || outraEnt->getID() == IDs::IDs::Verme || outraEnt->getID() == IDs::IDs::Venusiano)
+    if (outraEntidade->getID() == IDs::IDs::jogador || outraEntidade->getID() == IDs::IDs::Uraniano)
     {
-        colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
+        colisaoObstaculo(ds, static_cast<Personagem *>(outraEntidade));
     }
 }
 

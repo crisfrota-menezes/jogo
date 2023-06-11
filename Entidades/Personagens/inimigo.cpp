@@ -43,24 +43,6 @@ void Inimigo::atualizaMoveAleatorio()
     }
 }
 
-void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
-{
-    switch (outraEntidade->getID())
-    {
-    case (IDs::IDs::jogador):
-    {
-        cout << "Bateu em mim toma" << endl;
-        outraEntidade->vida -= dano;
-    }
-    break;
-    case (IDs::IDs::Uraniano):
-    {
-        // std::cout << "Empurra inimigo" << std::endl;
-    }
-    break;
-    }
-}
-
 void Inimigo::atualizar()
 {
     sf::Vector2f posJogador = jogador->getPos();
@@ -84,4 +66,16 @@ void Inimigo::atualizar()
     dtAux += relogio.getElapsedTime().asSeconds() * 100;
     relogio.restart();
     animar();
+}
+
+void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
+{
+    switch (outraEntidade->getID())
+    {
+    case (IDs::IDs::jogador):
+    {
+        // std::cout << "Bate jogador e jogador pode bater no inimigo" << std::endl;
+    }
+    break;
+    }
 }

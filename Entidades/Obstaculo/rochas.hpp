@@ -21,7 +21,7 @@ namespace SpaceHunt
             private:
                 int dano = 4;
             public:
-                Rochas(const sf::Vector2f pos);
+                Rochas(sf::Vector2f pos, sf::Vector2f tam);
                 ~Rochas();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 //void setVida(bool vida);

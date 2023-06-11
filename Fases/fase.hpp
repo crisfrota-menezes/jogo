@@ -6,6 +6,8 @@
 #include "../Parallax/fundo.hpp"
 
 //Personagens
+#include "../Entidades/Personagens/inimigo.hpp"
+#include "../Entidades/Personagens/personagem.hpp"
 #include "../Entidades/Personagens/jogador.hpp"
 #include "../Entidades/Personagens/uraniano.hpp"
 #include "../Entidades/Personagens/verme.hpp"

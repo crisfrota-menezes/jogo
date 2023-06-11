@@ -34,23 +34,3 @@ void Entidade::desenhar()
 {
     pGrafico->desenhaElemento(corpo);
 }
-
-void Entidade::setVida(int vida)
-{
-    this->vida = vida;
-}
-
-int Entidade::getVida() const
-{
-    return vida;
-}
-
-void Entidade::setDano(int dano)
-{
-    this->dano = dano;
-}
-
-int Entidade::getDano() const
-{
-    return dano;
-}

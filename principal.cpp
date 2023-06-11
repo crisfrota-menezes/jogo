@@ -45,14 +45,21 @@ void Jogo::run()
 {
     while (pGrafico->janelaAberta())
     {
+        try
+        {
         pEvento->executar();
         pGrafico->limpar();
         fase->executar();
         pGrafico->mostraElementos();
-        if(fase->concluida())
+        /*if(fase->concluida())
         {
             cout << "Fase concluida" << endl;
             exit(1);
+        }*/
+        }
+        catch(const char* msg)
+        {
+            cout << "SUPER ERRO" << endl;
         }
     }
 }

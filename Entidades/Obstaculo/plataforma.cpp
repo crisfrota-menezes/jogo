@@ -1,20 +1,23 @@
 #include "plataforma.hpp"
 
-Plataforma::Plataforma(const sf::Vector2f pos) : Obstaculo(pos, sf::Vector2f(TAMANHO_PLATAFORMA_X, TAMANHO_PLATAFORMA_Y), IDs::IDs::plataforma, CAMINHO_PLATAFORMA)
+Plataforma::Plataforma(sf::Vector2f pos, sf::Vector2f tam) : Obstaculo(pos, tam, IDs::IDs::plataforma, CAMINHO_PLATAFORMA)
 {
+    // textura = pGrafico->carregarTextura(CAMINHO_PLATAFORMA);
+    // corpo.setTexture(&textura);
+    // corpo.setFillColor(sf::Color::Green);
 }
 
 Plataforma::~Plataforma()
 {
 }
 
-void Plataforma::colisao(Entidade *outraEnt, sf::Vector2f ds)
+void Plataforma::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
-    sf::Vector2f posOutro = outraEnt->getPos();
-    sf::Vector2f tamOutro = outraEnt->getTam();
+    sf::Vector2f posOutro = outraEntidade->getPos();
+    sf::Vector2f tamOutro = outraEntidade->getTam();
 
-    if (outraEnt->getID() == IDs::IDs::jogador || outraEnt->getID() == IDs::IDs::Uraniano || outraEnt->getID() == IDs::IDs::Verme || outraEnt->getID() == IDs::IDs::Venusiano)
+    if (outraEntidade->getID() == IDs::IDs::jogador || outraEntidade->getID() == IDs::IDs::Uraniano)
     {
-        colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
+        colisaoObstaculo(ds, static_cast<Personagem *>(outraEntidade));
     }
 }
