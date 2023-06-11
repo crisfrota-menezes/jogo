@@ -1,6 +1,6 @@
 #include "arvore.hpp"
 
-Arvore::Arvore(sf::Vector2f pos, sf::Vector2f tam) : Obstaculo(pos, tam, IDs::IDs::Arvore, CAMINHO_TEXTURA_Arvore), flexibilidade(0.25f)
+Arvore::Arvore(sf::Vector2f pos) : Obstaculo(pos, sf::Vector2f(TAMANHO_Arvore_X, TAMANHO_Arvore_Y), IDs::IDs::Arvore, CAMINHO_TEXTURA_Arvore), flexibilidade(0.25f)
 {
     // terminar...
 }

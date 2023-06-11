@@ -1,7 +1,7 @@
 
 #include "principal.hpp"
 
-Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), pEvento(pEvento->getGerenciadorEvento()), fase(nullptr)
+Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), pEvento(pEvento->getGerenciadorEvento()), pGerenciadorEstado(pGerenciadorEstado->getGerenciadorEstado())
 {
     if (pGrafico == nullptr)
     {
@@ -15,32 +15,35 @@ Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), pEvento(pEvento->get
         exit(1);
     }
 
-    //criarMenu();
-    criarFase();
+    //criarFase();
+    if(pGerenciadorEstado == nullptr){
+        cout << "nao foi possivel criar um GerenciadorEstado" << endl;
+        exit(1);
+    }
+    pGerenciadorEstado->addEstado(IDs::IDs::jogar_Fase1);
     run();
 }
 
 Jogo::~Jogo()
 {
-    if (fase)
+    /*if (fase)
     {
         delete fase;
         fase = nullptr;
-    }
+    }*/
 }
 
-void Jogo::criarMenu()
+/*void Jogo::criarMenu()
 {
-    MenuPrincipal *aux = new MenuPrincipal();
+    MenuPrincipal *aux = new MenuPrincipal(pGrafico, this);
     if (aux == nullptr)
     {
         cout << "Erro ao criar o menu" << endl;
         exit(1);
     }
-    menu = static_cast<MenuPrincipal *>(aux);
-}
+}*/
 
-void Jogo::criarFase()
+/*void Jogo::criarFase()
 {
     Fase1 *aux = new Fase1();
     if (aux == nullptr)
@@ -51,23 +54,24 @@ void Jogo::criarFase()
     fase = static_cast<Fase *>(aux);
     fase->criarFundo();
     fase->criarMapa();
-}
+}*/
 
 void Jogo::run()
 {
     try
     {
-        //bool controle = false;
+       //bool controle = true;
+       //criarMenu();
         while (pGrafico->janelaAberta())
         {
-            //controle = menu->run();
+            //controle = 
+            //menu->run();
             //if (controle)
             //{
-                //delete menu;
-                //menu = nullptr;
                 pEvento->executar();
                 pGrafico->limpar();
-                fase->executar();
+                //fase->executar();
+                pGerenciadorEstado->executar();
                 pGrafico->mostraElementos();
             //}
             /*if(fase->concluida())
@@ -77,8 +81,8 @@ void Jogo::run()
             }*/
         }
     }
-    catch (const char *msg)
+    catch (const std::exception &e)
     {
-        cout << "SUPER ERRO" << endl;
+        std::cerr << e.what() << '\n';
     }
 }

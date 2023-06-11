@@ -22,25 +22,22 @@ void Fase1::criarFundo()
 
 void Fase1::criarMapa()
 {
-    std::ifstream arquivo;
-    std::string linha;
-    arquivo.open("C:/Users/crisn/Desktop/SpaceHunt/Fases/mapa_Fase1.txt");
-    if (!arquivo.is_open())
+    listaPersonagens.inserir(construtor->criarJogador(sf::Vector2f(100.0f, 400.0f)));
+
+    for (int i = 0; i < 10; i++)
     {
-        std::cout << "Fase1::nao foi possivel abrir o arquivo" << std::endl;
-        exit(1);
+        listaObstaculos.inserir(construtor->criarPlataforma(sf::Vector2f(i * 300.0f, 550.0f)));
     }
-    int j = 0;
-    while (std::getline(arquivo, linha))
+
+    for (int i = 0; i < 2; i++)
     {
-        for (int i = 0; i < linha.size(); i++)
-        {
-            if (linha[i] != ' ')
-            {
-                criarEntidade(linha[i], sf::Vector2i(i, j));
-            }
-        }
-        j++;
+        listaPersonagens.inserir(construtor->criarUraniano(sf::Vector2f(500.0f * (i + 1), 0.0f)));
     }
-    arquivo.close();
+
+    listaObstaculos.inserir(construtor->criarPlataforma(sf::Vector2f(500.0f, 400.0f)));
+    listaObstaculos.inserir(construtor->criarPlataforma(sf::Vector2f(900.0f, 400.0f)));
+    listaObstaculos.inserir(construtor->criarPlataforma(sf::Vector2f(1200.0f, 400.0f)));
+    listaObstaculos.inserir(construtor->criarPlataforma(sf::Vector2f(1100.0f, 250.0f)));
+    listaObstaculos.inserir(construtor->criarRocha(sf::Vector2f(400.0f, 500.0f)));
+    listaObstaculos.inserir(construtor->criarRocha(sf::Vector2f(1000.0f, 350.0f)));
 }

@@ -18,6 +18,8 @@ namespace SpaceHunt
             fase_Fase1,
             fundo_Fase2,
             fase_Fase2,
+            jogar_Fase1,
+            jogar_Fase2,
             Projetil
         };
     }

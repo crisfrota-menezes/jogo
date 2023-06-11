@@ -20,7 +20,7 @@ namespace SpaceHunt
                 bool noChao;
 
             public:
-                Jogador(const sf::Vector2f pos, const sf::Vector2f tam);
+                Jogador(const sf::Vector2f pos);
                 ~Jogador();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 void atualizar();

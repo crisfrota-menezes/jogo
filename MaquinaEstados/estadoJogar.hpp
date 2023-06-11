@@ -1,0 +1,31 @@
+#pragma once
+
+#include "estado.hpp"
+
+// Gerenciador
+#include "../Gerenciadores/gerenciadorGrafico.hpp"
+
+// Fases
+#include "../Fases/fase.hpp"
+#include "../Fases/fase1.hpp"
+#include "../Fases/fase2.hpp"
+
+namespace SpaceHunt
+{
+    namespace Estados
+    {
+        class EstadoJogar : public Estado
+        {
+        private:
+            Fase *fase;
+
+        public:
+            EstadoJogar(Fase *fase);
+            ~EstadoJogar();
+            void executar();
+            // void desenhar();
+        };
+    }
+    using namespace Estados;
+}
+using namespace SpaceHunt;

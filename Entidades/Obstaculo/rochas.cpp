@@ -1,6 +1,6 @@
 #include "rochas.hpp"
 
-Rochas::Rochas(sf::Vector2f pos, sf::Vector2f tam) : Obstaculo(pos, sf::Vector2f(TAMANHO_Rochas_X, TAMANHO_Rochas_Y), IDs::IDs::Rochas, CAMINHO_Rochas)
+Rochas::Rochas(sf::Vector2f pos) : Obstaculo(pos, sf::Vector2f(TAMANHO_Rochas_X, TAMANHO_Rochas_Y), IDs::IDs::Rochas, CAMINHO_Rochas)
 {
     dano = 4;
 }

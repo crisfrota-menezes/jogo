@@ -4,7 +4,9 @@
 #include "Gerenciadores/gerenciadorGrafico.hpp"
 #include "Gerenciadores/gerenciadorEvento.hpp"
 
-#include "Menus/menuPrincipal.hpp"
+//#include "Menus/menuPrincipal.hpp"
+
+#include "Gerenciadores/gerenciadorEstado.hpp"
 
 // Fases
 #include "Fases/fase1.hpp"
@@ -17,10 +19,11 @@ namespace SpaceHunt
     private:
         GerenciadorGrafico *pGrafico;
         GerenciadorEvento *pEvento;
-        MenuPrincipal *menu;
-        Fase *fase;
-        void criarFase();
-        void criarMenu();
+        GerenciadorEstado *pGerenciadorEstado;
+        //MenuPrincipal *menu;
+        //Fase *fase;
+        //void criarFase();
+        //void criarMenu();
 
     public:
         Jogo();

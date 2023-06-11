@@ -8,8 +8,8 @@
 #define ESCALA_X 1
 #define ESCALA_Y 1
 
-
-
+#define TAMANHO_PLATAFORMA_X 100.0f
+#define TAMANHO_PLATAFORMA_Y 100.0f
 
 namespace SpaceHunt
 {
@@ -20,7 +20,7 @@ namespace SpaceHunt
             class Plataforma : public Obstaculo
             {
             public:
-                Plataforma(sf::Vector2f pos, sf::Vector2f tam);
+                Plataforma(sf::Vector2f pos);
                 ~Plataforma();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 //void setVida(bool vida);

@@ -5,19 +5,7 @@
 
 #include "../Parallax/fundo.hpp"
 
-//Personagens
-#include "../Entidades/Personagens/inimigo.hpp"
-#include "../Entidades/Personagens/personagem.hpp"
-#include "../Entidades/Personagens/jogador.hpp"
-#include "../Entidades/Personagens/uraniano.hpp"
-#include "../Entidades/Personagens/verme.hpp"
-#include "../Entidades/Personagens/venusiano.hpp"
-#include "../Entidades/projetil.hpp"
-
-//Obstaculos
-#include "../Entidades/Obstaculo/arvore.hpp"
-#include "../Entidades/Obstaculo/rochas.hpp"
-#include "../Entidades/Obstaculo/plataforma.hpp"
+#include "../Construtores/construtorFase.hpp"
 
 //Gerenciadores
 #include "../Gerenciadores/GerenciadorColisao.hpp"
@@ -34,6 +22,7 @@ namespace SpaceHunt {
 
         class Fase : public Ente {
         protected:
+            Construtores::ConstrutorFase* construtor;
             ListaEntidades listaPersonagens;
             ListaEntidades listaObstaculos;
             GerenciadorColisao* pColisao;
@@ -42,14 +31,6 @@ namespace SpaceHunt {
         public:
             Fase(const IDs::IDs ID_Fase, const IDs::IDs ID_Fundo);
             ~Fase();
-            void criaUraniano(const sf::Vector2f pos);
-            void criaVerme(const sf::Vector2f pos);
-            void criaVenusiano(const sf::Vector2f pos);
-            void criarJogador(const sf::Vector2f pos);
-            void criarPlataforma(const sf::Vector2f pos);
-            void criarArvore(const sf::Vector2f pos);
-            void criarRochas(const sf::Vector2f pos);
-            void criarProjetil(const sf::Vector2f pos);
             virtual void criarMapa() = 0;
             void criarEntidade(char letra, const sf::Vector2i pos);
             void executar();

@@ -10,6 +10,7 @@ namespace SpaceHunt
         {
         private:
             GerenciadorGrafico *gg;
+            Jogo *jogo;
             sf::RenderWindow *window;
             sf::Font *font;
             sf::Texture *image;
@@ -28,7 +29,7 @@ namespace SpaceHunt
             void draw();
 
         public:
-            MenuPrincipal();
+            MenuPrincipal(GerenciadorGrafico *pGrafico, Jogo *jogo);
             ~MenuPrincipal();
             bool run();
         };
