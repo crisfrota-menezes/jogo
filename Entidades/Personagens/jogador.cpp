@@ -20,7 +20,7 @@ void Jogador::inicializa()
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/CaiJ.png", "CAI", 1, 0.15f, sf::Vector2f(3, 1.5));
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AtacaJ.png", "ATACA", 4, 0.15f, sf::Vector2f(3, 1.5));
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/HitJ.png", "HIT", 3, 0.15f, sf::Vector2f(3, 1.5));
-    corpo.setOrigin(sf::Vector2f(tam.x / 2.0f, tam.y / 4.7f));
+    corpo.setOrigin(sf::Vector2f(tam.x / 2.0f, tam.y / 5.0f));
 }
 
 void Jogador::atualizar()

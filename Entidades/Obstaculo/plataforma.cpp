@@ -2,9 +2,6 @@
 
 Plataforma::Plataforma(sf::Vector2f pos, sf::Vector2f tam) : Obstaculo(pos, tam, IDs::IDs::plataforma, CAMINHO_PLATAFORMA)
 {
-    // textura = pGrafico->carregarTextura(CAMINHO_PLATAFORMA);
-    // corpo.setTexture(&textura);
-    // corpo.setFillColor(sf::Color::Green);
 }
 
 Plataforma::~Plataforma()

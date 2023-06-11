@@ -16,8 +16,9 @@ void Rochas::colisao(Entidade *outraEnt, sf::Vector2f ds)
 
     if (outraEnt->getID() == IDs::IDs::jogador)
     {
+        cout << "AI" << endl;
         outraEnt->vida -= dano;
-        outraEnt->setPos(sf::Vector2f(posOutro.x, posOutro.y - 25.0f));
+        outraEnt->setPos(sf::Vector2f(posOutro.x, posOutro.y - 50.0f));
         if(outraEnt->vida <= 0)
         {
             delete outraEnt;
@@ -32,50 +33,3 @@ void Rochas::colisao(Entidade *outraEnt, sf::Vector2f ds)
         colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
     }
 }
-
-/*void Rochas::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
-{
-    sf::Vector2f posOutro = pPersonagem->getPos();
-    sf::Vector2f tamOutro = pPersonagem->getTam();
-    sf::Vector2f velFinal = pPersonagem->getVelFinal();
-    // int vidaEnt = pPersonagem->getVida();
-
-    if (ds.x < 0.0f && ds.y < 0.0f)
-    {
-        if (ds.x > ds.y)
-        {
-            if (posOutro.x < pos.x)
-            {
-                posOutro.x -= ds.x;
-                // vida -= dano;
-            }
-            else
-            {
-                posOutro.x += ds.x;
-                // vida -= dano;
-            }
-            velFinal.x = 0.0f;
-        }
-        else
-        {
-            if (posOutro.y < pos.y)
-            {
-                posOutro.y += ds.y;
-                if (pPersonagem->getID() == IDs::IDs::jogador)
-                {
-                    Jogador *pJogador = static_cast<Jogador *>(pPersonagem);
-                    pJogador->podePular();
-                }
-                // vida -= dano;
-            }
-            else
-            {
-                posOutro.y -= ds.y;
-                // vida -= dano;
-            }
-        }
-    }
-    pPersonagem->setPos(posOutro);
-    pPersonagem->setVelFinal(velFinal);
-    // pPersonagem->setVida(vidaEnt);
-}*/
