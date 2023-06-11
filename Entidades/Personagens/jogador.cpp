@@ -3,9 +3,13 @@
 #include <cmath>
 
 Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false)
-
 {
+    vida = 10;
     inicializa();
+}
+
+Jogador::~Jogador()
+{
 }
 
 void Jogador::inicializa()
@@ -61,6 +65,21 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     {
     case (IDs::IDs::Uraniano):
     {
+        cout << "AI" << endl;
+        vida -= outraEntidade->getDano();
+        if (vida <= 0)
+        {
+            cout << "MORTE POR URANIANO" << endl;
+            delete this;
+            cout << "GAME OVER" << endl;
+            exit(0);
+        }
+        else
+        {
+            // Código que empurra o jogador para trás
+            setPos(sf::Vector2f(pos.x, pos.y - 25.0f));
+            noChao = false;
+        }
     }
     break;
     case (IDs::IDs::plataforma):

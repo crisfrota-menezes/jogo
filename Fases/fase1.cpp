@@ -22,22 +22,25 @@ void Fase1::criarFundo()
 
 void Fase1::criarMapa()
 {
-    criarJogador(sf::Vector2f(100.0f, 400.0f));
-
-    for (int i = 0; i < 20; i++)
+    std::ifstream arquivo;
+    std::string linha;
+    arquivo.open("C:/Users/crisn/Desktop/SpaceHunt/Fases/mapa_Fase1.txt");
+    if (!arquivo.is_open())
     {
-        criarPlataforma(sf::Vector2f(i * 128.0f, 472.0f));
+        std::cout << "Fase1::nao foi possivel abrir o arquivo" << std::endl;
+        exit(1);
     }
-    criarProjetil(sf::Vector2f(100.0f, 400.0f));
-
-    for (int i = 0; i < 2; i++)
+    int j = 0;
+    while (std::getline(arquivo, linha))
     {
-        criaUraniano(sf::Vector2f(500.0f * (i + 1), 0.0f));
+        for (int i = 0; i < linha.size(); i++)
+        {
+            if (linha[i] != ' ')
+            {
+                criarEntidade(linha[i], sf::Vector2i(i, j));
+            }
+        }
+        j++;
     }
-    criarPlataforma(sf::Vector2f(500.0f, 200.0f));
-    criarPlataforma(sf::Vector2f(900.0f, 200.0f));
-    criarPlataforma(sf::Vector2f(1200.0f, 200.0f));
-    criarPlataforma(sf::Vector2f(1100.0f, 125.0f));
-    criarArvore(sf::Vector2f(400.0f, 500.0f));
-    criarArvore(sf::Vector2f(1000.0f, 350.0f));
+    arquivo.close();
 }

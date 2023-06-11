@@ -74,7 +74,6 @@ void Inimigo::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     {
     case (IDs::IDs::jogador):
     {
-        // std::cout << "Bate jogador e jogador pode bater no inimigo" << std::endl;
     }
     break;
     }

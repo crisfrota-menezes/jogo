@@ -3,7 +3,7 @@
 #include "Personagem.hpp"
 
 #define VELOCIDADE_JOGADOR 200.0f
-#define TAMANHO_PULO 0.5f
+#define TAMANHO_PULO 0.8f
 #define TAMANHO_JOGADOR_X 50.0f
 #define TAMANHO_JOGADOR_Y 90.0f
 

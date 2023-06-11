@@ -34,3 +34,8 @@ void Entidade::desenhar()
 {
     pGrafico->desenhaElemento(corpo);
 }
+
+int Entidade::getDano()
+{
+    return dano;
+}

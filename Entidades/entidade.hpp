@@ -27,6 +27,7 @@ namespace SpaceHunt
             virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
             virtual void atualizar() = 0;
             void desenhar();
+            int getDano();
         };
     }
     using namespace Entidades;
