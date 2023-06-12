@@ -1,9 +1,9 @@
 #include "gerenciadorEvento.hpp"
 #include "gerenciadorEstado.hpp"
 
-GerenciadorEvento* pEvento = nullptr;
-GerenciadorGrafico* pGrafico = GerenciadorGrafico::getGerenciadorGrafico();
-GerenciadorEstado* pEstado = GerenciadorEstado::getGerenciadorEstado();
+GerenciadorEvento* GerenciadorEvento::pEvento = nullptr;
+GerenciadorGrafico* GerenciadorEvento::pGrafico = GerenciadorGrafico::getGerenciadorGrafico();
+GerenciadorEstado* GerenciadorEvento::pEstado = GerenciadorEstado::getGerenciadorEstado();
 
 GerenciadorEvento::GerenciadorEvento()
 {

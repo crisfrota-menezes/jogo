@@ -3,9 +3,6 @@
 // Gerenciadores
 #include "Gerenciadores/gerenciadorGrafico.hpp"
 #include "Gerenciadores/gerenciadorEvento.hpp"
-
-//#include "Menus/menuPrincipal.hpp"
-
 #include "Gerenciadores/gerenciadorEstado.hpp"
 
 // Fases
@@ -19,7 +16,7 @@ namespace SpaceHunt
     private:
         static GerenciadorGrafico *pGrafico;
         static GerenciadorEvento *pEvento;
-        static GerenciadorEstado *pGerenciadorEstado;
+        static GerenciadorEstado *pEstado;
 
     public:
         Jogo();

@@ -1,9 +1,9 @@
 
 #include "principal.hpp"
 
-GerenciadorGrafico *pGrafico = GerenciadorGrafico::getGerenciadorGrafico();
-GerenciadorEvento *pEvento = GerenciadorEvento::getGerenciadorEvento();
-GerenciadorEstado *pEstado = GerenciadorEstado::getGerenciadorEstado();
+GerenciadorGrafico* Jogo::pGrafico = GerenciadorGrafico::getGerenciadorGrafico();
+GerenciadorEvento* Jogo::pEvento = GerenciadorEvento::getGerenciadorEvento();
+GerenciadorEstado* Jogo::pEstado = GerenciadorEstado::getGerenciadorEstado();
 
 Jogo::Jogo()
 {

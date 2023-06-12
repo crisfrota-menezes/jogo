@@ -1,6 +1,6 @@
 #include "gerenciadorEstado.hpp"
 
-GerenciadorEstado *GerenciadorEstado::pGerenciadorEstado = nullptr;
+GerenciadorEstado* GerenciadorEstado::pGerenciadorEstado = nullptr;
 
 GerenciadorEstado::GerenciadorEstado() : pilhaEstados(), construtorEstado()
 {
