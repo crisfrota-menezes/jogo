@@ -1,6 +1,8 @@
 #include "ente.hpp"
 
-Ente::Ente(const IDs::IDs ID) : ID(ID), pGrafico(pGrafico->getGerenciadorGrafico())
+GerenciadorGrafico *pGrafico = getGerenciadorGrafico();
+
+Ente::Ente(const IDs::IDs ID) : ID(ID)
 {
 }
 

@@ -17,13 +17,9 @@ namespace SpaceHunt
     class Jogo
     {
     private:
-        GerenciadorGrafico *pGrafico;
-        GerenciadorEvento *pEvento;
-        GerenciadorEstado *pGerenciadorEstado;
-        //MenuPrincipal *menu;
-        //Fase *fase;
-        //void criarFase();
-        //void criarMenu();
+        static GerenciadorGrafico *pGrafico;
+        static GerenciadorEvento *pEvento;
+        static GerenciadorEstado *pGerenciadorEstado;
 
     public:
         Jogo();

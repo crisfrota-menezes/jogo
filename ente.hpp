@@ -11,7 +11,7 @@ namespace SpaceHunt
     class Ente
     {
     protected:
-        GerenciadorGrafico *pGrafico;
+        static GerenciadorGrafico *pGrafico;
         const IDs::IDs ID;
 
     public:

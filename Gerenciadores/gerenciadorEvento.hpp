@@ -12,8 +12,8 @@ namespace SpaceHunt
         class GerenciadorEvento
         {
         private:
-            GerenciadorGrafico *pGrafico;
-            GerenciadorEstado *pEstado;
+            static GerenciadorGrafico *pGrafico;
+            static GerenciadorEstado *pEstado;
             // padrão de projeto singleton
             static GerenciadorEvento *pEvento;
             GerenciadorEvento();
