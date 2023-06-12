@@ -1,6 +1,7 @@
 #pragma once
 
-#include "GerenciadorGrafico.hpp"
+#include "gerenciadorGrafico.hpp"
+#include "gerenciadorEstado.hpp"
 #include "../Entidades/Personagens/jogador.hpp"
 
 namespace SpaceHunt

@@ -11,5 +11,5 @@ Botao::~Botao()
 void Botao::desenhar()
 {
     pGrafico->desenhaElemento(caixa);
-    pGrafico->desenhaElemento(caixaTexto.getTexto());
+    pGrafico->desenhaTexto(caixaTexto.getTexto());
 }
