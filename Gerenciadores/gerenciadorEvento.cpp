@@ -68,15 +68,15 @@ void GerenciadorEvento::verificaTeclaSolta(sf::Keyboard::Key tecla)
     }
     if (tecla == sf::Keyboard::Escape)
     {
-        pEstado->removerEstado();
+        pGrafico->fechaJanela();
     }
     else if (tecla == sf::Keyboard::R)
     {
-        pEstado->addEstado(IDs::IDs::jogar_Fase1);
+        //pEstado->addEstado(IDs::IDs::jogar_Fase1);
     }
     else if (tecla == sf::Keyboard::N)
     {
-        pEstado->addEstado(IDs::IDs::jogar_Fase2);
+        //pEstado->addEstado(IDs::IDs::jogar_Fase2);
     }
 }
 

@@ -29,13 +29,12 @@ namespace SpaceHunt
             void mostraElementos();
             void fechaJanela();
             sf::Texture carregarTextura(const char *caminho);
+            sf::Font carregarFonte(const char *caminho);
             const bool janelaAberta();
             void atualizarCamera(const sf::Vector2f posJogador);
             const sf::View getCamera();
             // desenha texto
             void desenhaTexto(sf::Text texto);
-            // desenha background
-            void desenhaBackground(sf::Sprite *bg);
         };
     }
     using namespace Gerenciadores;

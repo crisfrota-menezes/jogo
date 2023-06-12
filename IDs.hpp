@@ -20,6 +20,7 @@ namespace SpaceHunt
             fase_Fase2,
             jogar_Fase1,
             jogar_Fase2,
+            botao,
             Projetil
         };
     }

@@ -1,37 +1,22 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include "ranking.hpp"
-#include "opcoes.hpp"
+#include "../ente.hpp"
+#include "botao.hpp"
 
 namespace SpaceHunt
 {
-    class Menu
+    namespace Menus
     {
-        int pos;
-        bool pressed, select;
+        class Menu : public Ente
+        {
+        private:
+            sf::RectangleShape fundo;
 
-        sf::RenderWindow *window;
-        sf::Font *font;
-        sf::Texture *image;
-        sf::Sprite *bg;
-        sf::Vector2i mousePos;
-        sf::Vector2f mouseCoord;
-        std::vector<const char *> options;
-        std::vector<sf::Text> textos;
-        std::vector<sf::Vector2f> coords;
-        std::vector<std::size_t> sizes;
-
-    protected:
-        void set_values();
-        bool loop_events();
-        void draw();
-
-    public:
-        Menu();
-        ~Menu();
-        bool run();
-    };
+        public:
+            Menu(const IDs::IDs ID);
+            ~Menu();
+        };
+    }
+    using namespace Menus;
 }
 using namespace SpaceHunt;

@@ -86,7 +86,13 @@ void GerenciadorGrafico::desenhaTexto(sf::Text texto)
     window->draw(texto);
 }
 
-void GerenciadorGrafico::desenhaBackground(sf::Sprite *bg)
+sf::Font GerenciadorGrafico::carregarFonte(const char *caminho)
 {
-    window->draw(*bg);
+    sf::Font fonte;
+    if (!fonte.loadFromFile(caminho))
+    {
+        cout << "Erro ao carregar fonte" << endl;
+        exit(1);
+    }
+    return fonte;
 }
