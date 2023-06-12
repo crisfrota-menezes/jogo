@@ -4,9 +4,16 @@
 GerenciadorEvento* GerenciadorEvento::pEvento = nullptr;
 GerenciadorGrafico* GerenciadorEvento::pGrafico = GerenciadorGrafico::getGerenciadorGrafico();
 GerenciadorEstado* GerenciadorEvento::pEstado = GerenciadorEstado::getGerenciadorEstado();
+ListaObservador* GerenciadorEvento::listaObservador = new ListaObservador();
 
 GerenciadorEvento::GerenciadorEvento()
 {
+    listaObservador = new ListaObservador();
+    if (listaObservador == nullptr)
+    {
+        cout << "nao foi possivel criar uma Lista de Observadores" << endl;
+        exit(1);
+    }
 }
 
 GerenciadorEvento::~GerenciadorEvento()
@@ -20,6 +27,21 @@ GerenciadorEvento *GerenciadorEvento::getGerenciadorEvento()
         pEvento = new GerenciadorEvento();
     }
     return pEvento;
+}
+
+void GerenciadorEvento::addObservador(Observador* obs)
+{
+    listaObservador->addObservador(obs);
+}
+
+void GerenciadorEvento::removerObservador(Observador* obs)
+{
+    listaObservador->removerObservador(obs);
+}
+
+void GerenciadorEvento::removerObservador(int pos)
+{
+    listaObservador->removerObservador(pos);
 }
 
 void GerenciadorEvento::verificaTeclaPressionada(sf::Keyboard::Key tecla)
@@ -70,15 +92,7 @@ void GerenciadorEvento::verificaTeclaSolta(sf::Keyboard::Key tecla)
     }
     if (tecla == sf::Keyboard::Escape)
     {
-        pGrafico->fechaJanela();
-    }
-    else if (tecla == sf::Keyboard::R)
-    {
-        //pEstado->addEstado(IDs::IDs::jogar_Fase1);
-    }
-    else if (tecla == sf::Keyboard::N)
-    {
-        //pEstado->addEstado(IDs::IDs::jogar_Fase2);
+        pEstado->removerEstado();
     }
 }
 
@@ -93,11 +107,13 @@ void GerenciadorEvento::executar()
         }
         else if (evento.type == sf::Event::KeyPressed)
         {
-            verificaTeclaPressionada(evento.key.code);
+            //verificaTeclaPressionada(evento.key.code);
+            listaObservador->notificarTeclaPress(evento.key.code);
         }
         else if (evento.type == sf::Event::KeyReleased)
         {
-            verificaTeclaSolta(evento.key.code);
+            //verificaTeclaSolta(evento.key.code);
+            listaObservador->notificarTeclaSolta(evento.key.code);
         }
     }
 }

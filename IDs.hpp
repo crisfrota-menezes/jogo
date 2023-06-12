@@ -21,6 +21,8 @@ namespace SpaceHunt
             jogar_Fase1,
             jogar_Fase2,
             botao,
+            menuPrincipal,
+            estadoMenuPrincipal,
             Projetil
         };
     }

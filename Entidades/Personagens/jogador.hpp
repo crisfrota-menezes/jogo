@@ -9,6 +9,10 @@
 
 namespace SpaceHunt
 {
+    namespace Observadores
+    {
+        class ObservadorJ;
+    }
     namespace Entidades
     {
         namespace Personagens
@@ -18,6 +22,7 @@ namespace SpaceHunt
             private:
                 void inicializa();
                 bool noChao;
+                Observadores::ObservadorJ* obsJogador;
 
             public:
                 Jogador(const sf::Vector2f pos);

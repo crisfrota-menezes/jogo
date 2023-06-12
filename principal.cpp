@@ -24,7 +24,8 @@ Jogo::Jogo()
         cout << "nao foi possivel criar um GerenciadorEstado" << endl;
         exit(1);
     }
-    pEstado->addEstado(IDs::IDs::jogar_Fase1);
+    pEstado->addEstado(IDs::IDs::estadoMenuPrincipal);
+    //pEstado->addEstado(IDs::IDs::jogar_Fase1);
     run();
 }
 

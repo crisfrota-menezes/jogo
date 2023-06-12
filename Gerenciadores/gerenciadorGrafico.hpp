@@ -35,6 +35,7 @@ namespace SpaceHunt
             const sf::View getCamera();
             // desenha texto
             void desenhaTexto(sf::Text texto);
+            const sf::Vector2f getTamTela() const;
         };
     }
     using namespace Gerenciadores;

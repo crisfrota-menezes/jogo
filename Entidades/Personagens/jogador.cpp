@@ -1,15 +1,26 @@
 #include "jogador.hpp"
+#include "../../Observadores/observadorJ.hpp"
 
 #include <cmath>
 
-Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos, sf::Vector2f(TAMANHO_JOGADOR_X, TAMANHO_JOGADOR_Y), VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false)
+Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos, sf::Vector2f(TAMANHO_JOGADOR_X, TAMANHO_JOGADOR_Y), VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false), obsJogador(new ObservadorJ(this))
 {
-    vida = 10;
+    //vida = 10;
+    if (obsJogador == nullptr)
+    {
+        cout << "nao foi possivel criar um observador do jogador" << endl;
+        exit(1);
+    }
     inicializa();
 }
 
 Jogador::~Jogador()
 {
+    if (obsJogador)
+    {
+        delete obsJogador;
+        obsJogador = nullptr;
+    }
 }
 
 void Jogador::inicializa()
@@ -25,11 +36,6 @@ void Jogador::inicializa()
 
 void Jogador::atualizar()
 {
-    /**
-     * @ return void
-     *
-     * Faz o movimeto do jogador e atualiza animação
-     */
     atualizarPos();
     animar();
     pGrafico->atualizarCamera(pos);

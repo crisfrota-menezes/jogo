@@ -96,3 +96,8 @@ sf::Font GerenciadorGrafico::carregarFonte(const char *caminho)
     }
     return fonte;
 }
+
+const sf::Vector2f GerenciadorGrafico::getTamTela() const
+{
+    return (sf::Vector2f)window->getSize();
+}

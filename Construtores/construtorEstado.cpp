@@ -16,12 +16,13 @@ Estado *ConstrutorEstado::criarEstadoJogar(const IDs::IDs ID)
 
     fase = construtorFase.criarFase(ID);
     EstadoJogar *estadoJogar = new EstadoJogar(ID, fase);
-    if (estadoJogar == nullptr)
-    {
-        cout << "nao foi possivel criar um Estado Jogar" << endl;
-        exit(1);
-    }
     return static_cast<Estado *>(estadoJogar);
+}
+
+Estado *ConstrutorEstado::criarEstadoMenuPrincipal(const IDs::IDs ID)
+{
+    Estado *estado = static_cast<Estado *>(new EstadoMenuPrincipal(ID));
+    return estado;
 }
 
 Estado *ConstrutorEstado::criarEstado(const IDs::IDs ID)
@@ -30,9 +31,9 @@ Estado *ConstrutorEstado::criarEstado(const IDs::IDs ID)
     {
         return criarEstadoJogar(ID);
     }
-    else
+    else if (ID == IDs::IDs::estadoMenuPrincipal)
     {
-        cout << "nao foi possivel criar um Estado" << endl;
+        return criarEstadoMenuPrincipal(ID);
     }
     return nullptr;
 }
