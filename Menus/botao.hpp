@@ -25,10 +25,11 @@ namespace SpaceHunt
                 float tempo;
 
             public:
-                Botao(const std::string texto, const sf::Vector2f posicao, const sf::Vector2f tamanho);
+                Botao(const std::string texto, const sf::Vector2f posicao, const sf::Vector2f tamanho, const IDs::IDs id);
                 ~Botao();
                 void desenhar();
                 void setSelecionado(const bool selecionado = true);
+                const bool getSelecionado() const;
                 void atualizar();
             };
         }

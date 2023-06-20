@@ -1,11 +1,11 @@
 #include "jogador.hpp"
-#include "../../Observadores/observadorJ.hpp"
+#include "../../Observadores/observadorJogador.hpp"
 
 #include <cmath>
 
 Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos, sf::Vector2f(TAMANHO_JOGADOR_X, TAMANHO_JOGADOR_Y), VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false), obsJogador(new ObservadorJ(this))
 {
-    //vida = 10;
+    vida = 10;
     if (obsJogador == nullptr)
     {
         cout << "nao foi possivel criar um observador do jogador" << endl;
@@ -106,4 +106,19 @@ void Jogador::pular()
 void Jogador::podePular()
 {
     noChao = true;
+}
+
+void Jogador::ativaObs()
+{
+    obsJogador->ativar();
+}
+
+void Jogador::desativaObs()
+{
+    obsJogador->desativar();
+}
+
+const bool Jogador::getAtivaObs() const
+{
+    return obsJogador->getAtiva();
 }

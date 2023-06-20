@@ -25,7 +25,7 @@ namespace SpaceHunt
 
             public:
                 Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID);
-                ~Personagem();
+                virtual ~Personagem();
                 void setVelFinal(sf::Vector2f velFinal);
                 const sf::Vector2f getVelFinal() const;
                 void andar(const bool paraEsquerda);
@@ -38,7 +38,6 @@ namespace SpaceHunt
                 bool getNoChao() const;
                 void setNoChao(bool noChao);
                 bool getAtacando();
-                //virtual void setVida(bool vida) = 0;
             };
         }
         using namespace Personagens;

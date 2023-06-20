@@ -19,6 +19,7 @@ namespace SpaceHunt
             public:
                 Uraniano(const sf::Vector2f pos, Jogador *jogador);
                 ~Uraniano();
+                int getVida();
 
             };
         }

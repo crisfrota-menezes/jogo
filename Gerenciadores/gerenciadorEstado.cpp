@@ -1,6 +1,6 @@
 #include "gerenciadorEstado.hpp"
 
-GerenciadorEstado* GerenciadorEstado::pGerenciadorEstado = nullptr;
+GerenciadorEstado *GerenciadorEstado::pGerenciadorEstado = nullptr;
 
 GerenciadorEstado::GerenciadorEstado() : pilhaEstados(), construtorEstado()
 {
@@ -31,6 +31,58 @@ GerenciadorEstado::~GerenciadorEstado()
     }
 }
 
+void GerenciadorEstado::ativarObservadores()
+{
+    Estado *estadoAtual = getEstadoAtual();
+    switch (estadoAtual->getID())
+    {
+    case (IDs::IDs::jogar_Fase1):
+    {
+        EstadoJogar *estadoJogar = static_cast<EstadoJogar *>(estadoAtual);
+        Jogador *pJogador = estadoJogar->getJogador();
+        pJogador->ativaObs();
+    }
+    break;
+    case (IDs::IDs::jogar_Fase2):
+    {
+        EstadoJogar *estadoJogar = static_cast<EstadoJogar *>(estadoAtual);
+        Jogador *pJogador = estadoJogar->getJogador();
+        pJogador->ativaObs();
+    }
+    break;
+    case (IDs::IDs::estadoMenuPrincipal):
+    {
+    }
+    break;
+    }
+}
+
+void GerenciadorEstado::desativarObservadores()
+{
+    Estado *estadoAtual = getEstadoAtual();
+    switch (estadoAtual->getID())
+    {
+    case (IDs::IDs::jogar_Fase1):
+    {
+        EstadoJogar *estadoJogar = static_cast<EstadoJogar *>(estadoAtual);
+        Jogador *pJogador = estadoJogar->getJogador();
+        pJogador->desativaObs();
+    }
+    break;
+    case (IDs::IDs::jogar_Fase2):
+    {
+        EstadoJogar *estadoJogar = static_cast<EstadoJogar *>(estadoAtual);
+        Jogador *pJogador = estadoJogar->getJogador();
+        pJogador->desativaObs();
+    }
+    case (IDs::IDs::estadoMenuPrincipal):
+    {
+        // terminar...
+    }
+    break;
+    }
+}
+
 void GerenciadorEstado::addEstado(const IDs::IDs ID)
 {
     Estado *estado = construtorEstado.criarEstado(ID);
@@ -38,6 +90,10 @@ void GerenciadorEstado::addEstado(const IDs::IDs ID)
     {
         cout << "Erro ao criar estado" << endl;
         exit(0);
+    }
+    if (!pilhaEstados.empty())
+    {
+        desativarObservadores();
     }
     pilhaEstados.push(estado);
 }
@@ -50,10 +106,13 @@ void GerenciadorEstado::removerEstado()
         pilhaEstados.top() = nullptr;
         pilhaEstados.pop();
     }
-
-    if (pilhaEstados.empty())
+    if (!pilhaEstados.empty())
     {
-        GerenciadorGrafico* pGrafico = pGrafico->getGerenciadorGrafico();
+        ativarObservadores();
+    }
+    else
+    {
+        GerenciadorGrafico *pGrafico = pGrafico->getGerenciadorGrafico();
         pGrafico->fechaJanela();
     }
 }

@@ -1,6 +1,6 @@
 #include "botao.hpp"
 
-Botao::Botao(const std::string texto, const sf::Vector2f posicao, const sf::Vector2f tamBotao) : Ente(IDs::IDs::botao), caixaTexto(pGrafico->carregarFonte(CAMINHO_FONTE), texto), selecionado(false), tempoTroca(0.5f), tempo(0.0f), relogio(), posicao(posicao), tamanho(tamanho)
+Botao::Botao(const std::string texto, const sf::Vector2f posicao, const sf::Vector2f tamBotao, const IDs::IDs ID) : Ente(ID), caixaTexto(pGrafico->carregarFonte(CAMINHO_FONTE), texto), selecionado(false), tempoTroca(0.01f), tempo(0.0f), relogio(), posicao(posicao), tamanho(tamanho)
 {
     caixa.setPosition(posicao);
     caixa.setSize(tamBotao);
@@ -19,6 +19,12 @@ Botao::~Botao()
 void Botao::setSelecionado(const bool selecionado)
 {
     this->selecionado = selecionado;
+    caixaTexto.resetar();
+}
+
+const bool Botao::getSelecionado() const
+{
+    return selecionado;
 }
 
 void Botao::atualizar()

@@ -32,7 +32,9 @@ namespace SpaceHunt
                 void pular();
                 void podePular();
                 void animar();
-                //void setVida(bool vida);
+                void ativaObs();
+                void desativaObs();
+                const bool getAtivaObs() const;
             };
         }
         using namespace Personagens;

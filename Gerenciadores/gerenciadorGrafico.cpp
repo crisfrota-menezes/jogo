@@ -101,3 +101,9 @@ const sf::Vector2f GerenciadorGrafico::getTamTela() const
 {
     return (sf::Vector2f)window->getSize();
 }
+
+void GerenciadorGrafico::resetarJanela()
+{
+    camera.setCenter(LARGURA_TELA / 2.0f, ALTURA_TELA / 2.0f);
+    window->setView(camera);
+}

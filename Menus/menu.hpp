@@ -22,7 +22,7 @@ namespace SpaceHunt
         public:
             Menu(const IDs::IDs ID, const sf::Vector2f tamBotao);
             ~Menu();
-            void addBotao(const std::string texto, const sf::Vector2f posicao);
+            void addBotao(const std::string texto, const sf::Vector2f posicao, const IDs::IDs ID);
             void desenhar();
             virtual void executar() = 0;
         };

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "gerenciadorGrafico.hpp"
-#include "gerenciadorEstado.hpp"
 #include "../Entidades/Personagens/jogador.hpp"
 #include "../Listas/listaObservador.hpp"
 
@@ -20,8 +19,6 @@ namespace SpaceHunt
             // singleton
             static GerenciadorEvento *pEvento;
             GerenciadorEvento();
-            void verificaTeclaPressionada(sf::Keyboard::Key tecla);
-            void verificaTeclaSolta(sf::Keyboard::Key tecla);
 
         public:
             ~GerenciadorEvento();

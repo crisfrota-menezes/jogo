@@ -13,11 +13,12 @@ namespace SpaceHunt
 
         public:
             Estado(const IDs::IDs ID);
-            ~Estado();
+            virtual ~Estado();
             virtual void executar() = 0;
             virtual void desenhar();
             const bool getRemover() const;
             void setRemover(const bool remover = true);
+            virtual void mudarEstado() = 0;
         };
     }
     using namespace Estados;

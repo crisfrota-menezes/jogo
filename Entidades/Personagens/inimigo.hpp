@@ -29,7 +29,7 @@ namespace SpaceHunt
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 void atualizar();
                 void atualizaMoveAleatorio();
-                //virtual void setVida(bool vida) = 0;
+                virtual int getVida() = 0;
             };
         }
         using namespace Personagens;

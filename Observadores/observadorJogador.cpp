@@ -1,11 +1,12 @@
 #include "observadorJogador.hpp"
 
-ObservadorJ::ObservadorJ(Jogador *pJogador) : pJogador(pJogador)
+ObservadorJ::ObservadorJ(Jogador *pJogador) : pJogador(pJogador), Observador()
 {
 }
 
 ObservadorJ::~ObservadorJ()
 {
+    remove();
 }
 
 void ObservadorJ::teclaPressionada(const sf::Keyboard::Key tecla)

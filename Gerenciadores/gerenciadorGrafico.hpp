@@ -36,6 +36,7 @@ namespace SpaceHunt
             // desenha texto
             void desenhaTexto(sf::Text texto);
             const sf::Vector2f getTamTela() const;
+            void resetarJanela();
         };
     }
     using namespace Gerenciadores;

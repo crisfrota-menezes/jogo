@@ -48,6 +48,7 @@ void GerenciadorColisao::executar()
             if (ds.x < 0.0f && ds.y < 0.0f)
             {
                 ent1->colisao(ent2);
+                ent2->colisao(ent1);
             }
         }
     }

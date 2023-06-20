@@ -47,7 +47,7 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos)
     break;
     case ('a'):
     {
-        //listaPersonagens.inserir(construtorEnt.criarArvore(posAux));
+        // listaPersonagens.inserir(construtorEnt.criarArvore(posAux));
     }
     break;
     case ('#'):
@@ -65,20 +65,20 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos)
         listaObstaculos.inserir(construtorEnt.criarRocha(posAux));
     }
     break;
-    /*case ('p'):
-    {
-        criarProjetil(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
-    }
-    break;*/
+        /*case ('p'):
+        {
+            criarProjetil(sf::Vector2f(pos.x * 50.0f, pos.y * 50.0f));
+        }
+        break;*/
     }
 }
 
 Jogador *Fase::getJogador()
 {
-    for(int i = 0; i < listaPersonagens.getTam(); i++)
+    for (int i = 0; i < listaPersonagens.getTam(); i++)
     {
         Entidade *entidade = listaPersonagens.operator[](i);
-        if(entidade->getID() == IDs::IDs::jogador)
+        if (entidade->getID() == IDs::IDs::jogador)
         {
             return static_cast<Jogador *>(entidade);
         }
@@ -101,4 +101,20 @@ void Fase::executar()
 
     // verifica colisão
     pColisao->executar();
+
+    // verifica se a mais de um personagem na lista
+    if (listaPersonagens.getTam() <= 1)
+    {
+        Entidade *entidade = listaPersonagens.operator[](0);
+        if (entidade->getID() != IDs::IDs::jogador)
+        {
+            std::cout << "GAME OVER" << std::endl;
+            exit(0);
+        }
+        else
+        {
+            std::cout << "VITORIA" << std::endl;
+            exit(0);
+        }
+    }
 }

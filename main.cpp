@@ -5,6 +5,7 @@
 int main()
 {
     Jogo start;
-    
+    start.run();
+
     return 0;
 }
